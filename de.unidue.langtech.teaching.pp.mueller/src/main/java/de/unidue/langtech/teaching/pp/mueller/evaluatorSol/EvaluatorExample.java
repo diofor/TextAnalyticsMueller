@@ -1,4 +1,4 @@
-package de.unidue.langtech.teaching.pp.example.evaluatorSol;
+package de.unidue.langtech.teaching.pp.mueller.evaluatorSol;
 
 import org.apache.uima.UimaContext;
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;

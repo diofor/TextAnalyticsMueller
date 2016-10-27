@@ -1,4 +1,4 @@
-package de.unidue.langtech.teaching.pp.example;
+package de.unidue.langtech.teaching.pp.mueller;
 
 import static org.junit.Assert.assertEquals;
 
@@ -9,6 +9,7 @@ import org.apache.uima.fit.util.JCasUtil;
 import org.apache.uima.jcas.JCas;
 import org.junit.Test;
 
+import de.unidue.langtech.teaching.pp.mueller.ReaderExample;
 import de.unidue.langtech.teaching.pp.type.GoldLanguage;
 
 public class ReaderExampleTest {

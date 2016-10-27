@@ -1,4 +1,4 @@
-package de.unidue.langtech.teaching.pp.example.newType;
+package de.unidue.langtech.teaching.pp.mueller.newType;
 
 import java.util.Collection;
 

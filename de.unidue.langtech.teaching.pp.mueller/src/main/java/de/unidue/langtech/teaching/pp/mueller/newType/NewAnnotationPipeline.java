@@ -1,12 +1,12 @@
-package de.unidue.langtech.teaching.pp.example.newType;
+package de.unidue.langtech.teaching.pp.mueller.newType;
 
 import org.apache.uima.fit.factory.AnalysisEngineFactory;
 import org.apache.uima.fit.factory.CollectionReaderFactory;
 import org.apache.uima.fit.pipeline.SimplePipeline;
 
 import de.tudarmstadt.ukp.dkpro.core.tokit.BreakIteratorSegmenter;
-import de.unidue.langtech.teaching.pp.example.BaselineExample;
-import de.unidue.langtech.teaching.pp.example.ReaderExample;
+import de.unidue.langtech.teaching.pp.mueller.BaselineExample;
+import de.unidue.langtech.teaching.pp.mueller.ReaderExample;
 
 public class NewAnnotationPipeline
 {
