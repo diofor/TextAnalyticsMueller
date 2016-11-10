@@ -30,7 +30,36 @@ public class BaselineExample
         System.out.println("CAS contains " + tokens.size() + " tokens.");
         
         DetectedLanguage languageAnno = new DetectedLanguage(jcas);
-        languageAnno.setLanguage("EN");
+        
+        Integer language[] = {0,0,0}; //0 equals EN, 1 equals FR, 2 equals DE
+       
+        for (Token t : tokens)
+        {
+        	switch(t.getCoveredText())
+        	{
+        		case "the": language[0]++; break;
+        		case "tu" : language[1]++; break;
+        		case "tes": language[1]++; break;
+        		case "des": language[1]++; break;
+        		case "ist": language[2]++; break;
+        		case "ein": language[2]++; break;
+        	}
+        }
+        
+        //Auswerten des Arrays
+        if (language[0] > language[1] && language[0] > language[2])
+        {
+        	languageAnno.setLanguage("EN");
+        }
+        else if (language[1] > language[0] && language[1] > language[2])
+        {
+        	languageAnno.setLanguage("FR");
+        }
+        else if (language[2] > language[0] && language[2] > language[1])
+        {
+        	languageAnno.setLanguage("DE");
+        }
+        
         languageAnno.addToIndexes();
     }
 }
