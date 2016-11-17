@@ -8,6 +8,7 @@ import de.tudarmstadt.ukp.dkpro.core.tokit.BreakIteratorSegmenter;
 import de.unidue.langtech.teaching.pp.mueller.BaselineExample;
 import de.unidue.langtech.teaching.pp.mueller.EvaluatorExample;
 import de.unidue.langtech.teaching.pp.mueller.ReaderExample;
+import de.unidue.langtech.teaching.pp.mueller.SomeOtherExample;
 
 public class BasicPipeline
 {
@@ -20,9 +21,15 @@ public class BasicPipeline
                         ReaderExample.class,
                         ReaderExample.PARAM_INPUT_FILE, "src/test/resources/test/input.txt"
                 ),
+                
+               
                 AnalysisEngineFactory.createEngineDescription(BreakIteratorSegmenter.class),
                 AnalysisEngineFactory.createEngineDescription(BaselineExample.class),
                 AnalysisEngineFactory.createEngineDescription(EvaluatorExample.class)
+               
+                
+                //AnalysisEngineFactory.createEngineDescription(SomeOtherExample.class)
+                
 //                AnalysisEngineFactory.createEngineDescription(SnowballStemmer.class, SnowballStemmer.PARAM_LANGUAGE, "en"),
 //                AnalysisEngineFactory.createEngineDescription(CasDumpWriter.class)
         );

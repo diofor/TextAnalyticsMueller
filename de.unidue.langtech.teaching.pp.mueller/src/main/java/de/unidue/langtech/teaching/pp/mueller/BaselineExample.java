@@ -20,6 +20,7 @@ public class BaselineExample
     extends JCasAnnotator_ImplBase
 {
 
+
     @Override
     public void process(JCas jcas)
         throws AnalysisEngineProcessException
