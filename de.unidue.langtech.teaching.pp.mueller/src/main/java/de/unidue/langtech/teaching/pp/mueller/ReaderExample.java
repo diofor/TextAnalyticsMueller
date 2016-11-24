@@ -84,7 +84,7 @@ public class ReaderExample
         // add gold standard value as annotation
         GoldLanguage goldLanguage = new GoldLanguage(jcas);
         goldLanguage.setLanguage(parts[0]);
-        goldLanguage.addToIndexes();
+        goldLanguage.addToIndexes(); //WICHTIG! sonst wirds nicht wirklich hinzugefügt
         
         // add actual text of the document
         jcas.setDocumentText(parts[1]);
