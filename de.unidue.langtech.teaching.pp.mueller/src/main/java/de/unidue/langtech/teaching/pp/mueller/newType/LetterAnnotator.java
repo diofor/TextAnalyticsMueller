@@ -27,7 +27,6 @@ public class LetterAnnotator
         NewType myType = new NewType(jcas);
         myType.setCountLetterE(countLetterE);
         myType.addToIndexes();
-
     }
 
 }
