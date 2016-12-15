@@ -1,4 +1,4 @@
-package de.unidue.langtech.teaching.pp.mueller.newType;
+package de.unidue.langtech.teaching.pp.mueller.io;
 
 import java.util.Collection;
 
@@ -7,9 +7,9 @@ import org.apache.uima.fit.component.JCasAnnotator_ImplBase;
 import org.apache.uima.fit.util.JCasUtil;
 import org.apache.uima.jcas.JCas;
 
-import de.unidue.langtech.teaching.pp.type.DetectedLanguage;
-import de.unidue.langtech.teaching.pp.type.GoldLanguage;
-import de.unidue.langtech.teaching.pp.type.NewType;
+import de.unidue.langtech.teaching.pp.mueller.type.DetectedLanguage;
+import de.unidue.langtech.teaching.pp.mueller.type.GoldLanguage;
+import de.unidue.langtech.teaching.pp.mueller.type.NewType;
 
 public class Printer
     extends JCasAnnotator_ImplBase
