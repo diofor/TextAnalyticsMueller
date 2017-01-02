@@ -15,7 +15,8 @@ import org.apache.uima.resource.ResourceInitializationException;
 import org.apache.uima.util.Progress;
 
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
-import de.unidue.langtech.teaching.pp.type.GoldLanguage;
+//import de.unidue.langtech.teaching.pp.type.GoldLanguage;
+import de.unidue.langtech.teaching.pp.type.GoldTarget;
 
 public class Reader
     extends JCasCollectionReader_ImplBase
@@ -56,8 +57,27 @@ public class Reader
     public void getNext(JCas aJCas)
         throws IOException, CollectionException
     {
-        List<String> entry = new ArrayList<String>();
-
+    	String line = lines.get(currentLine);
+    	String tweet = "";
+    	String target = "";
+    	int index = 0;
+    	int indexUpper = 0;
+    	if (line.startsWith("\""))
+    	{
+    		index = line.indexOf("\",");
+    		tweet = line.substring(1, index);
+    		indexUpper = line.indexOf(",", index+2);
+    		target = line.substring(index+2, indexUpper);
+    	}
+    	else 
+    	{
+    		index = line.indexOf(",");
+    		tweet = line.substring(0, index);
+    		indexUpper = line.indexOf(",", index+1);
+    		target = line.substring(index+1, indexUpper);
+    	}
+        
+/*
         String nextLine = null;
         for (; currentLine < lines.size(); currentLine++) {
 
@@ -72,6 +92,7 @@ public class Reader
 
             entry.add(nextLine);
         }
+        */
         
         // 'entry' contains now one language code with all tokens of a sentence
         // position 0: language code
@@ -79,10 +100,12 @@ public class Reader
 
         // add gold standard value as annotation
         // the first line is the language code
-        GoldLanguage goldLanguage = new GoldLanguage(aJCas);
-        goldLanguage.setLanguage(entry.get(0));
-        goldLanguage.addToIndexes();
-
+        GoldTarget goldTarget = new GoldTarget(aJCas);
+        goldTarget.setTargetText(target);
+        //---------------goldLanguage.setLanguage(entry.get(0));
+        goldTarget.addToIndexes();
+        
+        /*
         String documentText = "";
         for (int i = 1; i < entry.size(); i++) {
             String word = entry.get(i);
@@ -97,8 +120,11 @@ public class Reader
             // append space as separator for next token
             documentText += " ";
         }
+        */
 
-        aJCas.setDocumentText(documentText.trim());
+        
+        aJCas.setDocumentText(tweet);
+        currentLine++;
 
     }
 

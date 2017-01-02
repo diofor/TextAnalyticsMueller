@@ -1,15 +1,11 @@
 package de.unidue.langtech.teaching.pp.mueller.io;
 
-import java.util.Collection;
-
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
 import org.apache.uima.fit.component.JCasAnnotator_ImplBase;
 import org.apache.uima.fit.util.JCasUtil;
 import org.apache.uima.jcas.JCas;
 
-import de.unidue.langtech.teaching.pp.mueller.type.DetectedLanguage;
-import de.unidue.langtech.teaching.pp.mueller.type.GoldLanguage;
-import de.unidue.langtech.teaching.pp.mueller.type.NewType;
+import de.unidue.langtech.teaching.pp.type.GoldTarget;
 
 public class Printer
     extends JCasAnnotator_ImplBase
@@ -19,6 +15,11 @@ public class Printer
     public void process(JCas jcas)
         throws AnalysisEngineProcessException
     {
+    	System.out.println((JCasUtil.selectSingle(jcas, GoldTarget.class)).getTargetText() +":\t"+jcas.getDocumentText());
+    	
+    	
+    	
+    	/*
         // This API always returns a collection even if you know that there should be only one
         Collection<NewType> letterECount = JCasUtil.select(jcas, NewType.class);
 
@@ -30,8 +31,15 @@ public class Printer
             System.out.println("Detected: " + detected.getLanguage() + " Gold:"
                     + gold.getLanguage());
             System.out.println("Number of e/E: " + t.getCountLetterE());
-        }
+        }*/
 
     }
 
+    public void collectionProcessComplete()
+            throws AnalysisEngineProcessException
+    {
+        super.collectionProcessComplete();
+        
+        System.out.println("ENDE");
+    }
 }

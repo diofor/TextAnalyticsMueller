@@ -7,8 +7,8 @@ import org.apache.uima.fit.util.JCasUtil;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.resource.ResourceInitializationException;
 
-import de.unidue.langtech.teaching.pp.mueller.type.DetectedLanguage;
-import de.unidue.langtech.teaching.pp.mueller.type.GoldLanguage;
+//import de.unidue.langtech.teaching.pp.mueller.type.DetectedLanguage;
+//import de.unidue.langtech.teaching.pp.mueller.type.GoldLanguage;
 
 public class EvaluatorExample
     extends JCasAnnotator_ImplBase
@@ -37,6 +37,7 @@ public class EvaluatorExample
     public void process(JCas jcas)
         throws AnalysisEngineProcessException
     {
+    	/*
         nrOfDocuments++; 
         
         DetectedLanguage detected = JCasUtil.selectSingle(jcas, DetectedLanguage.class);
@@ -46,6 +47,7 @@ public class EvaluatorExample
         if (detected.getLanguage().equals(actual.getLanguage())) {
             correct++;
         }
+        */
     }
 
 
