@@ -2,7 +2,6 @@ package de.unidue.langtech.teaching.pp.mueller.io;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.commons.io.FileUtils;
@@ -14,7 +13,6 @@ import org.apache.uima.jcas.JCas;
 import org.apache.uima.resource.ResourceInitializationException;
 import org.apache.uima.util.Progress;
 
-import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 //import de.unidue.langtech.teaching.pp.type.GoldLanguage;
 import de.unidue.langtech.teaching.pp.type.GoldTarget;
 
@@ -36,7 +34,7 @@ public class Reader
 
         try {
             lines = FileUtils.readLines(inputFile);
-            currentLine = 0;
+            currentLine = 1;
         }
         catch (IOException e) {
             throw new ResourceInitializationException(e);

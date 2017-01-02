@@ -96,6 +96,19 @@
   			de.tudarmstadt.ukp.dkpro.core.snowball-asl
   		</artifactId>
   	</dependency>
-  	
+
+  	  	<dependency>
+  	  		<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
+  	  		<artifactId>
+  	  			de.tudarmstadt.ukp.dkpro.core.frequency-asl
+  	  		</artifactId>
+  	  	</dependency>
+  	  	<dependency>
+  	  		<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
+  	  		<artifactId>
+  	  			de.tudarmstadt.ukp.dkpro.core.arktools-gpl
+  	  		</artifactId>
+  	  		<version>1.8.0</version>
+  	  	</dependency>
   </dependencies>
 </project>
