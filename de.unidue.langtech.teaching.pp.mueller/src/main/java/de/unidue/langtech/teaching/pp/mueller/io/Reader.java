@@ -73,11 +73,6 @@ public class Reader
             entry.add(nextLine);
         }
         
-//        for (String i : entry)
-//        {
-//        	System.err.println(i);
-//        }
-
         // 'entry' contains now one language code with all tokens of a sentence
         // position 0: language code
         // position 1 -> N: tokens
