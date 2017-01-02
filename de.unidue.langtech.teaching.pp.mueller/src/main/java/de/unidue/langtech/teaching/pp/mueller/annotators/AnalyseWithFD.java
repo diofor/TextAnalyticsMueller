@@ -17,8 +17,10 @@ import dkpro.toolbox.core.util.FD;
 
 public class AnalyseWithFD extends JCasAnnotator_ImplBase
 {
-	private FrequencyDistribution<String> fd;
+	//private FrequencyDistribution<String> fd;
+    private CFD<String, String> cfd_rawdata; 
     private CFD<String, String> cfd;
+    
     /* 
      * This is called BEFORE any documents are processed.
      */
@@ -27,7 +29,8 @@ public class AnalyseWithFD extends JCasAnnotator_ImplBase
         throws ResourceInitializationException
     {
         super.initialize(context);
-        fd = new FrequencyDistribution<String>();
+//        fd = new FrequencyDistribution<String>();
+        cfd_rawdata = new CFD<String, String>();
         cfd = new CFD<String, String>();
     }
 	
@@ -39,7 +42,7 @@ public class AnalyseWithFD extends JCasAnnotator_ImplBase
 		String cond = gold.getTargetText();
 		for(Token t: tokens)
 		{
-			cfd.inc(cond, t.getCoveredText());
+			cfd_rawdata.inc(cond, t.getCoveredText());
 			//fd.inc(t.getCoveredText());
 		}
 		
@@ -53,25 +56,34 @@ public class AnalyseWithFD extends JCasAnnotator_ImplBase
         throws AnalysisEngineProcessException
     {
         super.collectionProcessComplete();
-        
+      
         /*
-         * ToDo: es müssen gewöhnliche worte die in allen FD's vorkommen gefiltert werden. Sie behindern nur.
+         * ToDo: 	Es fehlt noch zu den einzeln Keywords die ich selektiere die Information, ob es in einem Favor, none, Against kontext vokam.
+         * 			Dies fehlt auch noch im Reader.
+         * 			Auswertung dieser Daten auf weiter Tweets fehlt noch.
+         * 
+         * Idee:	Eventuell kann ich die FD über Tokens aufbauen und nicht über den String... Dann habe ich die Info direkt mit dabei.
+         * 			
          */
-        //FD<String> atheism, feminist, clinton, abortion, climate;
         
-        for (String condition : cfd.getConditions())
+        for (String condition : cfd_rawdata.getConditions())
         {
-        	System.out.println("-------------------\n"+condition);
+        	System.out.println(condition+"\n-------------------\n");
         	
-        	/*
-        	switch(condition){
-        	case "Climate Change is a Real Concern": climate = cfd.getFreqDist(condition); break;
-        	case "Legalization of Abortion": abortion = cfd.getFreqDist(condition); break;
-        	case "Hillary Clinton": clinton = cfd.getFreqDist(condition); break;
-        	case "Atheism": atheism = cfd.getFreqDist(condition); break;
-        	case "Feminist Movement": feminist = cfd.getFreqDist(condition); break;
+        	for(String t : cfd_rawdata.getFreqDist(condition).getKeys())
+//        	for (String t : cfd_rawdata.getFreqDist(condition).getMostFrequentSamples(1000))
+        	{
+        		boolean existsInOtherFDs = false;
+	        	for(String secondConditon: cfd_rawdata.getConditions())
+	        	{
+	        		if (!(condition.equals(secondConditon)))
+	        		{
+	        			if (cfd_rawdata.getFreqDist(secondConditon).contains(t)) existsInOtherFDs = true;
+	        		}
+	        	}
+	        	if (!existsInOtherFDs) cfd.addSample(condition, t, cfd_rawdata.getCount(condition, t));
         	}
-        	*/
+        	
         	
         	for (String t : cfd.getFreqDist(condition).getMostFrequentSamples(50))
         	{
@@ -80,8 +92,10 @@ public class AnalyseWithFD extends JCasAnnotator_ImplBase
         	System.out.println("\n");
         }
         
-        //.getMostFrequentSamples(50)
-        
+        for (String condition : cfd.getConditions())
+        {
+        	System.out.println(condition+" "+cfd.getFreqDist(condition).getB());
+        }
     }
 
 }
