@@ -1,18 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
-  <name>GoldTarget</name>
+  <name>GoldInformation</name>
   <description/>
   <version/>
   <vendor/>
   <types>
     <typeDescription>
-      <name>de.unidue.langtech.teaching.pp.type.GoldTarget</name>
+      <name>de.unidue.langtech.teaching.pp.mueller.type.GoldInformation</name>
       <description/>
       <supertypeName>uima.tcas.Annotation</supertypeName>
     <features>
         <featureDescription>
           <name>TargetText</name>
           <description/>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
+        </featureDescription>
+      <featureDescription>
+          <name>Stance</name>
+          <description>The Stance of the Tweet.</description>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>Sentiment</name>
+          <description>The Sentiment of the Tweet</description>
           <rangeTypeName>uima.cas.String</rangeTypeName>
         </featureDescription>
       </features>

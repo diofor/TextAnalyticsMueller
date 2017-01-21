@@ -9,17 +9,17 @@ import org.apache.uima.fit.util.JCasUtil;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.resource.ResourceInitializationException;
 
-import de.tudarmstadt.ukp.dkpro.core.api.frequency.util.FrequencyDistribution;
+import de.tudarmstadt.ukp.dkpro.core.api.frequency.util.ConditionalFrequencyDistribution;
+//import de.tudarmstadt.ukp.dkpro.core.api.frequency.util.FrequencyDistribution;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
-import de.unidue.langtech.teaching.pp.type.GoldTarget;
-import dkpro.toolbox.core.util.CFD;
-import dkpro.toolbox.core.util.FD;
+import de.unidue.langtech.teaching.pp.mueller.io.CFDFileManager;
+import de.unidue.langtech.teaching.pp.mueller.type.GoldInformation;
 
 public class AnalyseWithFD extends JCasAnnotator_ImplBase
 {
 	//private FrequencyDistribution<String> fd;
-    private CFD<String, String> cfd_rawdata; 
-    private CFD<String, String> cfd;
+    private ConditionalFrequencyDistribution<String, String> cfd_rawdata; 
+    private ConditionalFrequencyDistribution<String, String> cfd;
     
     /* 
      * This is called BEFORE any documents are processed.
@@ -30,15 +30,15 @@ public class AnalyseWithFD extends JCasAnnotator_ImplBase
     {
         super.initialize(context);
 //        fd = new FrequencyDistribution<String>();
-        cfd_rawdata = new CFD<String, String>();
-        cfd = new CFD<String, String>();
+        cfd_rawdata = new ConditionalFrequencyDistribution<String, String>();
+        cfd = new ConditionalFrequencyDistribution<String, String>();
     }
 	
 	
 	@Override
 	public void process(JCas aJCas) throws AnalysisEngineProcessException {
 		Collection<Token> tokens = JCasUtil.select(aJCas, Token.class);
-		GoldTarget gold = JCasUtil.selectSingle(aJCas, GoldTarget.class);
+		GoldInformation gold = JCasUtil.selectSingle(aJCas, GoldInformation.class);
 		String cond = gold.getTargetText();
 		for(Token t: tokens)
 		{
@@ -66,11 +66,13 @@ public class AnalyseWithFD extends JCasAnnotator_ImplBase
          * 			
          */
         
+        //Better use tf/idf
+        
         for (String condition : cfd_rawdata.getConditions())
         {
         	System.out.println(condition+"\n-------------------\n");
         	
-        	for(String t : cfd_rawdata.getFreqDist(condition).getKeys())
+        	for(String t : cfd_rawdata.getFrequencyDistribution(condition).getKeys())
 //        	for (String t : cfd_rawdata.getFreqDist(condition).getMostFrequentSamples(1000))
         	{
         		boolean existsInOtherFDs = false;
@@ -78,14 +80,14 @@ public class AnalyseWithFD extends JCasAnnotator_ImplBase
 	        	{
 	        		if (!(condition.equals(secondConditon)))
 	        		{
-	        			if (cfd_rawdata.getFreqDist(secondConditon).contains(t)) existsInOtherFDs = true;
+	        			if (cfd_rawdata.getFrequencyDistribution(secondConditon).contains(t)) existsInOtherFDs = true;
 	        		}
 	        	}
 	        	if (!existsInOtherFDs) cfd.addSample(condition, t, cfd_rawdata.getCount(condition, t));
         	}
         	
         	
-        	for (String t : cfd.getFreqDist(condition).getMostFrequentSamples(50))
+        	for (String t : cfd.getFrequencyDistribution(condition).getMostFrequentSamples(50))
         	{
         		System.out.println(t);
         	}
@@ -94,8 +96,11 @@ public class AnalyseWithFD extends JCasAnnotator_ImplBase
         
         for (String condition : cfd.getConditions())
         {
-        	System.out.println(condition+" "+cfd.getFreqDist(condition).getB());
+        	System.out.println(condition+" "+cfd.getFrequencyDistribution(condition).getB());
         }
+        
+        CFDFileManager writer = new CFDFileManager();
+        writer.write(cfd, "Target");
     }
 
 }

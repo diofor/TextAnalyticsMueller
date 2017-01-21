@@ -13,8 +13,8 @@ import org.apache.uima.jcas.JCas;
 import org.apache.uima.resource.ResourceInitializationException;
 import org.apache.uima.util.Progress;
 
+import de.unidue.langtech.teaching.pp.mueller.type.GoldInformation;
 //import de.unidue.langtech.teaching.pp.type.GoldLanguage;
-import de.unidue.langtech.teaching.pp.type.GoldTarget;
 
 public class Reader
     extends JCasCollectionReader_ImplBase
@@ -58,22 +58,47 @@ public class Reader
     	String line = lines.get(currentLine);
     	String tweet = "";
     	String target = "";
+    	String stance = "";
+    	String opinion = "";
+    	String sentiment = "";
     	int index = 0;
     	int indexUpper = 0;
     	if (line.startsWith("\""))
     	{
+    		//Tweet mit "
     		index = line.indexOf("\",");
     		tweet = line.substring(1, index);
+    		//Target - immer ohne "
     		indexUpper = line.indexOf(",", index+2);
     		target = line.substring(index+2, indexUpper);
     	}
     	else 
     	{
+    		//Tweet ohne "
     		index = line.indexOf(",");
     		tweet = line.substring(0, index);
+    		//Target - immer ohne " aber nach Tweet mit "
     		indexUpper = line.indexOf(",", index+1);
     		target = line.substring(index+1, indexUpper);
     	}
+    	//Stance - immer ohne "
+		index = indexUpper+1;
+		indexUpper = line.indexOf(",", index);
+		stance = line.substring(index, indexUpper);
+		//opinion towards
+		index = indexUpper+1;
+		if (line.charAt(index) == '\"'){
+			index++;
+			indexUpper = line.indexOf("\",", index);
+			opinion = line.substring(index, indexUpper);
+			indexUpper++;
+		}else
+		{
+			indexUpper = line.indexOf(",", index);
+		}
+		//sentiment
+		index = indexUpper++;
+		sentiment = line.substring(index);
         
 /*
         String nextLine = null;
@@ -98,10 +123,13 @@ public class Reader
 
         // add gold standard value as annotation
         // the first line is the language code
-        GoldTarget goldTarget = new GoldTarget(aJCas);
-        goldTarget.setTargetText(target);
+        GoldInformation goldInf = new GoldInformation(aJCas);
+        goldInf.setTargetText(target);
+        goldInf.setStance(stance);
+        goldInf.setSentiment(sentiment);
+        
         //---------------goldLanguage.setLanguage(entry.get(0));
-        goldTarget.addToIndexes();
+        goldInf.addToIndexes();
         
         /*
         String documentText = "";

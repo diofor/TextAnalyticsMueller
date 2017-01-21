@@ -5,7 +5,7 @@ import org.apache.uima.fit.component.JCasAnnotator_ImplBase;
 import org.apache.uima.fit.util.JCasUtil;
 import org.apache.uima.jcas.JCas;
 
-import de.unidue.langtech.teaching.pp.type.GoldTarget;
+import de.unidue.langtech.teaching.pp.mueller.type.GoldInformation;
 
 public class Printer
     extends JCasAnnotator_ImplBase
@@ -15,7 +15,7 @@ public class Printer
     public void process(JCas jcas)
         throws AnalysisEngineProcessException
     {
-    	System.out.println((JCasUtil.selectSingle(jcas, GoldTarget.class)).getTargetText() +":\t"+jcas.getDocumentText());
+    	System.out.println((JCasUtil.selectSingle(jcas, GoldInformation.class)).getTargetText() +":\t"+jcas.getDocumentText());
     	
     	
     	
