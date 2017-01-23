@@ -18,8 +18,10 @@ import de.unidue.langtech.teaching.pp.mueller.type.GoldInformation;
 public class AnalyseWithFD extends JCasAnnotator_ImplBase
 {
 	//private FrequencyDistribution<String> fd;
-    private ConditionalFrequencyDistribution<String, String> cfd_rawdata; 
-    private ConditionalFrequencyDistribution<String, String> cfd;
+    private ConditionalFrequencyDistribution<String, String> cfd_rawdata_target;
+    private ConditionalFrequencyDistribution<String, String> cfd_rawdata_sentiment;
+    private ConditionalFrequencyDistribution<String, String> cfd_target;
+    private ConditionalFrequencyDistribution<String, String> cfd_sentiment;
     
     /* 
      * This is called BEFORE any documents are processed.
@@ -30,8 +32,10 @@ public class AnalyseWithFD extends JCasAnnotator_ImplBase
     {
         super.initialize(context);
 //        fd = new FrequencyDistribution<String>();
-        cfd_rawdata = new ConditionalFrequencyDistribution<String, String>();
-        cfd = new ConditionalFrequencyDistribution<String, String>();
+        cfd_rawdata_target = new ConditionalFrequencyDistribution<String, String>();
+        cfd_rawdata_sentiment = new ConditionalFrequencyDistribution<String, String>();
+        cfd_target = new ConditionalFrequencyDistribution<String, String>();
+        cfd_sentiment = new ConditionalFrequencyDistribution<String, String>();
     }
 	
 	
@@ -40,9 +44,11 @@ public class AnalyseWithFD extends JCasAnnotator_ImplBase
 		Collection<Token> tokens = JCasUtil.select(aJCas, Token.class);
 		GoldInformation gold = JCasUtil.selectSingle(aJCas, GoldInformation.class);
 		String cond = gold.getTargetText();
+		String sentiment = gold.getSentiment();
 		for(Token t: tokens)
 		{
-			cfd_rawdata.inc(cond, t.getCoveredText());
+			cfd_rawdata_target.inc(cond, t.getCoveredText());
+			cfd_rawdata_sentiment.inc(t.getCoveredText(), sentiment);
 			//fd.inc(t.getCoveredText());
 		}
 		
@@ -68,39 +74,40 @@ public class AnalyseWithFD extends JCasAnnotator_ImplBase
         
         //Better use tf/idf
         
-        for (String condition : cfd_rawdata.getConditions())
+        for (String condition : cfd_rawdata_target.getConditions())
         {
         	System.out.println(condition+"\n-------------------\n");
         	
-        	for(String t : cfd_rawdata.getFrequencyDistribution(condition).getKeys())
-//        	for (String t : cfd_rawdata.getFreqDist(condition).getMostFrequentSamples(1000))
+        	for(String t : cfd_rawdata_target.getFrequencyDistribution(condition).getKeys())
+//        	for (String t : cfd_rawdata_target.getFreqDist(condition).getMostFrequentSamples(1000))
         	{
         		boolean existsInOtherFDs = false;
-	        	for(String secondConditon: cfd_rawdata.getConditions())
+	        	for(String secondConditon: cfd_rawdata_target.getConditions())
 	        	{
 	        		if (!(condition.equals(secondConditon)))
 	        		{
-	        			if (cfd_rawdata.getFrequencyDistribution(secondConditon).contains(t)) existsInOtherFDs = true;
+	        			if (cfd_rawdata_target.getFrequencyDistribution(secondConditon).contains(t)) existsInOtherFDs = true;
 	        		}
 	        	}
-	        	if (!existsInOtherFDs) cfd.addSample(condition, t, cfd_rawdata.getCount(condition, t));
+	        	if (!existsInOtherFDs) cfd_target.addSample(condition, t, cfd_rawdata_target.getCount(condition, t));
         	}
         	
         	
-        	for (String t : cfd.getFrequencyDistribution(condition).getMostFrequentSamples(50))
+        	for (String t : cfd_target.getFrequencyDistribution(condition).getMostFrequentSamples(50))
         	{
         		System.out.println(t);
         	}
         	System.out.println("\n");
         }
         
-        for (String condition : cfd.getConditions())
+        for (String condition : cfd_target.getConditions())
         {
-        	System.out.println(condition+" "+cfd.getFrequencyDistribution(condition).getB());
+        	System.out.println(condition+" "+cfd_target.getFrequencyDistribution(condition).getB());
         }
         
         CFDFileManager writer = new CFDFileManager();
-        writer.write(cfd, "Target");
+        writer.write(cfd_target, "Target");
+        writer.write(cfd_rawdata_sentiment, "Sentiment");
     }
 
 }

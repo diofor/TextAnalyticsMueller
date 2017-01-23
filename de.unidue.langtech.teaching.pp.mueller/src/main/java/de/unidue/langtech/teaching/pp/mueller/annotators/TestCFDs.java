@@ -1,10 +1,8 @@
 package de.unidue.langtech.teaching.pp.mueller.annotators;
 
-import org.apache.uima.UimaContext;
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
 import org.apache.uima.fit.component.JCasAnnotator_ImplBase;
 import org.apache.uima.jcas.JCas;
-import org.apache.uima.resource.ResourceInitializationException;
 
 import de.tudarmstadt.ukp.dkpro.core.api.frequency.util.ConditionalFrequencyDistribution;
 import de.unidue.langtech.teaching.pp.mueller.io.CFDFileManager;
@@ -12,7 +10,7 @@ import de.unidue.langtech.teaching.pp.mueller.io.CFDFileManager;
 public class TestCFDs extends JCasAnnotator_ImplBase {
 	ConditionalFrequencyDistribution<String, String> cfd;
 	
-	
+		
 	@Override
 	public void process(JCas aJCas) throws AnalysisEngineProcessException {
 		// TODO Auto-generated method stub

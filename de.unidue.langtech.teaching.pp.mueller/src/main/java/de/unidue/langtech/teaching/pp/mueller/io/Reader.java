@@ -66,7 +66,7 @@ public class Reader
     	if (line.startsWith("\""))
     	{
     		//Tweet mit "
-    		index = line.indexOf("\",");
+    		index = line.indexOf("\",", 2);
     		tweet = line.substring(1, index);
     		//Target - immer ohne "
     		indexUpper = line.indexOf(",", index+2);
@@ -97,7 +97,7 @@ public class Reader
 			indexUpper = line.indexOf(",", index);
 		}
 		//sentiment
-		index = indexUpper++;
+		index = ++indexUpper;
 		sentiment = line.substring(index);
         
 /*

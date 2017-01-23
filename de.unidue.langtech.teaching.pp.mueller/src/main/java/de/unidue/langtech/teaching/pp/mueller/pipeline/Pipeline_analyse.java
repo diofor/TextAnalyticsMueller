@@ -4,12 +4,13 @@ import org.apache.uima.fit.factory.AnalysisEngineFactory;
 import org.apache.uima.fit.factory.CollectionReaderFactory;
 import org.apache.uima.fit.pipeline.SimplePipeline;
 
+import de.unidue.langtech.teaching.pp.mueller.annotators.AnalyseOfSentiment;
 import de.unidue.langtech.teaching.pp.mueller.annotators.AnalyseWithFD;
 import de.unidue.langtech.teaching.pp.mueller.annotators.TestCFDs;
 import de.unidue.langtech.teaching.pp.mueller.io.Reader;
 import de.tudarmstadt.ukp.dkpro.core.arktools.ArktweetTokenizer;
 
-public class Pipeline_buildFDs
+public class Pipeline_analyse
 {
 
     public static void main(String[] args)
@@ -18,13 +19,10 @@ public class Pipeline_buildFDs
         SimplePipeline.runPipeline(
                 CollectionReaderFactory.createReader(
                         Reader.class,
-                        Reader.PARAM_INPUT_FILE, "src/main/resources/train.csv"
+                        Reader.PARAM_INPUT_FILE, "src/main/resources/test.csv"
                 ),
                 AnalysisEngineFactory.createEngineDescription(ArktweetTokenizer.class),
-                AnalysisEngineFactory.createEngineDescription(AnalyseWithFD.class)
-                //AnalysisEngineFactory.createEngineDescription(TestCFDs.class)
-//                ,AnalysisEngineFactory.createEngineDescription(Printer.class)
-//               AnalysisEngineFactory.createEngineDescription(EvaluatorExample.class)
+                AnalysisEngineFactory.createEngineDescription(AnalyseOfSentiment.class)
         );
     }
 }
