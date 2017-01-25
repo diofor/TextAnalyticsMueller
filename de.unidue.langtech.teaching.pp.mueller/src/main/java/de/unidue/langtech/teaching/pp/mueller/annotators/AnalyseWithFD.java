@@ -19,7 +19,7 @@ public class AnalyseWithFD extends JCasAnnotator_ImplBase
 {
 	//private FrequencyDistribution<String> fd;
     private ConditionalFrequencyDistribution<String, String> cfd_rawdata_target;
-    private ConditionalFrequencyDistribution<String, String> cfd_rawdata_sentiment;
+	private ConditionalFrequencyDistribution<String, String> cfd_rawdata_sentiment;
     private ConditionalFrequencyDistribution<String, String> cfd_target;
     private ConditionalFrequencyDistribution<String, String> cfd_sentiment;
     
@@ -109,5 +109,13 @@ public class AnalyseWithFD extends JCasAnnotator_ImplBase
         writer.write(cfd_target, "Target");
         writer.write(cfd_rawdata_sentiment, "Sentiment");
     }
+    
+    public ConditionalFrequencyDistribution<String, String> getCfd_rawdata_target() {
+		return cfd_rawdata_target;
+	}
+
+	public ConditionalFrequencyDistribution<String, String> getCfd_rawdata_sentiment() {
+		return cfd_rawdata_sentiment;
+	}
 
 }

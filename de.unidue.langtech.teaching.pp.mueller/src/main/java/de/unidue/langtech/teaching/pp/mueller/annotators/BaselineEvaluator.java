@@ -3,13 +3,16 @@ package de.unidue.langtech.teaching.pp.mueller.annotators;
 import org.apache.uima.UimaContext;
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
 import org.apache.uima.fit.component.JCasAnnotator_ImplBase;
+import org.apache.uima.fit.util.JCasUtil;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.resource.ResourceInitializationException;
+
+import de.unidue.langtech.teaching.pp.mueller.type.GoldInformation;
 
 //import de.unidue.langtech.teaching.pp.mueller.type.DetectedLanguage;
 //import de.unidue.langtech.teaching.pp.mueller.type.GoldLanguage;
 
-public class EvaluatorExample
+public class BaselineEvaluator
     extends JCasAnnotator_ImplBase
 {
 
@@ -36,17 +39,9 @@ public class EvaluatorExample
     public void process(JCas jcas)
         throws AnalysisEngineProcessException
     {
-    	/*
-        nrOfDocuments++; 
-        
-        DetectedLanguage detected = JCasUtil.selectSingle(jcas, DetectedLanguage.class);
-        GoldLanguage actual = JCasUtil.selectSingle(jcas, GoldLanguage.class);
-
-        System.out.println(actual.getLanguage() + " detected as " + detected.getLanguage());
-        if (detected.getLanguage().equals(actual.getLanguage())) {
-            correct++;
-        }
-        */
+    	GoldInformation gold = JCasUtil.selectSingle(jcas, GoldInformation.class);
+    	if (gold.getSentiment().equals("neg")) ++correct;
+    	++nrOfDocuments;
     }
 
 
@@ -60,5 +55,6 @@ public class EvaluatorExample
         super.collectionProcessComplete();
         
         System.out.println(correct + " out of " + nrOfDocuments + " are correct.");
+        System.out.println((double)correct/nrOfDocuments*100 +"% is the Baseline.");
     }
 }

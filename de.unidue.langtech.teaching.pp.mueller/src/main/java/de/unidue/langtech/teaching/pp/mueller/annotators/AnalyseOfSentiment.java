@@ -64,7 +64,7 @@ public class AnalyseOfSentiment extends JCasAnnotator_ImplBase
 			
 		}
 		
-		String sentimentOfJCas = "";
+		String sentimentOfJCas = "neg"; //weil auf den Trainignsdaten das häufigste Sentiment neg ist.
 		if (pos > neg && pos > other) sentimentOfJCas = "pos";
 		if (neg > pos && neg > other) sentimentOfJCas = "neg";
 		if (other > pos && other > neg) sentimentOfJCas = "other";

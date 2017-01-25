@@ -24,7 +24,7 @@ public class Pipeline_buildFDs
                 AnalysisEngineFactory.createEngineDescription(AnalyseWithFD.class)
                 //AnalysisEngineFactory.createEngineDescription(TestCFDs.class)
 //                ,AnalysisEngineFactory.createEngineDescription(Printer.class)
-//               AnalysisEngineFactory.createEngineDescription(EvaluatorExample.class)
+//               AnalysisEngineFactory.createEngineDescription(BaselineEvaluator.class)
         );
     }
 }
