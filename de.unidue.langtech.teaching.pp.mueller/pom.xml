@@ -110,5 +110,11 @@
   	  		</artifactId>
   	  		<version>1.8.0</version>
   	  	</dependency>
+  	  	<dependency>
+  	  		<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
+  	  		<artifactId>
+  	  			de.tudarmstadt.ukp.dkpro.core.stopwordremover-asl
+  	  		</artifactId>
+  	  	</dependency>
   </dependencies>
 </project>

@@ -13,6 +13,7 @@ import org.apache.uima.jcas.JCas;
 import org.apache.uima.resource.ResourceInitializationException;
 import org.apache.uima.util.Progress;
 
+import de.unidue.langtech.teaching.pp.mueller.type.DetectedInformation;
 import de.unidue.langtech.teaching.pp.mueller.type.GoldInformation;
 //import de.unidue.langtech.teaching.pp.type.GoldLanguage;
 
@@ -127,9 +128,13 @@ public class Reader
         goldInf.setTargetText(target);
         goldInf.setStance(stance);
         goldInf.setSentiment(sentiment);
+        goldInf.setOpinion(opinion);
         
         //---------------goldLanguage.setLanguage(entry.get(0));
         goldInf.addToIndexes();
+        
+        DetectedInformation df = new DetectedInformation(aJCas);
+        df.addToIndexes();
         
         /*
         String documentText = "";

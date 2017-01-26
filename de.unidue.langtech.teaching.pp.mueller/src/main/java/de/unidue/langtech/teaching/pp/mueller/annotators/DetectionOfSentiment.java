@@ -4,9 +4,7 @@ import java.util.Collection;
 
 import org.apache.uima.UimaContext;
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
-import org.apache.uima.analysis_engine.ResultSpecification;
 import org.apache.uima.fit.component.JCasAnnotator_ImplBase;
-import org.apache.uima.fit.internal.ExtendedLogger;
 import org.apache.uima.fit.util.JCasUtil;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.resource.ResourceInitializationException;
@@ -16,16 +14,13 @@ import de.tudarmstadt.ukp.dkpro.core.api.frequency.util.FrequencyDistribution;
 //import de.tudarmstadt.ukp.dkpro.core.api.frequency.util.FrequencyDistribution;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 import de.unidue.langtech.teaching.pp.mueller.io.CFDFileManager;
-import de.unidue.langtech.teaching.pp.mueller.type.GoldInformation;
+import de.unidue.langtech.teaching.pp.mueller.type.DetectedInformation;
 
-public class AnalyseOfSentiment extends JCasAnnotator_ImplBase
+public class DetectionOfSentiment extends JCasAnnotator_ImplBase
 {
 	//private FrequencyDistribution<String> fd;
     private ConditionalFrequencyDistribution<String, String> cfd;
     private FrequencyDistribution<String> fd;
-    private long jcasCounter;
-    private long trefferCounter;
-    
    
     
     /* 
@@ -38,8 +33,6 @@ public class AnalyseOfSentiment extends JCasAnnotator_ImplBase
         super.initialize(context);
         CFDFileManager fm = new CFDFileManager();
         cfd = fm.read("Sentiment");
-        jcasCounter = 0;
-        trefferCounter = 0;
     }
 	
 	
@@ -49,10 +42,6 @@ public class AnalyseOfSentiment extends JCasAnnotator_ImplBase
 		int neg = 0;
 		int pos = 0;
 		int other = 0;
-		jcasCounter++;
-		//GoldInformation gold = JCasUtil.selectSingle(aJCas, GoldInformation.class);
-		//String cond = gold.getTargetText();
-		//String sentiment = gold.getSentiment();
 		for(Token t: tokens)
 		{
 			fd = cfd.getFrequencyDistribution(t.getCoveredText());
@@ -71,30 +60,14 @@ public class AnalyseOfSentiment extends JCasAnnotator_ImplBase
 		if (neg > pos && neg > other) sentimentOfJCas = "neg";
 		if (other > pos && other > neg) sentimentOfJCas = "other";
 		
+		DetectedInformation di = JCasUtil.selectSingle(aJCas, DetectedInformation.class);
+		di.setSentiment(sentimentOfJCas);
+		di.addToIndexes();
+		
 		//Vergeichen....
+		/*
 		String goldSentiment = JCasUtil.selectSingle(aJCas, GoldInformation.class).getSentiment();
 		if (goldSentiment.equals(sentimentOfJCas)) trefferCounter++;
-//		switch(goldSentiment)
-//		{
-//			case "pos": if(sentimentOfJCas == "pos") trefferCounter++; break;
-//			case "neg": if(sentimentOfJCas == "neg") trefferCounter++; break;
-//			case "other": if(sentimentOfJCas == "other") trefferCounter++; break;
-//		}
+		*/
 	}
-	
-	/* 
-     * This is called AFTER all documents have been processed.
-     */
-    @Override
-    public void collectionProcessComplete()
-        throws AnalysisEngineProcessException
-    {
-        super.collectionProcessComplete();
-        System.out.println("Absolute Zahlen: \nTreffer: "+trefferCounter+" - JCas Elemente: "+jcasCounter);
-        System.out.println("Trefferquote: "+ (double)trefferCounter/jcasCounter*100 +"%");
-        
-//        ResultSpecification rs = new 
-
-    }
-
 }

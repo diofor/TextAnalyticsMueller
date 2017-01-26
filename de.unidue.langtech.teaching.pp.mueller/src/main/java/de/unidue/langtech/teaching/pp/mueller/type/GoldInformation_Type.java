@@ -11,7 +11,7 @@ import org.apache.uima.cas.Feature;
 import org.apache.uima.jcas.tcas.Annotation_Type;
 
 /** 
- * Updated by JCasGen Sat Jan 21 17:15:03 CET 2017
+ * Updated by JCasGen Thu Jan 26 11:11:05 CET 2017
  * @generated */
 public class GoldInformation_Type extends Annotation_Type {
   /** @generated */
@@ -93,6 +93,30 @@ public class GoldInformation_Type extends Annotation_Type {
     ll_cas.ll_setStringValue(addr, casFeatCode_Sentiment, v);}
     
   
+ 
+  /** @generated */
+  final Feature casFeat_Opinion;
+  /** @generated */
+  final int     casFeatCode_Opinion;
+  /** @generated
+   * @param addr low level Feature Structure reference
+   * @return the feature value 
+   */ 
+  public String getOpinion(int addr) {
+        if (featOkTst && casFeat_Opinion == null)
+      jcas.throwFeatMissing("Opinion", "de.unidue.langtech.teaching.pp.mueller.type.GoldInformation");
+    return ll_cas.ll_getStringValue(addr, casFeatCode_Opinion);
+  }
+  /** @generated
+   * @param addr low level Feature Structure reference
+   * @param v value to set 
+   */    
+  public void setOpinion(int addr, String v) {
+        if (featOkTst && casFeat_Opinion == null)
+      jcas.throwFeatMissing("Opinion", "de.unidue.langtech.teaching.pp.mueller.type.GoldInformation");
+    ll_cas.ll_setStringValue(addr, casFeatCode_Opinion, v);}
+    
+  
 
 
 
@@ -116,6 +140,10 @@ public class GoldInformation_Type extends Annotation_Type {
  
     casFeat_Sentiment = jcas.getRequiredFeatureDE(casType, "Sentiment", "uima.cas.String", featOkTst);
     casFeatCode_Sentiment  = (null == casFeat_Sentiment) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_Sentiment).getCode();
+
+ 
+    casFeat_Opinion = jcas.getRequiredFeatureDE(casType, "Opinion", "uima.cas.String", featOkTst);
+    casFeatCode_Opinion  = (null == casFeat_Opinion) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_Opinion).getCode();
 
   }
 }

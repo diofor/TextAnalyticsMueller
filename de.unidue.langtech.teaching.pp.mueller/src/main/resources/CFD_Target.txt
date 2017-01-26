@@ -28,8 +28,8 @@ Feminist Movement	bored	3
 Feminist Movement	@Yohanzor	1
 Feminist Movement	acknowledge	1
 Feminist Movement	idealogies	1
-Feminist Movement	radfem	1
 Feminist Movement	greeted	1
+Feminist Movement	radfem	1
 Feminist Movement	#politicallycorrect	1
 Feminist Movement	parody	1
 Feminist Movement	#slipperyslope	1
@@ -101,10 +101,10 @@ Feminist Movement	@FredvonsydowTW	1
 Feminist Movement	#ponytail	1
 Feminist Movement	@StarSThomas	1
 Feminist Movement	charged	1
-Feminist Movement	surrounding	1
+Feminist Movement	infuriates	1
 Feminist Movement	@FOXSports1	1
 Feminist Movement	bcs	2
-Feminist Movement	infuriates	1
+Feminist Movement	surrounding	1
 Feminist Movement	HIStory	1
 Feminist Movement	OBVIOUSLY	1
 Feminist Movement	@Ricky_Vaughn99	1
@@ -184,7 +184,6 @@ Feminist Movement	@LaNaria_Athalia	1
 Feminist Movement	@jameelajamil	1
 Feminist Movement	Code	1
 Feminist Movement	toad	1
-Feminist Movement	OR	2
 Feminist Movement	mattress	1
 Feminist Movement	they'll	2
 Feminist Movement	ruin	1
@@ -245,8 +244,8 @@ Feminist Movement	signature	1
 Feminist Movement	bowing	1
 Feminist Movement	figureheads	1
 Feminist Movement	Tears	1
-Feminist Movement	@instruct	1
 Feminist Movement	#change	1
+Feminist Movement	@instruct	1
 Feminist Movement	inferiority	1
 Feminist Movement	womne	1
 Feminist Movement	thus	1
@@ -346,7 +345,6 @@ Feminist Movement	shares	1
 Feminist Movement	@DaniBChristen	1
 Feminist Movement	#Wimbledon	1
 Feminist Movement	narrow-minded	1
-Feminist Movement	THEN	1
 Feminist Movement	letting	1
 Feminist Movement	closes	1
 Feminist Movement	conversion	1
@@ -431,9 +429,9 @@ Feminist Movement	toddler	1
 Feminist Movement	CANNOT	1
 Feminist Movement	Individuals	1
 Feminist Movement	lonely	1
-Feminist Movement	hack	2
-Feminist Movement	Riot	2
 Feminist Movement	@moonsmuke	1
+Feminist Movement	Riot	2
+Feminist Movement	hack	2
 Feminist Movement	TASK	1
 Feminist Movement	suggest	1
 Feminist Movement	TL	2
@@ -598,8 +596,8 @@ Feminist Movement	GROWA	1
 Feminist Movement	PREACHING	1
 Feminist Movement	#TweetLikeAFeminist	1
 Feminist Movement	#Dietland	1
-Feminist Movement	prolife	1
 Feminist Movement	buff.ly/1HHhM18	1
+Feminist Movement	prolife	1
 Feminist Movement	Swift	1
 Feminist Movement	express	1
 Feminist Movement	@Awyee707	2
@@ -653,8 +651,8 @@ Feminist Movement	Slut	1
 Feminist Movement	Young	2
 Feminist Movement	thewtfmagazine	1
 Feminist Movement	appeared	1
-Feminist Movement	smile	1
 Feminist Movement	mans	1
+Feminist Movement	smile	1
 Feminist Movement	apologizing	1
 Feminist Movement	riots	1
 Feminist Movement	suck	4
@@ -723,8 +721,8 @@ Feminist Movement	#youthdevelopment	1
 Feminist Movement	category-fluid	1
 Feminist Movement	BUS	2
 Feminist Movement	INFORMATION	1
-Feminist Movement	#Young	1
 Feminist Movement	airbrushed	1
+Feminist Movement	#Young	1
 Feminist Movement	functioning	1
 Feminist Movement	CALL	1
 Feminist Movement	sole's	1
@@ -892,9 +890,9 @@ Feminist Movement	@blueeyedgagal	1
 Feminist Movement	Staying	2
 Feminist Movement	croft	1
 Feminist Movement	gossip	1
-Feminist Movement	#society	2
-Feminist Movement	wanting	3
 Feminist Movement	#girlsintechht	1
+Feminist Movement	wanting	3
+Feminist Movement	#society	2
 Feminist Movement	sooooo	1
 Feminist Movement	@EamonnHolmes	1
 Feminist Movement	#gaming	2
@@ -1111,9 +1109,8 @@ Feminist Movement	#insideamyschumer	1
 Feminist Movement	2/	1
 Feminist Movement	@__florencesmith	1
 Feminist Movement	gaze	1
-Feminist Movement	warrior	1
 Feminist Movement	tumblr	2
-Feminist Movement	AT	3
+Feminist Movement	warrior	1
 Feminist Movement	@_Lemaign	1
 Feminist Movement	SHALL	1
 Feminist Movement	incredibly	1
@@ -1252,8 +1249,8 @@ Feminist Movement	@DrEmilyGrossman	1
 Feminist Movement	@_sarcasmspasm	1
 Feminist Movement	#LenaDunham	1
 Feminist Movement	#jurassicworld	1
-Feminist Movement	couples	1
 Feminist Movement	complaints	1
+Feminist Movement	couples	1
 Feminist Movement	#thethingsthatmatter	1
 Feminist Movement	fanaticism	1
 Feminist Movement	Fell	1
@@ -1271,9 +1268,9 @@ Feminist Movement	perceived/imposed	1
 Feminist Movement	appearance	2
 Feminist Movement	@KrewellaJahan	1
 Feminist Movement	respectability	1
-Feminist Movement	Standard	1
-Feminist Movement	#hsmsong	1
 Feminist Movement	appropriately	1
+Feminist Movement	#hsmsong	1
+Feminist Movement	Standard	1
 Feminist Movement	self-loathing	1
 Feminist Movement	GAMING	1
 Feminist Movement	#NicerInternet	1
@@ -1343,7 +1340,6 @@ Feminist Movement	Heads	1
 Feminist Movement	harassed	3
 Feminist Movement	@fat_tush	1
 Feminist Movement	compete	1
-Feminist Movement	IF	6
 Feminist Movement	soccer	2
 Feminist Movement	revenge	1
 Feminist Movement	#Folklore	1
@@ -1505,8 +1501,8 @@ Feminist Movement	castration	1
 Feminist Movement	neckbeard	1
 Feminist Movement	#nonvaxxerhere	1
 Feminist Movement	@lenadunham	1
-Feminist Movement	amazingly	1
 Feminist Movement	Mito	1
+Feminist Movement	amazingly	1
 Feminist Movement	Frequency	1
 Feminist Movement	shops	1
 Feminist Movement	pigs	1
@@ -1714,9 +1710,9 @@ Feminist Movement	whine-fest	1
 Feminist Movement	Lorde	1
 Feminist Movement	condemns	1
 Feminist Movement	stress	1
-Feminist Movement	#AddGoatRuinAQuote	1
-Feminist Movement	scroll	1
 Feminist Movement	demanding	1
+Feminist Movement	scroll	1
+Feminist Movement	#AddGoatRuinAQuote	1
 Feminist Movement	festering	1
 Feminist Movement	@UKIP	1
 Feminist Movement	doormat	1
@@ -1840,12 +1836,12 @@ Feminist Movement	research	3
 Feminist Movement	#HackForGirlsRights	1
 Feminist Movement	dares	1
 Feminist Movement	@UN_Women	1
-Feminist Movement	shoulder	1
-Feminist Movement	micromanage	1
-Feminist Movement	names	2
-Feminist Movement	@monaeltahawy	1
-Feminist Movement	@CB_Printer	1
 Feminist Movement	@stephspickle	1
+Feminist Movement	micromanage	1
+Feminist Movement	@monaeltahawy	1
+Feminist Movement	names	2
+Feminist Movement	@CB_Printer	1
+Feminist Movement	shoulder	1
 Feminist Movement	@dznCosta	1
 Feminist Movement	#vaw	1
 Feminist Movement	payed	2
@@ -1994,8 +1990,8 @@ Feminist Movement	scene	1
 Feminist Movement	Grow	1
 Feminist Movement	admits	1
 Feminist Movement	singer	1
-Feminist Movement	@beauschopstick	1
 Feminist Movement	#gamedev	1
+Feminist Movement	@beauschopstick	1
 Feminist Movement	beast	1
 Feminist Movement	Zoe	1
 Feminist Movement	@kimiyyye	1
@@ -2026,8 +2022,8 @@ Atheism	moments	1
 Atheism	SOMEONE	1
 Atheism	1:8	1
 Atheism	google	1
-Atheism	deliver	1
 Atheism	overcome	3
+Atheism	deliver	1
 Atheism	-6	1
 Atheism	#KingOfKings	1
 Atheism	resting	1
@@ -2035,8 +2031,8 @@ Atheism	retains	1
 Atheism	workload	1
 Atheism	#Humanity	1
 Atheism	#christianity	2
-Atheism	messed	1
 Atheism	#GetToKnowHim	1
+Atheism	messed	1
 Atheism	defined	1
 Atheism	#BOOM	1
 Atheism	@_kissmysassyass	1
@@ -2057,11 +2053,11 @@ Atheism	#teamPerserverance	1
 Atheism	jihad	1
 Atheism	#quran	1
 Atheism	52:8	1
-Atheism	#BHSVoltaire	1
+Atheism	espouse	1
 Atheism	pleasures	1
 Atheism	featured	1
-Atheism	espouse	1
 Atheism	humble	1
+Atheism	#BHSVoltaire	1
 Atheism	verse	1
 Atheism	#religiondoesharm	1
 Atheism	You'd	2
@@ -2069,41 +2065,41 @@ Atheism	reputation	1
 Atheism	God/Love	1
 Atheism	#understanding	1
 Atheism	#always	1
-Atheism	historical	1
-Atheism	troubles	1
+Atheism	Welch	1
+Atheism	AIDS	1
 Atheism	#fca	1
 Atheism	eradicating	1
+Atheism	troubles	1
 Atheism	#UNT	1
-Atheism	AIDS	1
-Atheism	Welch	1
-Atheism	#god	11
+Atheism	historical	1
 Atheism	@JAHservant9	1
+Atheism	#god	11
 Atheism	#golds	1
 Atheism	study	1
 Atheism	testing	1
 Atheism	despising	1
 Atheism	Myth	1
 Atheism	discriminated	1
-Atheism	#joy	1
 Atheism	#simplelife	1
+Atheism	#joy	1
 Atheism	WTG	1
 Atheism	literature	1
 Atheism	courage	1
 Atheism	bitterness	1
+Atheism	Answe	1
+Atheism	@madhukishwar	1
 Atheism	whe	1
 Atheism	@neiltyson	1
-Atheism	@madhukishwar	1
-Atheism	Answe	1
 Atheism	Romans	1
-Atheism	34:1115	1
 Atheism	indeed	1
+Atheism	34:1115	1
 Atheism	Engagement	1
 Atheism	@RoySpeckhardt	1
 Atheism	Fail	1
 Atheism	-4	1
 Atheism	Salah	1
-Atheism	#100AEUAssembly	2
 Atheism	2:20	1
+Atheism	#100AEUAssembly	2
 Atheism	#mercy	1
 Atheism	#thoughtoftheday	1
 Atheism	@AtheistRepublic	1
@@ -2117,8 +2113,8 @@ Atheism	@NAInfidels	1
 Atheism	#thisiswhoIwasmeanttobeallalong	1
 Atheism	vicar	1
 Atheism	#HolySpirit	1
-Atheism	#christian	1
 Atheism	#AMA	1
+Atheism	#christian	1
 Atheism	cloud	1
 Atheism	Madhesis-	1
 Atheism	Billy	1
@@ -2146,9 +2142,9 @@ Atheism	transforming	1
 Atheism	@LavenderPurpleG	1
 Atheism	#authority	1
 Atheism	@FrMatthewLC	1
-Atheism	pieces	1
 Atheism	#PrayerTime	1
 Atheism	#Allah	1
+Atheism	pieces	1
 Atheism	#FreedomFromReligion	1
 Atheism	@dw_english	1
 Atheism	unsubstantiated	1
@@ -2182,13 +2178,13 @@ Atheism	Shivaji	1
 Atheism	#creative	1
 Atheism	#shameless	1
 Atheism	#Palestine	1
-Atheism	receive	2
-Atheism	#Judaism	1
-Atheism	BIBLE	2
-Atheism	jars	1
+Atheism	#Focus	1
 Atheism	black/white	1
 Atheism	#MinorityAppeasement	1
-Atheism	#Focus	1
+Atheism	BIBLE	2
+Atheism	#Judaism	1
+Atheism	receive	2
+Atheism	jars	1
 Atheism	2-5pm	1
 Atheism	commands	1
 Atheism	rejoice	1
@@ -2203,15 +2199,15 @@ Atheism	warns	1
 Atheism	fall	1
 Atheism	Hooligans	1
 Atheism	holds	1
-Atheism	mammal	1
+Atheism	prayed	1
 Atheism	criticise	1
 Atheism	#BHA2016	1
-Atheism	������Christopher	1
 Atheism	#poor	1
+Atheism	������Christopher	1
 Atheism	#giving	1
 Atheism	-2	1
-Atheism	prayed	1
 Atheism	#GodlessGala	1
+Atheism	mammal	1
 Atheism	#GodisGood	1
 Atheism	#Lord	2
 Atheism	Worship	1
@@ -2240,9 +2236,9 @@ Atheism	led	1
 Atheism	homeless	1
 Atheism	Ebola	1
 Atheism	towel	1
-Atheism	IDC	1
-Atheism	#freethinker	14
 Atheism	@DragonflyJonez	1
+Atheism	#freethinker	14
+Atheism	IDC	1
 Atheism	terrible	1
 Atheism	#warriors	1
 Atheism	oppression	2
@@ -2282,9 +2278,9 @@ Atheism	14:26	1
 Atheism	conserve	1
 Atheism	hears	2
 Atheism	JOY	1
-Atheism	ha	3
-Atheism	@chasenme01	1
 Atheism	Lk	1
+Atheism	@chasenme01	1
+Atheism	ha	3
 Atheism	-Blaise	1
 Atheism	circle	1
 Atheism	exalt	1
@@ -2312,10 +2308,10 @@ Atheism	Ye	1
 Atheism	ground	1
 Atheism	Pain	1
 Atheism	groups	1
-Atheism	Know	1
 Atheism	Devotional	1
-Atheism	Kuwait	1
+Atheism	Know	1
 Atheism	#TING	1
+Atheism	Kuwait	1
 Atheism	rejected	2
 Atheism	Micah	1
 Atheism	nudge	2
@@ -2328,23 +2324,23 @@ Atheism	Out	1
 Atheism	#PraisetheLord	2
 Atheism	certain	1
 Atheism	dominance	1
-Atheism	Exchange	1
-Atheism	Graveyards	1
 Atheism	@HopeCity	1
-Atheism	salvation	2
+Atheism	Graveyards	1
+Atheism	Exchange	1
 Atheism	clause	1
-Atheism	#Christianity	4
+Atheism	salvation	2
+Atheism	BT	1
 Atheism	prayerline	1
 Atheism	blind	1
 Atheism	44:38	1
+Atheism	#Christianity	4
 Atheism	rebuke	2
-Atheism	BT	1
 Atheism	#reasonoverreligion	1
 Atheism	#material	1
 Atheism	24:35	1
-Atheism	curiosity	1
-Atheism	#PrayForCharleston	1
 Atheism	being/meaning	1
+Atheism	#PrayForCharleston	1
+Atheism	curiosity	1
 Atheism	#me	1
 Atheism	secularism	1
 Atheism	143:11	1
@@ -2360,8 +2356,8 @@ Atheism	@Laur_guuurl	1
 Atheism	science-based	1
 Atheism	#intellectualthursday	1
 Atheism	Matthew	4
-Atheism	glory	1
 Atheism	Adams	1
+Atheism	glory	1
 Atheism	would've	1
 Atheism	Al-Maoon	1
 Atheism	@robeddy24	1
@@ -2384,15 +2380,15 @@ Atheism	soldiers	2
 Atheism	haram	1
 Atheism	Superstition-based	1
 Atheism	1776	1
-Atheism	inflicted	1
 Atheism	placed	1
-Atheism	physicist	1
+Atheism	inflicted	1
+Atheism	extremist	1
 Atheism	Purpose	1
 Atheism	-Galatians	1
 Atheism	Exodus	1
 Atheism	absolute	1
+Atheism	physicist	1
 Atheism	Atheist	2
-Atheism	extremist	1
 Atheism	Thoughts	1
 Atheism	#ChildOfGod	1
 Atheism	chastity	2
@@ -2421,8 +2417,8 @@ Atheism	Fallacies	1
 Atheism	#FightThePower	1
 Atheism	ensures	1
 Atheism	Disgusting	1
-Atheism	#teamjesus	5
 Atheism	#NOdaysoff	1
+Atheism	#teamjesus	5
 Atheism	named	1
 Atheism	emphasis	1
 Atheism	ups	1
@@ -2468,9 +2464,9 @@ Atheism	#atheists	2
 Atheism	evident	1
 Atheism	107:4	1
 Atheism	conformed	2
-Atheism	awarded	1
-Atheism	stamping	1
 Atheism	test	1
+Atheism	stamping	1
+Atheism	awarded	1
 Atheism	Truth	1
 Atheism	celebrated	1
 Atheism	tongues	1
@@ -2490,8 +2486,8 @@ Atheism	EXPO	1
 Atheism	#Ramayana	1
 Atheism	-Pastor	1
 Atheism	suggesting	1
-Atheism	scepter	1
 Atheism	#federalism	2
+Atheism	scepter	1
 Atheism	#fashions	1
 Atheism	#fearless	1
 Atheism	Lack	1
@@ -2519,8 +2515,8 @@ Atheism	Ignorant	1
 Atheism	Republic	1
 Atheism	prophet	1
 Atheism	nightmare	1
-Atheism	NOBODY	1
 Atheism	#actorslife	2
+Atheism	NOBODY	1
 Atheism	Michael	1
 Atheism	glorified	1
 Atheism	#disciples	1
@@ -2534,9 +2530,9 @@ Atheism	#homeschooling	1
 Atheism	605-475-3220	1
 Atheism	non-thing	1
 Atheism	tights	1
-Atheism	#Hypocrisy	1
-Atheism	reliance	1
 Atheism	Godwillhear	1
+Atheism	reliance	1
+Atheism	#Hypocrisy	1
 Atheism	nagging	1
 Atheism	bodyguards	1
 Atheism	@terrybrown5367	1
@@ -2581,16 +2577,16 @@ Atheism	tweeters	1
 Atheism	#belief	1
 Atheism	#buddhism	1
 Atheism	indifferent	1
-Atheism	battleground	1
 Atheism	definite	1
+Atheism	battleground	1
 Atheism	eo	1
 Atheism	@AbbsWinston	1
 Atheism	spooks	1
-Atheism	dismayed	1
-Atheism	laughing	1
-Atheism	#SAHD	1
-Atheism	#PrayerChangesThings	1
 Atheism	#atlprayer	1
+Atheism	laughing	1
+Atheism	dismayed	1
+Atheism	#PrayerChangesThings	1
+Atheism	#SAHD	1
 Atheism	#singlesecularstate	1
 Atheism	heavens	2
 Atheism	#Israel	1
@@ -2637,8 +2633,8 @@ Atheism	@MarlaMcCarthy	1
 Atheism	threatened	1
 Atheism	stones	1
 Atheism	insecurities	1
-Atheism	Deut	1
 Atheism	Rudd	1
+Atheism	Deut	1
 Atheism	centuries	1
 Atheism	midnight	1
 Atheism	#civilrights	1
@@ -2674,12 +2670,12 @@ Atheism	slavery	2
 Atheism	1John	1
 Atheism	#fuckfeminism	1
 Atheism	confront	1
-Atheism	figs	1
-Atheism	Satanists	1
-Atheism	it'll	2
-Atheism	Iwilllook	1
 Atheism	#Godsnotdead	1
+Atheism	Satanists	1
+Atheism	figs	1
+Atheism	Iwilllook	1
 Atheism	Harper	1
+Atheism	it'll	2
 Atheism	suppression	1
 Atheism	promoted	1
 Atheism	listened	1
@@ -2703,15 +2699,15 @@ Atheism	-Josh	1
 Atheism	@RanaAyyub	1
 Atheism	10:16	1
 Atheism	Hitchens	1
-Atheism	roots	2
+Atheism	dummy	1
 Atheism	#goodthing	1
 Atheism	frm	1
 Atheism	reside	1
 Atheism	implying	1
-Atheism	#AlwaysOptimistic	1
 Atheism	bloody	1
+Atheism	#AlwaysOptimistic	1
 Atheism	Osteen	1
-Atheism	dummy	1
+Atheism	roots	2
 Atheism	@SMARFreedom	1
 Atheism	desert	2
 Atheism	refuge	1
@@ -2725,11 +2721,11 @@ Atheism	molecules	1
 Atheism	milkExodus	1
 Atheism	#shepherd	1
 Atheism	#Relax	1
-Atheism	#LIFE	1
 Atheism	Gandhi	1
 Atheism	#servantleader	1
-Atheism	Breath	1
 Atheism	praises	1
+Atheism	Breath	1
+Atheism	#LIFE	1
 Atheism	#MotivationalDemotivational	1
 Atheism	decently	1
 Atheism	enraptured	1
@@ -2741,14 +2737,14 @@ Atheism	#gospel	2
 Atheism	@BethMooreLPM	1
 Atheism	reeks	1
 Atheism	#2ndAmendment	1
-Atheism	blessings	1
 Atheism	24:5	1
+Atheism	blessings	1
 Atheism	pair	1
 Atheism	#taber	1
 Atheism	Sail	1
-Atheism	#User	1
-Atheism	32:18	1
 Atheism	righteous	1
+Atheism	32:18	1
+Atheism	#User	1
 Atheism	Craig	1
 Atheism	Sauls	1
 Atheism	supernatural	2
@@ -2762,9 +2758,9 @@ Atheism	ideology	1
 Atheism	@GKJill	1
 Atheism	lovingkindness	1
 Atheism	Ahmed	1
-Atheism	unlovable	1
 Atheism	#Pray	1
 Atheism	@dhiggins63	2
+Atheism	unlovable	1
 Atheism	guest	1
 Atheism	Authority	1
 Atheism	#HERO	1
@@ -2791,35 +2787,35 @@ Atheism	stressed	1
 Atheism	outran	1
 Atheism	Given	1
 Atheism	#ParentalRights	1
-Atheism	blessed	2
+Atheism	Learn	1
 Atheism	@MaggieArdiente	1
 Atheism	Liar	1
-Atheism	Learn	1
+Atheism	blessed	2
 Atheism	#JUSTDOIT	1
-Atheism	Scream	1
-Atheism	#prayers	1
 Atheism	endures	1
+Atheism	#prayers	1
+Atheism	Scream	1
 Atheism	Thankful	1
 Atheism	@michaelshermer	1
 Atheism	Orders	1
 Atheism	#LyricTweet	1
-Atheism	Graham	1
 Atheism	random	1
+Atheism	Graham	1
 Atheism	attempted	1
 Atheism	Verily	1
 Atheism	@julievila	1
 Atheism	#salvation	1
 Atheism	Papa	1
 Atheism	#Nondiscrimination	1
-Atheism	@pookstahr	1
 Atheism	rating	1
-Atheism	7:14	1
+Atheism	@pookstahr	1
 Atheism	Darkness	1
+Atheism	7:14	1
 Atheism	Corinthians	2
 Atheism	#oppression	1
 Atheism	gods	3
-Atheism	prevails	1
 Atheism	fascination	1
+Atheism	prevails	1
 Atheism	labor	1
 Atheism	matching	1
 Atheism	strangers	1
@@ -2836,8 +2832,8 @@ Atheism	#AskanAtheistDay	1
 Atheism	1:7	1
 Atheism	#Grace	1
 Atheism	segment	1
-Atheism	@skepticpedi	1
 Atheism	#Mormon	1
+Atheism	@skepticpedi	1
 Atheism	rewards	1
 Atheism	#esteem	1
 Atheism	r/atheism	1
@@ -2864,21 +2860,21 @@ Atheism	negatives	1
 Atheism	@BDUTT	1
 Atheism	#BHA2015	4
 Atheism	Quran	4
-Atheism	wiser	1
 Atheism	prompted	1
+Atheism	wiser	1
 Atheism	#destiny	2
 Atheism	supplied	1
+Atheism	Word	2
+Atheism	agnosticism	1
 Atheism	59:1	1
 Atheism	violates	1
-Atheism	agnosticism	1
-Atheism	Dream	1
 Atheism	1:5	1
-Atheism	#purpose	1
 Atheism	worst	2
-Atheism	Word	2
-Atheism	redeemer	1
-Atheism	setbacks	1
+Atheism	Dream	1
+Atheism	#purpose	1
 Atheism	@SanghParivarOrg	1
+Atheism	setbacks	1
+Atheism	redeemer	1
 Atheism	730	1
 Atheism	Question	1
 Atheism	boil	1
@@ -2886,8 +2882,8 @@ Atheism	SELECTIVE	1
 Atheism	Maker	1
 Atheism	#Motivation	1
 Atheism	@americnhumanist	1
-Atheism	bury	1
 Atheism	bramble	1
+Atheism	bury	1
 Atheism	@MaheshHindu	1
 Atheism	#SAYYES	1
 Atheism	mutilating	1
@@ -2895,8 +2891,8 @@ Atheism	connected	2
 Atheism	compounds	1
 Atheism	sensationalising	1
 Atheism	rejects	2
-Atheism	eyewitnesses	1
 Atheism	posturing	1
+Atheism	eyewitnesses	1
 Atheism	Tomorrow	1
 Atheism	#LoveNeverFails	1
 Atheism	breakfast	1
@@ -2908,8 +2904,8 @@ Atheism	#here	1
 Atheism	2night	1
 Atheism	Therefore	2
 Atheism	#police	1
-Atheism	Many	1
 Atheism	#ChristianLibertarian	1
+Atheism	Many	1
 Atheism	blend	1
 Atheism	revive	1
 Atheism	#FSM	2
@@ -2918,9 +2914,9 @@ Atheism	#Drought	1
 Atheism	waterbug	1
 Atheism	Kurt	1
 Atheism	widows	1
-Atheism	television	1
 Atheism	Ram	1
 Atheism	#Truths	1
+Atheism	television	1
 Atheism	GAWD	1
 Atheism	Goff	1
 Atheism	#needy	1
@@ -2937,15 +2933,15 @@ Atheism	protest	1
 Atheism	8:3	1
 Atheism	Serious	1
 Atheism	5:6	1
-Atheism	particular	1
 Atheism	Proverbs	1
+Atheism	particular	1
 Atheism	Relationships	1
 Atheism	#Dontdoministryalone	1
 Atheism	Police	1
 Atheism	Philomena	1
 Atheism	@ChemBros	1
-Atheism	Image	1
 Atheism	#SCfeatured	1
+Atheism	Image	1
 Atheism	fuckers	1
 Atheism	Tunisians	1
 Atheism	#gamenight	1
@@ -2956,10 +2952,10 @@ Atheism	-Heb	1
 Atheism	Guide	1
 Atheism	re-arrangement	1
 Atheism	1400	1
-Atheism	@raosahab	1
 Atheism	470	1
-Atheism	Savior	2
+Atheism	@raosahab	1
 Atheism	inclusive	1
+Atheism	Savior	2
 Atheism	superstitions	2
 Atheism	medicine	1
 Atheism	introduce	1
@@ -2979,23 +2975,23 @@ Atheism	Ricketson	1
 Atheism	Attacks	1
 Atheism	credible	1
 Atheism	@TAG65	1
-Atheism	#GOD	1
 Atheism	Quite	1
+Atheism	#GOD	1
 Atheism	Ingram	1
 Atheism	promised	1
 Atheism	#Hallelujah	2
-Atheism	sky	1
+Atheism	#fads	1
 Atheism	Albus	1
 Atheism	Ness	1
 Atheism	diz	1
-Atheism	#fads	1
-Atheism	joy	3
 Atheism	#Ummah	1
+Atheism	Alittle	1
+Atheism	joy	3
 Atheism	Loving	3
+Atheism	sky	1
 Atheism	HardWork	1
 Atheism	#RUSH	1
 Atheism	ancestry	1
-Atheism	Alittle	1
 Atheism	circa	1
 Atheism	@DarleneZschech	1
 Atheism	@HughONeillsPub	1
@@ -3012,25 +3008,25 @@ Atheism	abide	2
 Atheism	#ButGod	1
 Atheism	#Dancer	1
 Atheism	hedge	1
-Atheism	@Gospel_Project	1
 Atheism	Festival	1
+Atheism	@Gospel_Project	1
 Atheism	Temple	1
 Atheism	#FB	1
 Atheism	nowadays	1
-Atheism	#seeds	1
 Atheism	deficiencies	1
+Atheism	#seeds	1
 Atheism	succeeded	1
-Atheism	sighing	1
-Atheism	@wolfblitzer	2
 Atheism	transferred	1
+Atheism	@wolfblitzer	2
+Atheism	sighing	1
 Atheism	inclined	1
 Atheism	BHA	1
-Atheism	affliction	1
 Atheism	Talmud	1
-Atheism	WON	1
+Atheism	affliction	1
+Atheism	@moealqadi	1
 Atheism	Merritt	1
 Atheism	values	1
-Atheism	@moealqadi	1
+Atheism	WON	1
 Atheism	Growing	1
 Atheism	Clause	1
 Atheism	#free	1
@@ -3039,8 +3035,8 @@ Atheism	change-	1
 Atheism	Hallelujah	1
 Atheism	expander	1
 Atheism	#lazy	1
-Atheism	satisfied	1
 Atheism	#BibleVerses	1
+Atheism	satisfied	1
 Atheism	feathers	1
 Atheism	lil	1
 Atheism	Zubair	1
@@ -3061,27 +3057,27 @@ Atheism	CEB	1
 Atheism	shoulders	1
 Atheism	772-324-9040	1
 Atheism	51:47	1
-Atheism	whom	1
 Atheism	@jeff_hollander	1
-Atheism	wrote	1
+Atheism	whom	1
 Atheism	expectation	1
+Atheism	wrote	1
 Atheism	Essential	1
 Atheism	installed	1
 Atheism	@ThinkingAtheist	1
 Atheism	#LoveMyJesus	1
 Atheism	#allah	1
-Atheism	Glory	1
+Atheism	washed	1
 Atheism	answering-maybe	1
 Atheism	reaching	1
 Atheism	@ax2n38	1
 Atheism	1989	1
 Atheism	Simms	1
 Atheism	hpn	1
-Atheism	Sikhism	1
-Atheism	#Funny	1
-Atheism	G.K.	1
 Atheism	#christianvocations	1
-Atheism	washed	1
+Atheism	G.K.	1
+Atheism	#Funny	1
+Atheism	Sikhism	1
+Atheism	Glory	1
 Atheism	#rational	1
 Atheism	#signposts	1
 Atheism	#dreamer	1
@@ -3092,15 +3088,15 @@ Atheism	#PHN	1
 Atheism	reached	1
 Atheism	Timothy	1
 Atheism	Souls	1
-Atheism	Christianity	3
 Atheism	#futurism	1
+Atheism	Christianity	3
 Atheism	#YouGotIt	1
 Atheism	#SacrilegeSu	1
 Atheism	Pascal	1
-Atheism	Dozens	1
+Atheism	#revival	1
 Atheism	#Lalitgate	1
 Atheism	Rational	1
-Atheism	#revival	1
+Atheism	Dozens	1
 Atheism	#ShameOnYou	1
 Atheism	Ponder	1
 Atheism	divine	1
@@ -3110,8 +3106,8 @@ Atheism	#khole	1
 Atheism	clasped	2
 Atheism	#agnostic	1
 Atheism	tribal	1
-Atheism	#LOVE	1
 Atheism	@FaithReeI	1
+Atheism	#LOVE	1
 Atheism	#commodities	1
 Atheism	dark	1
 Atheism	encouragement	1
@@ -3148,8 +3144,8 @@ Atheism	@AlphaRomeo223	1
 Atheism	Competency	1
 Atheism	temples	1
 Atheism	@asadowaisi	2
-Atheism	#ISpeakLife	1
 Atheism	sprinkle	1
+Atheism	#ISpeakLife	1
 Atheism	Light	2
 Atheism	prevents	1
 Atheism	Howard	1
@@ -3159,16 +3155,16 @@ Atheism	prayers	4
 Atheism	#focus	1
 Atheism	cable	1
 Atheism	Akbar	1
-Atheism	foundation	3
 Atheism	@charlesfrith	1
+Atheism	foundation	3
 Atheism	#curriculum	1
 Atheism	pickets	2
 Atheism	self-discipline	1
 Atheism	#show	1
 Atheism	Washington	1
 Atheism	#MexicanProverb	1
-Atheism	#lyingforjesus	1
 Atheism	@Sai_swaroopa	1
+Atheism	#lyingforjesus	1
 Atheism	onhow	1
 Atheism	-Rom	1
 Atheism	impossibilities	1
@@ -3205,14 +3201,14 @@ Atheism	#identity	4
 Atheism	hour-but	1
 Atheism	peacemakers	1
 Atheism	Trusting	2
-Atheism	greed	1
 Atheism	lovely	2
+Atheism	greed	1
 Atheism	MUAH	1
-Atheism	addiction	1
-Atheism	#Thatcherism	1
-Atheism	framers	1
-Atheism	#narwhals	1
 Atheism	#believers	1
+Atheism	#Thatcherism	1
+Atheism	#narwhals	1
+Atheism	framers	1
+Atheism	addiction	1
 Atheism	spirit	5
 Atheism	#Think	1
 Atheism	UNT	1
@@ -3242,14 +3238,14 @@ Atheism	#share	1
 Atheism	#Save	1
 Atheism	#meangreen	1
 Atheism	@narrowwaychurch	1
-Atheism	Awwam	1
 Atheism	hangs	1
-Atheism	10:21	1
+Atheism	Awwam	1
 Atheism	bigotry	1
+Atheism	10:21	1
 Atheism	folly	1
 Atheism	Immanuel	1
-Atheism	#church	3
 Atheism	miracles	1
+Atheism	#church	3
 Atheism	Islamic	1
 Atheism	Miraculous	1
 Atheism	@GovMikeHuckabee	2
@@ -3258,15 +3254,15 @@ Atheism	#reality	2
 Atheism	@ShelleySegal	1
 Atheism	manifest	1
 Atheism	Psalm	4
-Atheism	#TeamCOGIC	1
 Atheism	Clear	1
+Atheism	#TeamCOGIC	1
 Atheism	Interestingly	1
 Atheism	#Diversity	1
-Atheism	forever'-	1
 Atheism	burdens	1
 Atheism	@geekswhodrink	1
 Atheism	fully	2
 Atheism	#chicago	1
+Atheism	forever'-	1
 Atheism	#freedomofspeech	1
 Atheism	Leaving	1
 Atheism	rant	1
@@ -3288,24 +3284,24 @@ Atheism	Inge	1
 Atheism	SatNav	1
 Atheism	unconditionally	2
 Atheism	fasting	2
-Atheism	stupidity	1
-Atheism	Impossible	2
 Atheism	@RamaY_BRF	1
+Atheism	Impossible	2
+Atheism	stupidity	1
 Atheism	-but	1
 Atheism	2,000	1
 Atheism	Koran	1
 Atheism	Son	1
-Atheism	renewing	1
-Atheism	acceptance	1
-Atheism	#HAPPINES	1
-Atheism	Angel	1
-Atheism	resurrected	1
 Atheism	#devastation	1
+Atheism	resurrected	1
+Atheism	#HAPPINES	1
+Atheism	acceptance	1
+Atheism	Angel	1
+Atheism	renewing	1
 Atheism	landscape	1
-Atheism	#Vision	1
 Atheism	limitation	1
-Atheism	Struggling	1
+Atheism	#Vision	1
 Atheism	Bigoted	1
+Atheism	Struggling	1
 Atheism	3:17	1
 Atheism	halal	1
 Atheism	adore	1
@@ -3358,12 +3354,12 @@ Atheism	@nytopinion	1
 Atheism	seminary	1
 Atheism	heaven	6
 Atheism	#homeschool	1
-Atheism	#powerofprayer	2
+Atheism	dinner	1
 Atheism	#gold	1
 Atheism	@halcyondon	1
 Atheism	Brahmin	1
+Atheism	#powerofprayer	2
 Atheism	#theword	1
-Atheism	dinner	1
 Atheism	staggered	1
 Atheism	made-up	1
 Atheism	elsewhere	1
@@ -3372,20 +3368,20 @@ Atheism	Less	1
 Atheism	Fruity	1
 Atheism	throne	1
 Atheism	@AnitaLea1	1
-Atheism	vanity	1
 Atheism	#Conqueror	1
+Atheism	vanity	1
 Atheism	remove	1
 Atheism	Chesterton	1
 Atheism	-LifeAndBuildingAsPortrayedInTheSongOfSongs	1
 Atheism	multi	1
 Atheism	hello	1
-Atheism	Ali	1
-Atheism	@PvtFraser	2
-Atheism	flags	1
-Atheism	misinfo	1
 Atheism	#Repent	1
-Atheism	SCOC	1
+Atheism	misinfo	1
+Atheism	@PvtFraser	2
+Atheism	Ali	1
+Atheism	flags	1
 Atheism	therefore	2
+Atheism	SCOC	1
 Atheism	Yours	1
 Atheism	23:19	1
 Atheism	dollars	1
@@ -3404,9 +3400,9 @@ Atheism	weakness	1
 Atheism	@antgerrard86	1
 Atheism	@bdutt	1
 Atheism	wherever	1
-Atheism	#lethimin	1
-Atheism	#hope	4
 Atheism	Cosell	1
+Atheism	#hope	4
+Atheism	#lethimin	1
 Atheism	#Gospel	1
 Atheism	Shia	1
 Atheism	nations	2
@@ -3430,20 +3426,20 @@ Atheism	Hand	1
 Atheism	Ps	2
 Atheism	10:18	1
 Atheism	@narendramodi	1
-Atheism	constitution	3
-Atheism	@IntrovertAngry	1
-Atheism	creator	1
-Atheism	leper	1
-Atheism	@prayerbullets	9
-Atheism	DISCONNECT	1
 Atheism	hallowed	1
-Atheism	33:33	1
+Atheism	leper	1
+Atheism	@IntrovertAngry	1
+Atheism	DISCONNECT	1
+Atheism	creator	1
+Atheism	@prayerbullets	9
+Atheism	constitution	3
 Atheism	#ChristianPrivilege	1
+Atheism	33:33	1
 Atheism	Morality	1
 Atheism	lacks	1
 Atheism	Lamb	5
-Atheism	@EthicalUnion	1
 Atheism	discoveries	1
+Atheism	@EthicalUnion	1
 Atheism	transcends	1
 Atheism	Achievers	1
 Atheism	Chameleon	1
@@ -3463,10 +3459,10 @@ Atheism	imperfect	1
 Atheism	atheist	3
 Atheism	newness	1
 Atheism	#forevergrateful	1
-Atheism	12:5	1
+Atheism	matter-	1
 Atheism	#ICouldUseALittleMoreCowbell	1
 Atheism	#Tunisia	1
-Atheism	matter-	1
+Atheism	12:5	1
 Atheism	#Presstitutes	1
 Atheism	sensed	2
 Atheism	bought	1
@@ -3492,8 +3488,8 @@ Atheism	#Qur'an	1
 Atheism	FFAF(Freedom	1
 Atheism	spying	1
 Atheism	@ginestarros	1
-Atheism	#shunpoliticalislam	1
 Atheism	@ambedkarperiyar	1
+Atheism	#shunpoliticalislam	1
 Atheism	@Breaking911	1
 Atheism	physicians	1
 Atheism	EVERYTHING	1
@@ -3501,26 +3497,26 @@ Atheism	balance	1
 Atheism	rejoices	1
 Atheism	thorns	1
 Atheism	Autonomy	1
-Atheism	#FuckJesus	2
 Atheism	Task	1
-Atheism	Ramadan	2
-Atheism	70s	1
-Atheism	@Swamy39	2
-Atheism	#obsession	1
+Atheism	#FuckJesus	2
 Atheism	#MuslimsSalvageYourselves	1
+Atheism	#obsession	1
+Atheism	@Swamy39	2
+Atheism	70s	1
+Atheism	Ramadan	2
 Atheism	#Father	1
 Atheism	-Prov	3
-Atheism	base	1
 Atheism	@Po_st	1
-Atheism	shld	1
+Atheism	base	1
 Atheism	sorrowful	2
+Atheism	shld	1
 Atheism	#Lebanon	1
 Atheism	Nehru	1
 Atheism	14:27	1
 Atheism	AtheistQ	1
-Atheism	imploding	1
-Atheism	#LoveIsLove	2
 Atheism	countless	1
+Atheism	#LoveIsLove	2
+Atheism	imploding	1
 Atheism	Fear	1
 Atheism	Vonnegut	1
 Atheism	Anniversary	1
@@ -3533,47 +3529,47 @@ Atheism	#Expo	1
 Atheism	Certainly	1
 Atheism	atheism	2
 Atheism	Maher	1
-Atheism	ye	2
-Atheism	dwell	1
-Atheism	maintenance	1
-Atheism	#religious	1
-Atheism	convincing	1
-Atheism	Xtian	1
-Atheism	afterlife	1
-Atheism	abominations	1
 Atheism	sustain	1
+Atheism	Xtian	1
+Atheism	maintenance	1
+Atheism	afterlife	1
+Atheism	convincing	1
+Atheism	#religious	1
+Atheism	abominations	1
+Atheism	dwell	1
+Atheism	ye	2
 Atheism	lasting	1
 Atheism	sagar	1
 Atheism	#WordOfLife	1
 Atheism	Maha	2
 Atheism	freely	1
 Atheism	plays	1
-Atheism	#Revelation21	1
-Atheism	healed	1
 Atheism	Faithful	3
+Atheism	healed	1
+Atheism	#Revelation21	1
 Atheism	Kip	1
 Atheism	#trends	1
 Atheism	#goodness	1
 Atheism	17:3	1
 Atheism	#India	1
 Atheism	owl	1
+Atheism	#weed	1
+Atheism	@captains_pick	1
 Atheism	#4thJuly	1
 Atheism	adequate	1
-Atheism	@captains_pick	1
-Atheism	#weed	1
 Atheism	disappearing	1
 Atheism	repentance	1
 Atheism	potter	1
 Atheism	24:7	1
 Atheism	Maya	1
 Atheism	Dumbledore	1
-Atheism	#TeamAtheist	1
 Atheism	positives	1
+Atheism	#TeamAtheist	1
 Atheism	#newyork	1
 Atheism	Peale	1
-Atheism	#July4th	1
-Atheism	slain	1
 Atheism	gaps	1
+Atheism	slain	1
+Atheism	#July4th	1
 Atheism	surround	1
 Atheism	ripping	1
 Atheism	quest	1
@@ -3584,13 +3580,13 @@ Atheism	#believe	2
 Atheism	#ftsask	1
 Atheism	@srisri	1
 Atheism	#Community	1
-Atheism	Year	1
 Atheism	#OneWorld	1
+Atheism	Year	1
 Atheism	#Christ	4
-Atheism	#miami	1
 Atheism	685783	1
-Atheism	postcode	1
+Atheism	#miami	1
 Atheism	#WhatIKnowAboutIslam	1
+Atheism	postcode	1
 Atheism	@authoramish	1
 Atheism	Firmly	1
 Atheism	5:9	1
@@ -3608,17 +3604,17 @@ Atheism	trusted	1
 Atheism	concise	1
 Atheism	mistaken	1
 Atheism	finances	1
-Atheism	urges	1
 Atheism	reiterate	1
+Atheism	urges	1
 Atheism	#roadtolife	1
 Atheism	#Buddhism	1
 Atheism	#beingme	1
-Atheism	#Positivity	1
-Atheism	Happiness	1
 Atheism	#RWAtl	1
-Atheism	#consciousness	1
+Atheism	Happiness	1
+Atheism	#Positivity	1
 Atheism	we'd	2
 Atheism	mere	1
+Atheism	#consciousness	1
 Atheism	flawed	1
 Atheism	Trust	1
 Atheism	#IAMisthepotter	1
@@ -3631,8 +3627,8 @@ Atheism	Ingersoll	1
 Atheism	#ffrf	1
 Atheism	#Sunday	2
 Atheism	Poverty	1
-Atheism	#LordOfLords	1
 Atheism	@TonyMiano	1
+Atheism	#LordOfLords	1
 Atheism	@evangelistmatt	1
 Atheism	#process	1
 Atheism	allegiance	1
@@ -3711,7 +3707,6 @@ Hillary Clinton	#RememberBenghazi2016	2
 Hillary Clinton	Loved	1
 Hillary Clinton	@Norsu2	1
 Hillary Clinton	GOODNESS	1
-Hillary Clinton	THEIR	1
 Hillary Clinton	crooks	1
 Hillary Clinton	unlike	1
 Hillary Clinton	brawl	1
@@ -3817,9 +3812,9 @@ Hillary Clinton	Amb	1
 Hillary Clinton	@LindaSuhler	1
 Hillary Clinton	morse	1
 Hillary Clinton	@HillaryforNH	1
-Hillary Clinton	@WomenintheWorld	1
-Hillary Clinton	OUT	1
 Hillary Clinton	cop	1
+Hillary Clinton	OUT	1
+Hillary Clinton	@WomenintheWorld	1
 Hillary Clinton	#muslim	1
 Hillary Clinton	#randpaul	1
 Hillary Clinton	Dick	1
@@ -3970,14 +3965,13 @@ Hillary Clinton	@3coffeesplez	1
 Hillary Clinton	#PayToPlayDiplomacy	1
 Hillary Clinton	worked	1
 Hillary Clinton	@CBSThisMorning	2
-Hillary Clinton	Decided	1
 Hillary Clinton	#N	1
 Hillary Clinton	cuts	1
 Hillary Clinton	Nov	1
 Hillary Clinton	INTENDED	1
 Hillary Clinton	Liberals	2
 Hillary Clinton	@NumbersMuncher	1
-Hillary Clinton	INTO	1
+Hillary Clinton	Decided	1
 Hillary Clinton	@mizerello	1
 Hillary Clinton	Rainbow	1
 Hillary Clinton	cocaine	1
@@ -4004,9 +3998,9 @@ Hillary Clinton	#PTown	1
 Hillary Clinton	@KoriWasinger	1
 Hillary Clinton	SODOM	1
 Hillary Clinton	plates	1
-Hillary Clinton	OVERTIME	1
-Hillary Clinton	Night	1
 Hillary Clinton	smoothly	1
+Hillary Clinton	Night	1
+Hillary Clinton	OVERTIME	1
 Hillary Clinton	@BuzzFeedNews	1
 Hillary Clinton	Incorrectness	1
 Hillary Clinton	infested	1
@@ -4030,11 +4024,11 @@ Hillary Clinton	Lawrence	1
 Hillary Clinton	@CorrectRecord	1
 Hillary Clinton	$9M	1
 Hillary Clinton	@zacharyebell	1
-Hillary Clinton	Best	1
-Hillary Clinton	middle-aged	1
 Hillary Clinton	fraud	1
-Hillary Clinton	#SorryBernie	1
+Hillary Clinton	middle-aged	1
+Hillary Clinton	Best	1
 Hillary Clinton	mirrors	1
+Hillary Clinton	#SorryBernie	1
 Hillary Clinton	@TarekFatah	1
 Hillary Clinton	#ChillaryClinton	1
 Hillary Clinton	BITCHES	2
@@ -4062,20 +4056,19 @@ Hillary Clinton	#freedom_justice_equality_education	4
 Hillary Clinton	@ClintonGlobal	1
 Hillary Clinton	tough	1
 Hillary Clinton	introduction	1
-Hillary Clinton	behalf	1
 Hillary Clinton	admiration	1
+Hillary Clinton	behalf	1
 Hillary Clinton	@debaterlife	1
 Hillary Clinton	FAVs	3
 Hillary Clinton	#GayRights	1
 Hillary Clinton	scary	1
 Hillary Clinton	figures	1
 Hillary Clinton	@ZekeJMiller	1
-Hillary Clinton	successes	1
 Hillary Clinton	@strumpetcity	1
 Hillary Clinton	#KeepTexasRed	1
 Hillary Clinton	@MaxTollensJr	1
 Hillary Clinton	manage	15
-Hillary Clinton	ON	1
+Hillary Clinton	successes	1
 Hillary Clinton	White	6
 Hillary Clinton	@andersonDrLJA	1
 Hillary Clinton	#psychopaths	1
@@ -4166,11 +4159,10 @@ Hillary Clinton	vs	3
 Hillary Clinton	childhood	1
 Hillary Clinton	#escapeClinton	1
 Hillary Clinton	coincidence	1
-Hillary Clinton	Was	1
 Hillary Clinton	#pizza	1
 Hillary Clinton	#Hanover	1
-Hillary Clinton	#iacaucus	1
 Hillary Clinton	#MorningJoe	1
+Hillary Clinton	#iacaucus	1
 Hillary Clinton	B	1
 Hillary Clinton	pet	1
 Hillary Clinton	brilliance	1
@@ -4295,11 +4287,11 @@ Hillary Clinton	@popcornreel	1
 Hillary Clinton	qualifications	1
 Hillary Clinton	betrayed	2
 Hillary Clinton	@petefrt	2
-Hillary Clinton	#bbc	1
+Hillary Clinton	#TexasTech	1
 Hillary Clinton	burrito	1
 Hillary Clinton	HASHTAGS	1
 Hillary Clinton	#Bush	1
-Hillary Clinton	#TexasTech	1
+Hillary Clinton	#bbc	1
 Hillary Clinton	ACTION	1
 Hillary Clinton	@Jami_USA	1
 Hillary Clinton	@icedecay	1
@@ -4544,9 +4536,9 @@ Hillary Clinton	chef	1
 Hillary Clinton	Probably	1
 Hillary Clinton	Prez	1
 Hillary Clinton	z's	1
-Hillary Clinton	@TGowdySC	1
-Hillary Clinton	collectively	1
 Hillary Clinton	Flops	1
+Hillary Clinton	collectively	1
+Hillary Clinton	@TGowdySC	1
 Hillary Clinton	1%ers	1
 Hillary Clinton	awkwardness	1
 Hillary Clinton	#NothingMoreAmericanThan	2
@@ -4605,16 +4597,16 @@ Hillary Clinton	#DonaldTrump	4
 Hillary Clinton	@RedHatGeek	1
 Hillary Clinton	@RepSusanDavis	1
 Hillary Clinton	HillaryforSC	1
-Hillary Clinton	@BillHemmer	1
+Hillary Clinton	superglued	1
 Hillary Clinton	QAEDA	1
 Hillary Clinton	leaving	1
-Hillary Clinton	wis	1
-Hillary Clinton	chi	1
 Hillary Clinton	Marx	1
+Hillary Clinton	chi	1
 Hillary Clinton	@CassandraRules	1
-Hillary Clinton	superglued	1
-Hillary Clinton	Elections	1
+Hillary Clinton	wis	1
+Hillary Clinton	@BillHemmer	1
 Hillary Clinton	#HillaryIceCreamFlavors	1
+Hillary Clinton	Elections	1
 Hillary Clinton	purposes	1
 Hillary Clinton	#MikeHuckabee	1
 Hillary Clinton	@betheljd	1
@@ -4821,8 +4813,8 @@ Hillary Clinton	navigating	1
 Hillary Clinton	@Joan_Vennochi	1
 Hillary Clinton	hang	1
 Hillary Clinton	@GREG61032	1
-Hillary Clinton	venues	1
 Hillary Clinton	leftanistas	1
+Hillary Clinton	venues	1
 Hillary Clinton	hairstylist	1
 Hillary Clinton	@Bluesaloon	1
 Hillary Clinton	sellouts	1
@@ -4840,7 +4832,6 @@ Hillary Clinton	#Obamanation	1
 Hillary Clinton	2013	3
 Hillary Clinton	Karl	1
 Hillary Clinton	@GunnJessica	1
-Hillary Clinton	WITH	1
 Hillary Clinton	Palo	1
 Hillary Clinton	@greta	2
 Hillary Clinton	#ditchmitch	1
@@ -4876,8 +4867,8 @@ Hillary Clinton	#CrackerBarrel	1
 Hillary Clinton	outlets	1
 Hillary Clinton	Holder	1
 Hillary Clinton	COMBINED	1
-Hillary Clinton	Cabinet	1
 Hillary Clinton	corrupt	3
+Hillary Clinton	Cabinet	1
 Hillary Clinton	#DeadBroke	1
 Hillary Clinton	#Killary	1
 Hillary Clinton	@gailtalk	1
@@ -4955,9 +4946,9 @@ Hillary Clinton	injection	1
 Hillary Clinton	negros	1
 Hillary Clinton	Inaugural	1
 Hillary Clinton	!!.....	1
-Hillary Clinton	schedule	1
-Hillary Clinton	davidjones720	1
 Hillary Clinton	LOOKING	1
+Hillary Clinton	davidjones720	1
+Hillary Clinton	schedule	1
 Hillary Clinton	nowhere	1
 Hillary Clinton	enemies	1
 Hillary Clinton	Nixon	1
@@ -4987,14 +4978,13 @@ Hillary Clinton	imprisons	1
 Hillary Clinton	@Xxoax	1
 Hillary Clinton	BULLY	1
 Hillary Clinton	Haha	1
-Hillary Clinton	IT	2
 Hillary Clinton	:-))))	1
 Hillary Clinton	#uniteblue	2
 Hillary Clinton	#ReflectingHillary	1
 Hillary Clinton	Jail	1
 Hillary Clinton	September	1
-Hillary Clinton	#Dontvote	1
 Hillary Clinton	select	1
+Hillary Clinton	#Dontvote	1
 Hillary Clinton	pantsuit	1
 Hillary Clinton	#foxnews	1
 Hillary Clinton	LIE	1
@@ -5009,9 +4999,9 @@ Hillary Clinton	#Hillary_2016_NO	1
 Hillary Clinton	#JimWebb	1
 Hillary Clinton	Problem	1
 Hillary Clinton	@jilevin	1
-Hillary Clinton	Saw	1
-Hillary Clinton	VP	1
 Hillary Clinton	#LibertyNotHillary	3
+Hillary Clinton	VP	1
+Hillary Clinton	Saw	1
 Hillary Clinton	financial	2
 Hillary Clinton	firestorm	1
 Hillary Clinton	Fantastic	1
@@ -5179,9 +5169,9 @@ Hillary Clinton	Clinton	35
 Hillary Clinton	participate	1
 Hillary Clinton	Bill's	2
 Hillary Clinton	@kimkennedy4	1
+Hillary Clinton	Conservative	1
 Hillary Clinton	FastTrack	1
 Hillary Clinton	Oval	1
-Hillary Clinton	Conservative	1
 Hillary Clinton	RACISTS	1
 Hillary Clinton	#Arrest	1
 Hillary Clinton	stance	1
@@ -5281,16 +5271,16 @@ Hillary Clinton	@pikester45	1
 Hillary Clinton	gear	2
 Hillary Clinton	@clantro	1
 Hillary Clinton	Republicans	4
-Hillary Clinton	@JohnKerry	1
 Hillary Clinton	bag	1
+Hillary Clinton	@JohnKerry	1
 Hillary Clinton	@MyOTRadventure	1
 Hillary Clinton	Totally	1
 Hillary Clinton	boyfriends	1
 Hillary Clinton	tip	1
 Hillary Clinton	H	1
 Hillary Clinton	Fallon	1
-Hillary Clinton	#lies	1
 Hillary Clinton	#CherylRios	1
+Hillary Clinton	#lies	1
 Hillary Clinton	Madame	1
 Hillary Clinton	Hill	2
 Hillary Clinton	donors	4
@@ -5339,10 +5329,9 @@ Hillary Clinton	#raisethenewPOTUS	1
 Hillary Clinton	BOGUS	1
 Hillary Clinton	tearing	1
 Hillary Clinton	flies	1
-Hillary Clinton	nOT	1
 Hillary Clinton	MADE	2
-Hillary Clinton	par	1
 Hillary Clinton	birthday	1
+Hillary Clinton	par	1
 Hillary Clinton	Nauseating	1
 Hillary Clinton	offending	2
 Hillary Clinton	#ElizabethWarren	1
@@ -5436,8 +5425,8 @@ Hillary Clinton	Hilly	1
 Hillary Clinton	ex-boyfriends	1
 Hillary Clinton	Univisin	1
 Hillary Clinton	protected	2
-Hillary Clinton	improvements	1
 Hillary Clinton	park	2
+Hillary Clinton	improvements	1
 Hillary Clinton	Bin	1
 Hillary Clinton	@WhoopiGoldberg	1
 Hillary Clinton	@stphil	1
@@ -5475,8 +5464,8 @@ Hillary Clinton	penumbra	1
 Hillary Clinton	30-year	1
 Hillary Clinton	bites	1
 Hillary Clinton	@adamplevy	1
-Hillary Clinton	@evanperez	1
 Hillary Clinton	#2016	8
+Hillary Clinton	@evanperez	1
 Hillary Clinton	#New	1
 Hillary Clinton	Jeane	1
 Hillary Clinton	Yvette	1
@@ -5502,9 +5491,9 @@ Hillary Clinton	Strung	1
 Hillary Clinton	@Crossbearer1956	1
 Hillary Clinton	@akawhit1	1
 Hillary Clinton	Scooby	1
-Hillary Clinton	Me-me-me-me-China-me-me	1
 Hillary Clinton	#NoObamaThirdTerm	1
 Hillary Clinton	Beating	1
+Hillary Clinton	Me-me-me-me-China-me-me	1
 Hillary Clinton	@ChelseaClinton	1
 Hillary Clinton	innovate	1
 Hillary Clinton	TRUTH	3
@@ -5584,11 +5573,11 @@ Hillary Clinton	she'll	1
 Hillary Clinton	Sanger	2
 Hillary Clinton	@WashTimes	1
 Hillary Clinton	encourage	3
-Hillary Clinton	FORWARD	1
-Hillary Clinton	caus	1
-Hillary Clinton	hairspray	1
-Hillary Clinton	@dnewhauser	1
 Hillary Clinton	Forgive	1
+Hillary Clinton	caus	1
+Hillary Clinton	@dnewhauser	1
+Hillary Clinton	hairspray	1
+Hillary Clinton	FORWARD	1
 Hillary Clinton	CHAMPION	2
 Hillary Clinton	china	1
 Hillary Clinton	formidable	1
@@ -5818,10 +5807,10 @@ Legalization of Abortion	@charlescwcooke	1
 Legalization of Abortion	#EndTheDiscrimination	1
 Legalization of Abortion	process	1
 Legalization of Abortion	answerable	1
-Legalization of Abortion	22	1
+Legalization of Abortion	self-defense	1
 Legalization of Abortion	Bitches	1
 Legalization of Abortion	@OnlineForLife	1
-Legalization of Abortion	self-defense	1
+Legalization of Abortion	22	1
 Legalization of Abortion	@quarq	1
 Legalization of Abortion	specifically	2
 Legalization of Abortion	dehumanizing	1
@@ -5931,8 +5920,8 @@ Legalization of Abortion	#analogy	1
 Legalization of Abortion	#FIDA	1
 Legalization of Abortion	factors	1
 Legalization of Abortion	#prohealthcare	1
-Legalization of Abortion	Assaulting	1
 Legalization of Abortion	#QuitKillingGirls	1
+Legalization of Abortion	Assaulting	1
 Legalization of Abortion	chill	1
 Legalization of Abortion	Catherine	1
 Legalization of Abortion	lightly	1
@@ -5940,8 +5929,8 @@ Legalization of Abortion	bestowed	2
 Legalization of Abortion	operation	1
 Legalization of Abortion	@ShowTruth	3
 Legalization of Abortion	souls	1
-Legalization of Abortion	Gael	1
 Legalization of Abortion	consenting	1
+Legalization of Abortion	Gael	1
 Legalization of Abortion	#voice	2
 Legalization of Abortion	adopt	1
 Legalization of Abortion	absurd	1
@@ -5968,8 +5957,8 @@ Legalization of Abortion	Texan	1
 Legalization of Abortion	late-term	1
 Legalization of Abortion	@LilaGraceRose	1
 Legalization of Abortion	@Clifford1462	1
-Legalization of Abortion	Suess	1
 Legalization of Abortion	#BlackLivesDontMatter	1
+Legalization of Abortion	Suess	1
 Legalization of Abortion	dialogue	1
 Legalization of Abortion	@LifeMattersJrnl	1
 Legalization of Abortion	Pro-Life	1
@@ -6089,8 +6078,8 @@ Legalization of Abortion	spaces	1
 Legalization of Abortion	predicted	1
 Legalization of Abortion	agonist	1
 Legalization of Abortion	shore	1
-Legalization of Abortion	334A	1
 Legalization of Abortion	conclusion	1
+Legalization of Abortion	334A	1
 Legalization of Abortion	@abc13houston	1
 Legalization of Abortion	penal	1
 Legalization of Abortion	@CandiesOrg	1
@@ -6181,15 +6170,15 @@ Legalization of Abortion	everywhereyouthgen	1
 Legalization of Abortion	@codeinediva	1
 Legalization of Abortion	Wednesday	2
 Legalization of Abortion	@WildChild69	4
-Legalization of Abortion	#MyuranSukumaran	1
 Legalization of Abortion	goodness	1
+Legalization of Abortion	#MyuranSukumaran	1
 Legalization of Abortion	Esp	1
 Legalization of Abortion	#15minutes	1
 Legalization of Abortion	@TheHeavySquad	1
 Legalization of Abortion	buying	1
 Legalization of Abortion	#thoughtiwasgonnadie	1
-Legalization of Abortion	Gets	1
 Legalization of Abortion	#drugTrafficking	1
+Legalization of Abortion	Gets	1
 Legalization of Abortion	-Mother	3
 Legalization of Abortion	kills	4
 Legalization of Abortion	@ORConservative	1
@@ -6224,16 +6213,16 @@ Legalization of Abortion	advocacy	1
 Legalization of Abortion	#silence	1
 Legalization of Abortion	Messed	1
 Legalization of Abortion	#ProtectTheUnprotected	1
-Legalization of Abortion	Sweden	1
 Legalization of Abortion	Nuns	1
 Legalization of Abortion	alleys	1
+Legalization of Abortion	Sweden	1
 Legalization of Abortion	Inching	1
 Legalization of Abortion	prochoice	5
 Legalization of Abortion	Fact	1
 Legalization of Abortion	vasectomy	1
 Legalization of Abortion	#Gun	1
-Legalization of Abortion	tis	1
 Legalization of Abortion	isright	3
+Legalization of Abortion	tis	1
 Legalization of Abortion	#income	1
 Legalization of Abortion	#NoToDeathPenalty	1
 Legalization of Abortion	reasoning	1
@@ -6347,8 +6336,8 @@ Legalization of Abortion	#crisis	1
 Legalization of Abortion	nurses	1
 Legalization of Abortion	100,000	1
 Legalization of Abortion	Yup	2
-Legalization of Abortion	prolifers	1
 Legalization of Abortion	@WayneSense	1
+Legalization of Abortion	prolifers	1
 Legalization of Abortion	Cora	1
 Legalization of Abortion	snitched	1
 Legalization of Abortion	#FederalistPapers	1
@@ -6421,8 +6410,8 @@ Legalization of Abortion	#followthrough	1
 Legalization of Abortion	#bluemoon	1
 Legalization of Abortion	strongly	2
 Legalization of Abortion	Charged	3
-Legalization of Abortion	@MannyMooncup	1
 Legalization of Abortion	#abuse	1
+Legalization of Abortion	@MannyMooncup	1
 Legalization of Abortion	item	1
 Legalization of Abortion	beautifully	1
 Legalization of Abortion	@KC_Football_Guy	1
@@ -6438,9 +6427,9 @@ Legalization of Abortion	Wade	2
 Legalization of Abortion	bodily	4
 Legalization of Abortion	autonomy	5
 Legalization of Abortion	one's	1
-Legalization of Abortion	repression	1
-Legalization of Abortion	#HappyEarth	1
 Legalization of Abortion	@Britt_Ghiroli	1
+Legalization of Abortion	#HappyEarth	1
+Legalization of Abortion	repression	1
 Legalization of Abortion	#potus	1
 Legalization of Abortion	lifesaving	1
 Legalization of Abortion	#NARAL	1
@@ -6703,8 +6692,8 @@ Legalization of Abortion	misinformed	1
 Legalization of Abortion	family/even	1
 Legalization of Abortion	structural	1
 Legalization of Abortion	You'll	1
-Legalization of Abortion	#freeshirt	1
 Legalization of Abortion	@MattSears4	1
+Legalization of Abortion	#freeshirt	1
 Legalization of Abortion	DIE	1
 Legalization of Abortion	eagles	2
 Legalization of Abortion	#lie	1
@@ -6735,11 +6724,10 @@ Legalization of Abortion	57	1
 Legalization of Abortion	@nice_euna	2
 Legalization of Abortion	#worldhunger	1
 Legalization of Abortion	@kilcurry	2
-Legalization of Abortion	@thumperbunny88	1
 Legalization of Abortion	@alvedaking	1
 Legalization of Abortion	@j6fras	1
+Legalization of Abortion	@thumperbunny88	1
 Legalization of Abortion	fenna	1
-Legalization of Abortion	An	1
 Legalization of Abortion	#murder	2
 Legalization of Abortion	@usweekly	1
 Legalization of Abortion	#SaveTheBabiesBumpThemAnimals	1
@@ -6808,8 +6796,8 @@ Legalization of Abortion	@BristolsBlog	3
 Legalization of Abortion	boxing	1
 Legalization of Abortion	#Mozambique's	1
 Legalization of Abortion	^^	1
-Legalization of Abortion	#abvote	2
 Legalization of Abortion	strikes	1
+Legalization of Abortion	#abvote	2
 Legalization of Abortion	execution	1
 Legalization of Abortion	21	1
 Legalization of Abortion	PRODUCE	1
@@ -7573,8 +7561,8 @@ Climate Change is a Real Concern	#Biosphere	1
 Climate Change is a Real Concern	#Climate	12
 Climate Change is a Real Concern	#sb277	2
 Climate Change is a Real Concern	#SavingMyTomorrow	1
-Climate Change is a Real Concern	#abpoli	2
 Climate Change is a Real Concern	Btw	1
+Climate Change is a Real Concern	#abpoli	2
 Climate Change is a Real Concern	#engineering	1
 Climate Change is a Real Concern	#diversity	1
 Climate Change is a Real Concern	greenhouse	2
@@ -7808,9 +7796,9 @@ Climate Change is a Real Concern	slight	1
 Climate Change is a Real Concern	summers	2
 Climate Change is a Real Concern	@abcnews	1
 Climate Change is a Real Concern	@Muskoka247	1
-Climate Change is a Real Concern	ramblings	1
-Climate Change is a Real Concern	#yeg	1
 Climate Change is a Real Concern	#rengreece	1
+Climate Change is a Real Concern	#yeg	1
+Climate Change is a Real Concern	ramblings	1
 Climate Change is a Real Concern	Laggardship	1
 Climate Change is a Real Concern	assholes	1
 Climate Change is a Real Concern	@irbrodie	1
@@ -8179,9 +8167,9 @@ Climate Change is a Real Concern	speed	1
 Climate Change is a Real Concern	@ABCenvironment	1
 Climate Change is a Real Concern	Lake	1
 Climate Change is a Real Concern	#Australia	2
-Climate Change is a Real Concern	destroying	2
-Climate Change is a Real Concern	crew	1
 Climate Change is a Real Concern	Dallas	1
+Climate Change is a Real Concern	crew	1
+Climate Change is a Real Concern	destroying	2
 Climate Change is a Real Concern	@greengoddess892	1
 Climate Change is a Real Concern	felt	2
 Climate Change is a Real Concern	disaster	1
@@ -8698,9 +8686,9 @@ Climate Change is a Real Concern	traditional	1
 Climate Change is a Real Concern	Asteroid	1
 Climate Change is a Real Concern	scientists	2
 Climate Change is a Real Concern	fairy	3
-Climate Change is a Real Concern	snazzy	1
 Climate Change is a Real Concern	warm	2
 Climate Change is a Real Concern	coalfired	1
+Climate Change is a Real Concern	snazzy	1
 Climate Change is a Real Concern	fascinating	2
 Climate Change is a Real Concern	priority	1
 Climate Change is a Real Concern	@RobSilver	1
@@ -8767,8 +8755,8 @@ Climate Change is a Real Concern	Scary	1
 Climate Change is a Real Concern	@missearth_sa	1
 Climate Change is a Real Concern	@EllaBellaC	1
 Climate Change is a Real Concern	#GPC	1
-Climate Change is a Real Concern	strengthen	1
 Climate Change is a Real Concern	litterbug	1
+Climate Change is a Real Concern	strengthen	1
 Climate Change is a Real Concern	transfer	1
 Climate Change is a Real Concern	Thursday	1
 Climate Change is a Real Concern	debunking	1
@@ -8808,8 +8796,8 @@ Climate Change is a Real Concern	agriculture	2
 Climate Change is a Real Concern	Prof	1
 Climate Change is a Real Concern	showerheads	1
 Climate Change is a Real Concern	LED	1
-Climate Change is a Real Concern	self-lit	1
 Climate Change is a Real Concern	#govegan	1
+Climate Change is a Real Concern	self-lit	1
 Climate Change is a Real Concern	#anywhereneartheequator	1
 Climate Change is a Real Concern	Fraudband	1
 Climate Change is a Real Concern	Soda	1
@@ -8854,8 +8842,8 @@ Climate Change is a Real Concern	#EarthDay	1
 Climate Change is a Real Concern	@Icicle167	1
 Climate Change is a Real Concern	Eat	1
 Climate Change is a Real Concern	@adamjpankratz	1
-Climate Change is a Real Concern	Climate	12
 Climate Change is a Real Concern	@ndnstyl	1
+Climate Change is a Real Concern	Climate	12
 Climate Change is a Real Concern	swift	1
 Climate Change is a Real Concern	#LACityHall	1
 Climate Change is a Real Concern	#Disease	1
@@ -8927,9 +8915,9 @@ Climate Change is a Real Concern	#ClimateFact	1
 Climate Change is a Real Concern	numbered	1
 Climate Change is a Real Concern	2search	1
 Climate Change is a Real Concern	pale	1
-Climate Change is a Real Concern	degrowth	1
-Climate Change is a Real Concern	maintaining	1
 Climate Change is a Real Concern	Considering	1
+Climate Change is a Real Concern	maintaining	1
+Climate Change is a Real Concern	degrowth	1
 Climate Change is a Real Concern	logarithmic	1
 Climate Change is a Real Concern	Karachi	1
 Climate Change is a Real Concern	de	1

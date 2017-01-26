@@ -11,7 +11,7 @@ import org.apache.uima.jcas.tcas.Annotation;
 
 
 /** 
- * Updated by JCasGen Sat Jan 21 17:15:03 CET 2017
+ * Updated by JCasGen Thu Jan 26 11:11:04 CET 2017
  * XML source: /Users/JMac/git/TextAnalyticsMueller/de.unidue.langtech.teaching.pp.mueller/src/main/resources/desc/type/GoldInformation.xml
  * @generated */
 public class GoldInformation extends Annotation {
@@ -140,6 +140,28 @@ public class GoldInformation extends Annotation {
     if (GoldInformation_Type.featOkTst && ((GoldInformation_Type)jcasType).casFeat_Sentiment == null)
       jcasType.jcas.throwFeatMissing("Sentiment", "de.unidue.langtech.teaching.pp.mueller.type.GoldInformation");
     jcasType.ll_cas.ll_setStringValue(addr, ((GoldInformation_Type)jcasType).casFeatCode_Sentiment, v);}    
+   
+    
+  //*--------------*
+  //* Feature: Opinion
+
+  /** getter for Opinion - gets 
+   * @generated
+   * @return value of the feature 
+   */
+  public String getOpinion() {
+    if (GoldInformation_Type.featOkTst && ((GoldInformation_Type)jcasType).casFeat_Opinion == null)
+      jcasType.jcas.throwFeatMissing("Opinion", "de.unidue.langtech.teaching.pp.mueller.type.GoldInformation");
+    return jcasType.ll_cas.ll_getStringValue(addr, ((GoldInformation_Type)jcasType).casFeatCode_Opinion);}
+    
+  /** setter for Opinion - sets  
+   * @generated
+   * @param v value to set into the feature 
+   */
+  public void setOpinion(String v) {
+    if (GoldInformation_Type.featOkTst && ((GoldInformation_Type)jcasType).casFeat_Opinion == null)
+      jcasType.jcas.throwFeatMissing("Opinion", "de.unidue.langtech.teaching.pp.mueller.type.GoldInformation");
+    jcasType.ll_cas.ll_setStringValue(addr, ((GoldInformation_Type)jcasType).casFeatCode_Opinion, v);}    
   }
 
     

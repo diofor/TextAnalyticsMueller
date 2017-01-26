@@ -22,6 +22,8 @@ public class Pipeline_baseline {
 	                AnalysisEngineFactory.createEngineDescription(ArktweetTokenizer.class),
 	                AnalysisEngineFactory.createEngineDescription(FindMostFrequentSentiment.class)
 	        );
+	        
+	        
 	        SimplePipeline.runPipeline(
 	                CollectionReaderFactory.createReader(
 	                        Reader.class,

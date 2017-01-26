@@ -8,6 +8,7 @@ import org.apache.uima.fit.component.JCasAnnotator_ImplBase;
 import org.apache.uima.fit.util.JCasUtil;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.resource.ResourceInitializationException;
+import org.apache.uima.resource.ResourceManager;
 
 import de.tudarmstadt.ukp.dkpro.core.api.frequency.util.ConditionalFrequencyDistribution;
 //import de.tudarmstadt.ukp.dkpro.core.api.frequency.util.FrequencyDistribution;
@@ -19,7 +20,7 @@ public class AnalyseWithFD extends JCasAnnotator_ImplBase
 {
 	//private FrequencyDistribution<String> fd;
     private ConditionalFrequencyDistribution<String, String> cfd_rawdata_target;
-	private ConditionalFrequencyDistribution<String, String> cfd_rawdata_sentiment;
+    protected static ConditionalFrequencyDistribution<String, String> cfd_rawdata_sentiment;
     private ConditionalFrequencyDistribution<String, String> cfd_target;
     private ConditionalFrequencyDistribution<String, String> cfd_sentiment;
     
@@ -31,7 +32,6 @@ public class AnalyseWithFD extends JCasAnnotator_ImplBase
         throws ResourceInitializationException
     {
         super.initialize(context);
-//        fd = new FrequencyDistribution<String>();
         cfd_rawdata_target = new ConditionalFrequencyDistribution<String, String>();
         cfd_rawdata_sentiment = new ConditionalFrequencyDistribution<String, String>();
         cfd_target = new ConditionalFrequencyDistribution<String, String>();
@@ -76,7 +76,7 @@ public class AnalyseWithFD extends JCasAnnotator_ImplBase
         
         for (String condition : cfd_rawdata_target.getConditions())
         {
-        	System.out.println(condition+"\n-------------------\n");
+//        	System.out.println(condition+"\n-------------------\n");
         	
         	for(String t : cfd_rawdata_target.getFrequencyDistribution(condition).getKeys())
 //        	for (String t : cfd_rawdata_target.getFreqDist(condition).getMostFrequentSamples(1000))
@@ -93,11 +93,11 @@ public class AnalyseWithFD extends JCasAnnotator_ImplBase
         	}
         	
         	
-        	for (String t : cfd_target.getFrequencyDistribution(condition).getMostFrequentSamples(50))
-        	{
-        		System.out.println(t);
-        	}
-        	System.out.println("\n");
+//        	for (String t : cfd_target.getFrequencyDistribution(condition).getMostFrequentSamples(50))
+//        	{
+//        		System.out.println(t);
+//        	}
+//        	System.out.println("\n");
         }
         
         for (String condition : cfd_target.getConditions())
