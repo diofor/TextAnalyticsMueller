@@ -11,7 +11,7 @@ import org.apache.uima.cas.Feature;
 import org.apache.uima.jcas.tcas.Annotation_Type;
 
 /** 
- * Updated by JCasGen Thu Jan 26 11:15:57 CET 2017
+ * Updated by JCasGen Mon Jan 30 22:03:09 CET 2017
  * @generated */
 public class DetectedInformation_Type extends Annotation_Type {
   /** @generated */
@@ -117,6 +117,102 @@ public class DetectedInformation_Type extends Annotation_Type {
     ll_cas.ll_setStringValue(addr, casFeatCode_opinion, v);}
     
   
+ 
+  /** @generated */
+  final Feature casFeat_sentiment_value_wordnet;
+  /** @generated */
+  final int     casFeatCode_sentiment_value_wordnet;
+  /** @generated
+   * @param addr low level Feature Structure reference
+   * @return the feature value 
+   */ 
+  public double getSentiment_value_wordnet(int addr) {
+        if (featOkTst && casFeat_sentiment_value_wordnet == null)
+      jcas.throwFeatMissing("sentiment_value_wordnet", "de.unidue.langtech.teaching.pp.mueller.type.DetectedInformation");
+    return ll_cas.ll_getDoubleValue(addr, casFeatCode_sentiment_value_wordnet);
+  }
+  /** @generated
+   * @param addr low level Feature Structure reference
+   * @param v value to set 
+   */    
+  public void setSentiment_value_wordnet(int addr, double v) {
+        if (featOkTst && casFeat_sentiment_value_wordnet == null)
+      jcas.throwFeatMissing("sentiment_value_wordnet", "de.unidue.langtech.teaching.pp.mueller.type.DetectedInformation");
+    ll_cas.ll_setDoubleValue(addr, casFeatCode_sentiment_value_wordnet, v);}
+    
+  
+ 
+  /** @generated */
+  final Feature casFeat_sent_count_pos;
+  /** @generated */
+  final int     casFeatCode_sent_count_pos;
+  /** @generated
+   * @param addr low level Feature Structure reference
+   * @return the feature value 
+   */ 
+  public long getSent_count_pos(int addr) {
+        if (featOkTst && casFeat_sent_count_pos == null)
+      jcas.throwFeatMissing("sent_count_pos", "de.unidue.langtech.teaching.pp.mueller.type.DetectedInformation");
+    return ll_cas.ll_getLongValue(addr, casFeatCode_sent_count_pos);
+  }
+  /** @generated
+   * @param addr low level Feature Structure reference
+   * @param v value to set 
+   */    
+  public void setSent_count_pos(int addr, long v) {
+        if (featOkTst && casFeat_sent_count_pos == null)
+      jcas.throwFeatMissing("sent_count_pos", "de.unidue.langtech.teaching.pp.mueller.type.DetectedInformation");
+    ll_cas.ll_setLongValue(addr, casFeatCode_sent_count_pos, v);}
+    
+  
+ 
+  /** @generated */
+  final Feature casFeat_sent_count_neg;
+  /** @generated */
+  final int     casFeatCode_sent_count_neg;
+  /** @generated
+   * @param addr low level Feature Structure reference
+   * @return the feature value 
+   */ 
+  public long getSent_count_neg(int addr) {
+        if (featOkTst && casFeat_sent_count_neg == null)
+      jcas.throwFeatMissing("sent_count_neg", "de.unidue.langtech.teaching.pp.mueller.type.DetectedInformation");
+    return ll_cas.ll_getLongValue(addr, casFeatCode_sent_count_neg);
+  }
+  /** @generated
+   * @param addr low level Feature Structure reference
+   * @param v value to set 
+   */    
+  public void setSent_count_neg(int addr, long v) {
+        if (featOkTst && casFeat_sent_count_neg == null)
+      jcas.throwFeatMissing("sent_count_neg", "de.unidue.langtech.teaching.pp.mueller.type.DetectedInformation");
+    ll_cas.ll_setLongValue(addr, casFeatCode_sent_count_neg, v);}
+    
+  
+ 
+  /** @generated */
+  final Feature casFeat_sent_count_other;
+  /** @generated */
+  final int     casFeatCode_sent_count_other;
+  /** @generated
+   * @param addr low level Feature Structure reference
+   * @return the feature value 
+   */ 
+  public long getSent_count_other(int addr) {
+        if (featOkTst && casFeat_sent_count_other == null)
+      jcas.throwFeatMissing("sent_count_other", "de.unidue.langtech.teaching.pp.mueller.type.DetectedInformation");
+    return ll_cas.ll_getLongValue(addr, casFeatCode_sent_count_other);
+  }
+  /** @generated
+   * @param addr low level Feature Structure reference
+   * @param v value to set 
+   */    
+  public void setSent_count_other(int addr, long v) {
+        if (featOkTst && casFeat_sent_count_other == null)
+      jcas.throwFeatMissing("sent_count_other", "de.unidue.langtech.teaching.pp.mueller.type.DetectedInformation");
+    ll_cas.ll_setLongValue(addr, casFeatCode_sent_count_other, v);}
+    
+  
 
 
 
@@ -144,6 +240,22 @@ public class DetectedInformation_Type extends Annotation_Type {
  
     casFeat_opinion = jcas.getRequiredFeatureDE(casType, "opinion", "uima.cas.String", featOkTst);
     casFeatCode_opinion  = (null == casFeat_opinion) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_opinion).getCode();
+
+ 
+    casFeat_sentiment_value_wordnet = jcas.getRequiredFeatureDE(casType, "sentiment_value_wordnet", "uima.cas.Double", featOkTst);
+    casFeatCode_sentiment_value_wordnet  = (null == casFeat_sentiment_value_wordnet) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_sentiment_value_wordnet).getCode();
+
+ 
+    casFeat_sent_count_pos = jcas.getRequiredFeatureDE(casType, "sent_count_pos", "uima.cas.Long", featOkTst);
+    casFeatCode_sent_count_pos  = (null == casFeat_sent_count_pos) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_sent_count_pos).getCode();
+
+ 
+    casFeat_sent_count_neg = jcas.getRequiredFeatureDE(casType, "sent_count_neg", "uima.cas.Long", featOkTst);
+    casFeatCode_sent_count_neg  = (null == casFeat_sent_count_neg) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_sent_count_neg).getCode();
+
+ 
+    casFeat_sent_count_other = jcas.getRequiredFeatureDE(casType, "sent_count_other", "uima.cas.Long", featOkTst);
+    casFeatCode_sent_count_other  = (null == casFeat_sent_count_other) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_sent_count_other).getCode();
 
   }
 }

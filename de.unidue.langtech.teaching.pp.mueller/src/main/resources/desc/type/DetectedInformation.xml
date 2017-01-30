@@ -30,6 +30,26 @@
           <description/>
           <rangeTypeName>uima.cas.String</rangeTypeName>
         </featureDescription>
+      <featureDescription>
+          <name>sentiment_value_wordnet</name>
+          <description/>
+          <rangeTypeName>uima.cas.Double</rangeTypeName>
+        </featureDescription>
+      <featureDescription>
+          <name>sent_count_pos</name>
+          <description/>
+          <rangeTypeName>uima.cas.Long</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>sent_count_neg</name>
+          <description/>
+          <rangeTypeName>uima.cas.Long</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>sent_count_other</name>
+          <description/>
+          <rangeTypeName>uima.cas.Long</rangeTypeName>
+        </featureDescription>
       </features>
     </typeDescription>
     </types>

@@ -1,6 +1,8 @@
 package de.unidue.langtech.teaching.pp.mueller.annotators;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 import org.apache.uima.UimaContext;
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
@@ -8,6 +10,7 @@ import org.apache.uima.fit.component.JCasAnnotator_ImplBase;
 import org.apache.uima.fit.util.JCasUtil;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.resource.ResourceInitializationException;
+import org.apache.uima.jcas.cas.LongArray;
 
 import de.tudarmstadt.ukp.dkpro.core.api.frequency.util.ConditionalFrequencyDistribution;
 import de.tudarmstadt.ukp.dkpro.core.api.frequency.util.FrequencyDistribution;
@@ -60,6 +63,12 @@ public class DetectionOfSentiment extends JCasAnnotator_ImplBase
 			
 		}
 		
+		DetectedInformation di = JCasUtil.selectSingle(aJCas, DetectedInformation.class);
+		di.setSent_count_pos(countsForOrientation[0]);
+		di.setSent_count_neg(countsForOrientation[1]);
+		di.setSent_count_other(countsForOrientation[2]);
+		
+		
 		String sentimentOfJCas = "neg"; //weil auf den Trainignsdaten das häufigste Sentiment neg ist.
 		
 		
@@ -85,8 +94,17 @@ public class DetectionOfSentiment extends JCasAnnotator_ImplBase
 
 		if (max > 0) sentimentOfJCas = sentiments[stelle];
 		
-		DetectedInformation di = JCasUtil.selectSingle(aJCas, DetectedInformation.class);
+		
 		di.setSentiment(sentimentOfJCas);
+		
+//		LongArray sentimet_values = new LongArray(aJCas, countsForOrientation.length);
+//		for(int i = 0; i<countsForOrientation.length; ++i)
+//		{
+//			sentimet_values.set(i, countsForOrientation[i]);
+//		}
+//		di.setSentiment_values(sentimet_values);
+		
+		
 		di.addToIndexes();
 		
 	}
