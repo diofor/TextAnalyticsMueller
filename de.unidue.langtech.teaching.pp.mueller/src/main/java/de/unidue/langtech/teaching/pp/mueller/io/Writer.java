@@ -6,21 +6,14 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.commons.io.FileUtils;
 import org.apache.uima.UimaContext;
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
-import org.apache.uima.collection.CollectionException;
 import org.apache.uima.fit.component.JCasAnnotator_ImplBase;
-import org.apache.uima.fit.component.JCasCollectionReader_ImplBase;
 import org.apache.uima.fit.descriptor.ConfigurationParameter;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.resource.ResourceInitializationException;
-import org.apache.uima.util.Progress;
 
-import de.tudarmstadt.ukp.dkpro.core.api.metadata.type.DocumentMetaData;
 import de.unidue.langtech.teaching.pp.mueller.type.DetectedInformation;
-import de.unidue.langtech.teaching.pp.mueller.type.GoldInformation;
-import edu.stanford.nlp.io.EncodingPrintWriter.out;
 //import de.unidue.langtech.teaching.pp.type.GoldLanguage;
 
 public class Writer

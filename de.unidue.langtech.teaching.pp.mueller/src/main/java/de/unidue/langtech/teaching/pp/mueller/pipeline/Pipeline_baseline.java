@@ -14,6 +14,7 @@ public class Pipeline_baseline {
 	public static void main(String[] args)
 	        throws Exception
 	    {
+			//Pipline um das häufigste Sentiment in den Trainingsdaten zu bestimmen.
 	        SimplePipeline.runPipeline(
 	                CollectionReaderFactory.createReader(
 	                        Reader.class,
@@ -23,7 +24,7 @@ public class Pipeline_baseline {
 	                AnalysisEngineFactory.createEngineDescription(FindMostFrequentSentiment.class)
 	        );
 	        
-	        
+	        //Pipeline um eine Basline mit dem häufigsten Sentiment zu bestimmen.
 	        SimplePipeline.runPipeline(
 	                CollectionReaderFactory.createReader(
 	                        Reader.class,

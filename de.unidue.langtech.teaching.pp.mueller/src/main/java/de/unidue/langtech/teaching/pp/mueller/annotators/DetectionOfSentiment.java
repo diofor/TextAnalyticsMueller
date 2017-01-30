@@ -21,6 +21,9 @@ public class DetectionOfSentiment extends JCasAnnotator_ImplBase
 	//private FrequencyDistribution<String> fd;
     private ConditionalFrequencyDistribution<String, String> cfd;
     private FrequencyDistribution<String> fd;
+    
+    String[] sentiments = {"pos", "neg", "other"};
+	long[] countsForOrientation  = new long[sentiments.length];
    
     
     /* 
@@ -39,35 +42,52 @@ public class DetectionOfSentiment extends JCasAnnotator_ImplBase
 	@Override
 	public void process(JCas aJCas) throws AnalysisEngineProcessException {
 		Collection<Token> tokens = JCasUtil.select(aJCas, Token.class);
-		int neg = 0;
-		int pos = 0;
-		int other = 0;
+		
 		for(Token t: tokens)
 		{
 			fd = cfd.getFrequencyDistribution(t.getCoveredText());
 			if (fd != null)
 			{
-				String max = fd.getMostFrequentSamples(1).get(0);
-				if(max.equals("pos")) pos++;
-				if(max.equals("neg")) neg++;
-				if(max.equals("other")) other++;
+				long summeAnPunkten = 0;
+				for (String key : fd.getKeys())	{
+					summeAnPunkten += fd.getCount(key);
+				}
+				for(int i = 0; i < sentiments.length; ++i)
+				{
+					countsForOrientation[i] += Math.round((double)fd.getCount(sentiments[i])/summeAnPunkten * 100);
+				}
 			}
 			
 		}
 		
 		String sentimentOfJCas = "neg"; //weil auf den Trainignsdaten das häufigste Sentiment neg ist.
-		if (pos > neg && pos > other) sentimentOfJCas = "pos";
-		if (neg > pos && neg > other) sentimentOfJCas = "neg";
-		if (other > pos && other > neg) sentimentOfJCas = "other";
+		
+		
+		long max = Long.MIN_VALUE;
+		int stelle = -1; 
+		for(int i = 0; i < countsForOrientation.length; ++i)
+		{
+			if(countsForOrientation[i] > max) {
+				max = countsForOrientation[i];
+				stelle = i;
+			}
+			countsForOrientation[i] = 0;
+		}
+//		for(int i = 0; i < countsForOrientation.length; ++i)
+//		{
+//			if(countsForOrientation[i] + 10 > max && i != stelle) {
+//				System.out.printf("(%d, %d, %d) - %d - %d%n", countsForOrientation[0], countsForOrientation[1], countsForOrientation[2], max, countsForOrientation[i]);
+//				System.out.println(countsForOrientation.length);
+//			}
+//			countsForOrientation[i] = 0;
+//		}
+		
+
+		if (max > 0) sentimentOfJCas = sentiments[stelle];
 		
 		DetectedInformation di = JCasUtil.selectSingle(aJCas, DetectedInformation.class);
 		di.setSentiment(sentimentOfJCas);
 		di.addToIndexes();
 		
-		//Vergeichen....
-		/*
-		String goldSentiment = JCasUtil.selectSingle(aJCas, GoldInformation.class).getSentiment();
-		if (goldSentiment.equals(sentimentOfJCas)) trefferCounter++;
-		*/
 	}
 }

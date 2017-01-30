@@ -27,10 +27,11 @@ public class FindMostFrequentSentiment  extends JCasAnnotator_ImplBase {
 	@Override
 	public void process(JCas aJCas) throws AnalysisEngineProcessException {
 		GoldInformation gold = JCasUtil.selectSingle(aJCas, GoldInformation.class);
-		switch (gold.getSentiment()) {
-		case "pos":	++pos; break;
-		case "neg":	++neg; break; 
-		case "other": ++other; break;
+		switch (gold.getSentiment()) 
+		{
+			case "pos":	++pos; break;
+			case "neg":	++neg; break; 
+			case "other": ++other; break;
 		}
 		++sum;
 	}
@@ -42,12 +43,12 @@ public class FindMostFrequentSentiment  extends JCasAnnotator_ImplBase {
 		String max = "";
 		if (pos > neg && pos > other) max = "pos"; 
 		if (neg > pos && neg > other) max = "neg"; 
-		if (other > neg && other > pos) max = "other"; 
-		System.out.println("Das häufigste Sentiment ist in diesen Daten \"" + max+"\"");
-		System.out.println("pos:\t" + pos);
-		System.out.println("neg:\t" + neg);
-		System.out.println("other:\t" + other);
-		
+		if (other > neg && other > pos) max = "other";
+		System.out.println("Die Verteilung der Sentiments:");
+		System.out.printf("pos:\t%d \tvon %d - %.2f%% %n", pos, sum, ((double)pos/sum));
+		System.out.printf("neg:\t%d \tvon %d - %.2f%% %n", neg, sum, ((double)neg/sum));
+		System.out.printf("other:\t%d \tvon %d - %.2f%% %n", other, sum, ((double)other/sum));
+		System.out.printf("The most frequent sentiment in this data was: \"%s\" %n %n", max);
 	}
 
 	

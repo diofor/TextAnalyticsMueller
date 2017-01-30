@@ -44,9 +44,11 @@ public class CFDFileManager {
 		    	werte = line.split("\\t");
 		    	cfd.addSample(werte[0], werte[1], Long.valueOf(werte[2]));
 		    }
+		    System.out.println("\nCFD für "+ goal +" von \"" +file.getAbsolutePath()+ "\" gelesen.");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		
 		return cfd;
 	}
 

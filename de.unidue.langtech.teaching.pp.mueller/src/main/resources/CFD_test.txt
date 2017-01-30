@@ -1,0 +1,10 @@
+Satz	other	2
+in	other	1
+doppelt	other	1
+Das	other	1
+das	other	1
+ist	other	1
+ein	other	1
+dem	other	1
+hier	other	1
+sich	other	1

@@ -17,6 +17,7 @@ import org.junit.Test;
 import de.tudarmstadt.ukp.dkpro.core.api.frequency.util.ConditionalFrequencyDistribution;
 import de.tudarmstadt.ukp.dkpro.core.arktools.ArktweetTokenizer;
 import de.unidue.langtech.teaching.pp.mueller.io.CFDFileManager;
+import de.unidue.langtech.teaching.pp.mueller.io.vergleicheCFDs;
 import de.unidue.langtech.teaching.pp.mueller.type.GoldInformation;
 
 public class AnalyseWithFDTest {
@@ -57,38 +58,6 @@ public class AnalyseWithFDTest {
 		cfd_sentiment_verleichswert.inc("erste", "pos");
 		cfd_sentiment_verleichswert.inc("Test", "pos");
 		
-		assertEquals(true, vergleiche(ana.getCfd_rawdata_sentiment(), cfd_sentiment_verleichswert)); 
+		assertEquals(true, vergleicheCFDs.vergleiche(ana.getCfd_rawdata_sentiment(), cfd_sentiment_verleichswert)); 
 	}
-	
-	private boolean vergleiche(ConditionalFrequencyDistribution<String, String> cfd1, ConditionalFrequencyDistribution<String, String> cfd2)
-	{
-		if (cfd1.getConditions().size() == cfd2.getConditions().size())
-		{
-			List<String> condition1 = new ArrayList<String>(cfd1.getConditions());
-			List<String> condition2 = new ArrayList<String>(cfd2.getConditions());
-			condition1.sort(null);
-			condition2.sort(null);
-			
-			
-			for(int i = 0; i < condition1.size(); ++i)
-			{
-				if(!(condition1.get(i).equals(condition2.get(i)))) return false;
-			}
-		}
-		else
-		{
-			return false;
-		}
-		
-		for(String condition : cfd1.getConditions())
-		{
-			for (String key :cfd1.getFrequencyDistribution(condition).getKeys())
-			{
-				if (!(cfd1.getCount(condition, key) == cfd2.getCount(condition, key))) return false; 
-			}
-		}
-//		System.out.println(cfd1.getConditions().equals(cfd2.getConditions()));
-		return true;
-	}
-
 }

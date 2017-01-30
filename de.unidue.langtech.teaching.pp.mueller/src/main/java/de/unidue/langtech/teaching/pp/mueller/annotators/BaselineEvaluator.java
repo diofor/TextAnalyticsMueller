@@ -18,6 +18,7 @@ public class BaselineEvaluator
 
     private int correct;
     private int nrOfDocuments;
+    private String choosenSentiment;
     
     /* 
      * This is called BEFORE any documents are processed.
@@ -29,6 +30,7 @@ public class BaselineEvaluator
         super.initialize(context);
         correct = 0;
         nrOfDocuments = 0;
+        choosenSentiment = "neg";
     }
     
     
@@ -40,7 +42,7 @@ public class BaselineEvaluator
         throws AnalysisEngineProcessException
     {
     	GoldInformation gold = JCasUtil.selectSingle(jcas, GoldInformation.class);
-    	if (gold.getSentiment().equals("neg")) ++correct;
+    	if (gold.getSentiment().equals(choosenSentiment)) ++correct;
     	++nrOfDocuments;
     }
 
@@ -54,7 +56,7 @@ public class BaselineEvaluator
     {
         super.collectionProcessComplete();
         
-        System.out.println(correct + " out of " + nrOfDocuments + " are correct.");
-        System.out.println((double)correct/nrOfDocuments*100 +"% is the Baseline.");
+        System.out.printf("%d out of %d are correct, if you choose %s every time as Sentiment.%n", correct, nrOfDocuments, choosenSentiment);
+        System.out.printf("The Baseline is %.6f%%.", (double)correct/nrOfDocuments*100);
     }
 }

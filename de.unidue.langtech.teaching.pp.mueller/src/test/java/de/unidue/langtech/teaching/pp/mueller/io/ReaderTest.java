@@ -87,7 +87,7 @@ public class ReaderTest {
 	
 	@Test
 	public void testReader_tweet() throws Exception {
-		
+		// Tweets sollen in einer Form ohne Anführungszeichen vorliegen.
 		int amountJCasElements = 0;
 		int tweetsWithoutQuotes = 0;
 		for (JCas jcas : new JCasIterable(reader)) {

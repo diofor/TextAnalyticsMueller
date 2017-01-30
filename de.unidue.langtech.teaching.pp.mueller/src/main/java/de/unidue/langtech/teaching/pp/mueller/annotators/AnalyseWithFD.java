@@ -8,7 +8,6 @@ import org.apache.uima.fit.component.JCasAnnotator_ImplBase;
 import org.apache.uima.fit.util.JCasUtil;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.resource.ResourceInitializationException;
-import org.apache.uima.resource.ResourceManager;
 
 import de.tudarmstadt.ukp.dkpro.core.api.frequency.util.ConditionalFrequencyDistribution;
 //import de.tudarmstadt.ukp.dkpro.core.api.frequency.util.FrequencyDistribution;
@@ -74,6 +73,7 @@ public class AnalyseWithFD extends JCasAnnotator_ImplBase
         
         //Better use tf/idf
         
+        /*
         for (String condition : cfd_rawdata_target.getConditions())
         {
 //        	System.out.println(condition+"\n-------------------\n");
@@ -99,14 +99,15 @@ public class AnalyseWithFD extends JCasAnnotator_ImplBase
 //        	}
 //        	System.out.println("\n");
         }
-        
+        */
         for (String condition : cfd_target.getConditions())
         {
         	System.out.println(condition+" "+cfd_target.getFrequencyDistribution(condition).getB());
         }
         
         CFDFileManager writer = new CFDFileManager();
-        writer.write(cfd_target, "Target");
+        //writer.write(cfd_target, "Target");
+        writer.write(cfd_rawdata_target, "Target");
         writer.write(cfd_rawdata_sentiment, "Sentiment");
     }
     
