@@ -22,6 +22,7 @@ public class AnalyseWithFD extends JCasAnnotator_ImplBase
     protected static ConditionalFrequencyDistribution<String, String> cfd_rawdata_sentiment;
     private ConditionalFrequencyDistribution<String, String> cfd_target;
     private ConditionalFrequencyDistribution<String, String> cfd_sentiment;
+    private int counter;
     
     /* 
      * This is called BEFORE any documents are processed.
@@ -35,6 +36,7 @@ public class AnalyseWithFD extends JCasAnnotator_ImplBase
         cfd_rawdata_sentiment = new ConditionalFrequencyDistribution<String, String>();
         cfd_target = new ConditionalFrequencyDistribution<String, String>();
         cfd_sentiment = new ConditionalFrequencyDistribution<String, String>();
+        counter = 0;
     }
 	
 	
@@ -48,9 +50,10 @@ public class AnalyseWithFD extends JCasAnnotator_ImplBase
 		{
 			cfd_rawdata_target.inc(cond, t.getCoveredText());
 			cfd_rawdata_sentiment.inc(t.getCoveredText(), sentiment);
+			
 			//fd.inc(t.getCoveredText());
 		}
-		
+		++counter;
 	}
 	
 	/* 
@@ -62,44 +65,6 @@ public class AnalyseWithFD extends JCasAnnotator_ImplBase
     {
         super.collectionProcessComplete();
       
-        /*
-         * ToDo: 	Es fehlt noch zu den einzeln Keywords die ich selektiere die Information, ob es in einem Favor, none, Against kontext vokam.
-         * 			Dies fehlt auch noch im Reader.
-         * 			Auswertung dieser Daten auf weiter Tweets fehlt noch.
-         * 
-         * Idee:	Eventuell kann ich die FD über Tokens aufbauen und nicht über den String... Dann habe ich die Info direkt mit dabei.
-         * 			
-         */
-        
-        //Better use tf/idf
-        
-        /*
-        for (String condition : cfd_rawdata_target.getConditions())
-        {
-//        	System.out.println(condition+"\n-------------------\n");
-        	
-        	for(String t : cfd_rawdata_target.getFrequencyDistribution(condition).getKeys())
-//        	for (String t : cfd_rawdata_target.getFreqDist(condition).getMostFrequentSamples(1000))
-        	{
-        		boolean existsInOtherFDs = false;
-	        	for(String secondConditon: cfd_rawdata_target.getConditions())
-	        	{
-	        		if (!(condition.equals(secondConditon)))
-	        		{
-	        			if (cfd_rawdata_target.getFrequencyDistribution(secondConditon).contains(t)) existsInOtherFDs = true;
-	        		}
-	        	}
-	        	if (!existsInOtherFDs) cfd_target.addSample(condition, t, cfd_rawdata_target.getCount(condition, t));
-        	}
-        	
-        	
-//        	for (String t : cfd_target.getFrequencyDistribution(condition).getMostFrequentSamples(50))
-//        	{
-//        		System.out.println(t);
-//        	}
-//        	System.out.println("\n");
-        }
-        */
         for (String condition : cfd_target.getConditions())
         {
         	System.out.println(condition+" "+cfd_target.getFrequencyDistribution(condition).getB());
@@ -109,6 +74,10 @@ public class AnalyseWithFD extends JCasAnnotator_ImplBase
         //writer.write(cfd_target, "Target");
         writer.write(cfd_rawdata_target, "Target");
         writer.write(cfd_rawdata_sentiment, "Sentiment");
+        
+        System.out.println("\nBEGIN Auswertung AnalyseWithFD");
+        System.out.printf("Es wurden %d Tweets eingelesen.%n", counter);
+        System.out.println("ENDE Auswertung AnalyseWithFD\n");
     }
     
     public ConditionalFrequencyDistribution<String, String> getCfd_rawdata_target() {

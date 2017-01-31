@@ -14,9 +14,11 @@ import de.tudarmstadt.ukp.dkpro.core.arktools.ArktweetTokenizer;
 import de.tudarmstadt.ukp.dkpro.core.opennlp.OpenNlpPosTagger;
 import de.tudarmstadt.ukp.dkpro.core.stopwordremover.StopWordRemover;
 import de.tudarmstadt.ukp.dkpro.core.textcat.LanguageIdentifier;
-import de.unidue.langtech.teaching.pp.mueller.annotators.AnalyseOfSentimentWithWordnet;
+import de.unidue.langtech.teaching.pp.mueller.annotators.AnalyseOfSentimentWithFD;
+import de.unidue.langtech.teaching.pp.mueller.annotators.DecisionOfSentiment;
+import de.unidue.langtech.teaching.pp.mueller.annotators.DetectionOfSentimentWithWordnet;
 import de.unidue.langtech.teaching.pp.mueller.annotators.AnalyseWithFD;
-import de.unidue.langtech.teaching.pp.mueller.annotators.DetectionOfSentiment;
+import de.unidue.langtech.teaching.pp.mueller.annotators.DetectionOfSentimentWithFD;
 import de.unidue.langtech.teaching.pp.mueller.annotators.Evaluator;
 import de.unidue.langtech.teaching.pp.mueller.io.Reader;
 
@@ -31,8 +33,9 @@ public class Pipeline_analyse
         throws Exception
     {
     	buildFDs();
-//    	detectOnTestdataViaFDs();
-    	detectViaWordnet();
+    	detectViaFDs();
+    	detectViaFDsAdvanced();
+    	detectViaFDandWordnet();
     }
     
     public static void buildFDs() throws ResourceInitializationException, UIMAException, IOException
@@ -47,7 +50,21 @@ public class Pipeline_analyse
          );
     }
     
-    public static void detectOnTestdataViaFDs() throws ResourceInitializationException, UIMAException, IOException
+    public static void detectViaFDs() throws ResourceInitializationException, UIMAException, IOException
+    {
+    	
+    	SimplePipeline.runPipeline(
+                CollectionReaderFactory.createReader(
+                        Reader.class,
+                        Reader.PARAM_INPUT_FILE, "src/main/resources/test.csv"
+                ),
+                AnalysisEngineFactory.createEngineDescription(ArktweetTokenizer.class),
+                AnalysisEngineFactory.createEngineDescription(AnalyseOfSentimentWithFD.class),
+                AnalysisEngineFactory.createEngineDescription(Evaluator.class)
+        );
+    }
+    
+    public static void detectViaFDsAdvanced() throws ResourceInitializationException, UIMAException, IOException
     {
     	
     	SimplePipeline.runPipeline(
@@ -57,13 +74,13 @@ public class Pipeline_analyse
                 ),
                 AnalysisEngineFactory.createEngineDescription(ArktweetTokenizer.class),
                 AnalysisEngineFactory.createEngineDescription(StopWordRemover.class, StopWordRemover.PARAM_MODEL_LOCATION, STOPWORD_FILE),
-                AnalysisEngineFactory.createEngineDescription(DetectionOfSentiment.class),
-                //AnalysisEngineFactory.createEngineDescription(Writer.class),
+                AnalysisEngineFactory.createEngineDescription(DetectionOfSentimentWithFD.class),
+                AnalysisEngineFactory.createEngineDescription(DecisionOfSentiment.class),
                 AnalysisEngineFactory.createEngineDescription(Evaluator.class)
         );
     }
     
-    public static void detectViaWordnet() throws ResourceInitializationException, UIMAException, IOException
+    public static void detectViaFDandWordnet() throws ResourceInitializationException, UIMAException, IOException
     {
     	
     	SimplePipeline.runPipeline(
@@ -74,8 +91,9 @@ public class Pipeline_analyse
                 AnalysisEngineFactory.createEngineDescription(ArktweetTokenizer.class),
                 AnalysisEngineFactory.createEngineDescription(OpenNlpPosTagger.class, OpenNlpPosTagger.PARAM_LANGUAGE, "en"),
                 AnalysisEngineFactory.createEngineDescription(StopWordRemover.class, StopWordRemover.PARAM_MODEL_LOCATION, STOPWORD_FILE),
-                AnalysisEngineFactory.createEngineDescription(DetectionOfSentiment.class),
-                AnalysisEngineFactory.createEngineDescription(AnalyseOfSentimentWithWordnet.class, AnalyseOfSentimentWithWordnet.PARAM_WORDNET_FILE, WORDNET_FILE),
+                AnalysisEngineFactory.createEngineDescription(DetectionOfSentimentWithFD.class),
+                AnalysisEngineFactory.createEngineDescription(DetectionOfSentimentWithWordnet.class, DetectionOfSentimentWithWordnet.PARAM_WORDNET_FILE, WORDNET_FILE),
+                AnalysisEngineFactory.createEngineDescription(DecisionOfSentiment.class),
                 AnalysisEngineFactory.createEngineDescription(Evaluator.class)
         );
     }

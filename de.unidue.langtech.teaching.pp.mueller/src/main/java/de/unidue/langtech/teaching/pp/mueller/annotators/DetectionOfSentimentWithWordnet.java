@@ -25,7 +25,7 @@ import de.unidue.langtech.teaching.pp.mueller.type.DetectedInformation;
 import de.unidue.langtech.teaching.pp.mueller.type.GoldInformation;
 import edu.berkeley.nlp.util.ArrayUtil;
 
-public class AnalyseOfSentimentWithWordnet extends JCasAnnotator_ImplBase
+public class DetectionOfSentimentWithWordnet extends JCasAnnotator_ImplBase
 {
 	public static final String PARAM_WORDNET_FILE = "WordnetFile";
     @ConfigurationParameter(name = PARAM_WORDNET_FILE, mandatory = true)
@@ -35,7 +35,7 @@ public class AnalyseOfSentimentWithWordnet extends JCasAnnotator_ImplBase
     private static final float seperator = 0.6f; //should set the border for evaluating an non sure tweet. 
     String[] sentiments = {"pos", "neg", "other"};
     
-    private int counter, up, down;
+    private int counter;
     private double min, max, ave;
     
    
@@ -59,9 +59,6 @@ public class AnalyseOfSentimentWithWordnet extends JCasAnnotator_ImplBase
         min = 0;
         max = 0;
         ave = 0;
-        up = 0;
-        down = 0;
-        
     }
 	
 	
@@ -76,7 +73,7 @@ public class AnalyseOfSentimentWithWordnet extends JCasAnnotator_ImplBase
 		long[] temp = Arrays.copyOf(scores, 3);
 		Arrays.sort(temp);
 //		System.out.println(Arrays.toString(scores));
-		if ((temp[2]*seperator) < temp[1])
+		if ((temp[2]*seperator) <= temp[1])
 		{
 			Collection<Token> tokens = JCasUtil.select(aJCas, Token.class);
 			
@@ -92,43 +89,17 @@ public class AnalyseOfSentimentWithWordnet extends JCasAnnotator_ImplBase
 		}
 		
 		
-		if (sentimentValue != 0)
-		{
-			int faktor = 8;
-//			System.err.println(counter);
-//			System.out.println(Arrays.toString(scores));
-			if (sentimentValue < 0) //Die Einschätzung von Wordnet geht eher ins negative.
-			{
-				 scores[1] *= (Math.abs(sentimentValue)+1)*faktor; //+1 damit der Faktor immer größer als 1 ist.
-//				 System.out.println("Korrektur-");
-				 ++down;
-			}
-			else //Die Einschätzung von Wordnet geht eher ins positve.
-			{
-				scores[0] *= (Math.abs(sentimentValue)+1)*faktor; //+1 damit der Faktor immer größer als 1 ist.
-//				System.out.println("Korrektur+");
-				++up;
-				
-			}
-//			System.out.println(Arrays.toString(scores) +"\n");
-		}
-		
-		long max_score = Long.MIN_VALUE;
-		int stelle = -1; 
-		for(int i = 0; i < scores.length; ++i)
-		{
-			if(scores[i] > max_score) {
-				max_score = scores[i];
-				stelle = i;
-			}
-		}
-		di.setSentiment(sentiments[stelle]);
-		
 		di.setSentiment_value_wordnet(sentimentValue);
 		di.addToIndexes();
+		
+		
+		
 		if (sentimentValue > max) max = sentimentValue;
 		if (sentimentValue < min) min = sentimentValue;
 		if (sentimentValue != 0) ave += sentimentValue;
+		
+		
+		//sentimentValue für die nächst jCas auf 0 setzen.
 		sentimentValue = 0;
 		
 	}
@@ -153,11 +124,10 @@ public class AnalyseOfSentimentWithWordnet extends JCasAnnotator_ImplBase
         
 //        ResultSpecification rs = new
         
-        
-        System.out.println("Counter: "+ counter);
+        //
+        System.out.println("\nBEGIN Auswertung DetectionOfSentimentWithWordnet");
         System.out.printf("Das minimum ist %.6f - das maximum ist %.6f %nDer Durchschnitt ist %.6f %n", min, max, ave/counter);
-        System.out.printf("Es wurde %d mal nach open korrigiert und %d mal nach unten.", up, down);
-        System.out.println("ENDE");
+        System.out.println("ENDE Auswertung DetectionOfSentimentWithWordnet\n");
 
     }
 

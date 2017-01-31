@@ -19,7 +19,7 @@ import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 import de.unidue.langtech.teaching.pp.mueller.io.CFDFileManager;
 import de.unidue.langtech.teaching.pp.mueller.type.DetectedInformation;
 
-public class DetectionOfSentiment extends JCasAnnotator_ImplBase
+public class DetectionOfSentimentWithFD extends JCasAnnotator_ImplBase
 {
 	//private FrequencyDistribution<String> fd;
     private ConditionalFrequencyDistribution<String, String> cfd;
@@ -63,49 +63,12 @@ public class DetectionOfSentiment extends JCasAnnotator_ImplBase
 			
 		}
 		
-		
-		
-		
-		
-		String sentimentOfJCas = "neg"; //weil auf den Trainignsdaten das häufigste Sentiment neg ist.
-		
-		
-		long max = Long.MIN_VALUE;
-		int stelle = -1; 
-		for(int i = 0; i < countsForSentiments.length; ++i)
-		{
-			if(countsForSentiments[i] > max) {
-				max = countsForSentiments[i];
-				stelle = i;
-			}
-//			countsForOrientation[i] = 0;
-		}
-		
-//		for(int i = 0; i < countsForOrientation.length; ++i)
-//		{
-//			if(countsForOrientation[i] + 10 > max && i != stelle) {
-//				System.out.printf("(%d, %d, %d) - %d - %d%n", countsForOrientation[0], countsForOrientation[1], countsForOrientation[2], max, countsForOrientation[i]);
-//				System.out.println(countsForOrientation.length);
-//			}
-//			countsForOrientation[i] = 0;
-//		}
-		
-		
-		
-
-		
-		if (max > 0) sentimentOfJCas = sentiments[stelle];
-		
 		DetectedInformation di = JCasUtil.selectSingle(aJCas, DetectedInformation.class);
-		
 		di.setSent_count_pos(countsForSentiments[0]);
 		di.setSent_count_neg(countsForSentiments[1]);
 		di.setSent_count_other(countsForSentiments[2]);
-		di.setSentiment(sentimentOfJCas);
-		
 		di.addToIndexes();
 
-		
 		//Werte fürd die nächste jCas zurücksetzen.
 		for(int j = 0; j<countsForSentiments.length; ++j) countsForSentiments[j] = 0;
 	}

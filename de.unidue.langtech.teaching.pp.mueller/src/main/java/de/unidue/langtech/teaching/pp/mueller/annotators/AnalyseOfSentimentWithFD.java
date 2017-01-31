@@ -14,6 +14,7 @@ import de.tudarmstadt.ukp.dkpro.core.api.frequency.util.FrequencyDistribution;
 //import de.tudarmstadt.ukp.dkpro.core.api.frequency.util.FrequencyDistribution;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 import de.unidue.langtech.teaching.pp.mueller.io.CFDFileManager;
+import de.unidue.langtech.teaching.pp.mueller.type.DetectedInformation;
 import de.unidue.langtech.teaching.pp.mueller.type.GoldInformation;
 
 public class AnalyseOfSentimentWithFD extends JCasAnnotator_ImplBase
@@ -70,14 +71,13 @@ public class AnalyseOfSentimentWithFD extends JCasAnnotator_ImplBase
 		if (other > pos && other > neg) sentimentOfJCas = "other";
 		
 		//Vergeichen....
-		String goldSentiment = JCasUtil.selectSingle(aJCas, GoldInformation.class).getSentiment();
-		if (goldSentiment.equals(sentimentOfJCas)) trefferCounter++;
-//		switch(goldSentiment)
-//		{
-//			case "pos": if(sentimentOfJCas == "pos") trefferCounter++; break;
-//			case "neg": if(sentimentOfJCas == "neg") trefferCounter++; break;
-//			case "other": if(sentimentOfJCas == "other") trefferCounter++; break;
-//		}
+//		String goldSentiment = JCasUtil.selectSingle(aJCas, GoldInformation.class).getSentiment();
+//		if (goldSentiment.equals(sentimentOfJCas)) trefferCounter++;
+		
+		DetectedInformation di = JCasUtil.selectSingle(aJCas, DetectedInformation.class);
+		di.setSentiment(sentimentOfJCas);
+		di.addToIndexes();
+		
 	}
 	
 	/* 
@@ -88,11 +88,8 @@ public class AnalyseOfSentimentWithFD extends JCasAnnotator_ImplBase
         throws AnalysisEngineProcessException
     {
         super.collectionProcessComplete();
-        System.out.println("Absolute Zahlen: \nTreffer: "+trefferCounter+" - JCas Elemente: "+jcasCounter);
-        System.out.println("Trefferquote: "+ (double)trefferCounter/jcasCounter*100 +"%");
-        
-//        ResultSpecification rs = new 
-
+//        System.out.println("Absolute Zahlen: \nTreffer: "+trefferCounter+" - JCas Elemente: "+jcasCounter);
+//        System.out.println("Trefferquote: "+ (double)trefferCounter/jcasCounter*100 +"%");
     }
 
 }
