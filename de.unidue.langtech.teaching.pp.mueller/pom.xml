@@ -116,5 +116,15 @@
   	  			de.tudarmstadt.ukp.dkpro.core.stopwordremover-asl
   	  		</artifactId>
   	  	</dependency>
+  	  	<dependency>
+  	  		<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
+  	  		<artifactId>
+  	  			de.tudarmstadt.ukp.dkpro.core.opennlp-asl
+  	  		</artifactId>
+  	  	</dependency>
+  	  	<dependency>
+  	  		<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
+  	  		<artifactId>de.tudarmstadt.ukp.dkpro.core.textcat-asl</artifactId>
+  	  	</dependency>
   </dependencies>
 </project>

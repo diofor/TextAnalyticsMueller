@@ -26,7 +26,7 @@ public class DetectionOfSentiment extends JCasAnnotator_ImplBase
     private FrequencyDistribution<String> fd;
     
     String[] sentiments = {"pos", "neg", "other"};
-	long[] countsForOrientation  = new long[sentiments.length];
+	long[] countsForSentiments  = new long[sentiments.length];
    
     
     /* 
@@ -57,16 +57,14 @@ public class DetectionOfSentiment extends JCasAnnotator_ImplBase
 				}
 				for(int i = 0; i < sentiments.length; ++i)
 				{
-					countsForOrientation[i] += Math.round((double)fd.getCount(sentiments[i])/summeAnPunkten * 100);
+					countsForSentiments[i] += Math.round((double)fd.getCount(sentiments[i])/summeAnPunkten * 100);
 				}
 			}
 			
 		}
 		
-		DetectedInformation di = JCasUtil.selectSingle(aJCas, DetectedInformation.class);
-		di.setSent_count_pos(countsForOrientation[0]);
-		di.setSent_count_neg(countsForOrientation[1]);
-		di.setSent_count_other(countsForOrientation[2]);
+		
+		
 		
 		
 		String sentimentOfJCas = "neg"; //weil auf den Trainignsdaten das häufigste Sentiment neg ist.
@@ -74,14 +72,15 @@ public class DetectionOfSentiment extends JCasAnnotator_ImplBase
 		
 		long max = Long.MIN_VALUE;
 		int stelle = -1; 
-		for(int i = 0; i < countsForOrientation.length; ++i)
+		for(int i = 0; i < countsForSentiments.length; ++i)
 		{
-			if(countsForOrientation[i] > max) {
-				max = countsForOrientation[i];
+			if(countsForSentiments[i] > max) {
+				max = countsForSentiments[i];
 				stelle = i;
 			}
-			countsForOrientation[i] = 0;
+//			countsForOrientation[i] = 0;
 		}
+		
 //		for(int i = 0; i < countsForOrientation.length; ++i)
 //		{
 //			if(countsForOrientation[i] + 10 > max && i != stelle) {
@@ -91,21 +90,23 @@ public class DetectionOfSentiment extends JCasAnnotator_ImplBase
 //			countsForOrientation[i] = 0;
 //		}
 		
+		
+		
 
+		
 		if (max > 0) sentimentOfJCas = sentiments[stelle];
 		
+		DetectedInformation di = JCasUtil.selectSingle(aJCas, DetectedInformation.class);
 		
+		di.setSent_count_pos(countsForSentiments[0]);
+		di.setSent_count_neg(countsForSentiments[1]);
+		di.setSent_count_other(countsForSentiments[2]);
 		di.setSentiment(sentimentOfJCas);
 		
-//		LongArray sentimet_values = new LongArray(aJCas, countsForOrientation.length);
-//		for(int i = 0; i<countsForOrientation.length; ++i)
-//		{
-//			sentimet_values.set(i, countsForOrientation[i]);
-//		}
-//		di.setSentiment_values(sentimet_values);
-		
-		
 		di.addToIndexes();
+
 		
+		//Werte fürd die nächste jCas zurücksetzen.
+		for(int j = 0; j<countsForSentiments.length; ++j) countsForSentiments[j] = 0;
 	}
 }

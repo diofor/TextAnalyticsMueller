@@ -11,13 +11,14 @@ import org.apache.uima.resource.ResourceInitializationException;
 
 import de.tudarmstadt.ukp.dkpro.core.arktools.ArktweetPosTagger;
 import de.tudarmstadt.ukp.dkpro.core.arktools.ArktweetTokenizer;
+import de.tudarmstadt.ukp.dkpro.core.opennlp.OpenNlpPosTagger;
 import de.tudarmstadt.ukp.dkpro.core.stopwordremover.StopWordRemover;
+import de.tudarmstadt.ukp.dkpro.core.textcat.LanguageIdentifier;
 import de.unidue.langtech.teaching.pp.mueller.annotators.AnalyseOfSentimentWithWordnet;
 import de.unidue.langtech.teaching.pp.mueller.annotators.AnalyseWithFD;
 import de.unidue.langtech.teaching.pp.mueller.annotators.DetectionOfSentiment;
 import de.unidue.langtech.teaching.pp.mueller.annotators.Evaluator;
 import de.unidue.langtech.teaching.pp.mueller.io.Reader;
-import de.unidue.langtech.teaching.pp.mueller.io.Writer;
 
 public class Pipeline_analyse
 {
@@ -71,10 +72,11 @@ public class Pipeline_analyse
                         Reader.PARAM_INPUT_FILE, "src/main/resources/test.csv"
                 ),
                 AnalysisEngineFactory.createEngineDescription(ArktweetTokenizer.class),
-//                AnalysisEngineFactory.createEngineDescription(ArktweetPosTagger.class),
+                AnalysisEngineFactory.createEngineDescription(OpenNlpPosTagger.class, OpenNlpPosTagger.PARAM_LANGUAGE, "en"),
                 AnalysisEngineFactory.createEngineDescription(StopWordRemover.class, StopWordRemover.PARAM_MODEL_LOCATION, STOPWORD_FILE),
                 AnalysisEngineFactory.createEngineDescription(DetectionOfSentiment.class),
-                AnalysisEngineFactory.createEngineDescription(AnalyseOfSentimentWithWordnet.class, AnalyseOfSentimentWithWordnet.PARAM_WORDNET_FILE, WORDNET_FILE)
+                AnalysisEngineFactory.createEngineDescription(AnalyseOfSentimentWithWordnet.class, AnalyseOfSentimentWithWordnet.PARAM_WORDNET_FILE, WORDNET_FILE),
+                AnalysisEngineFactory.createEngineDescription(Evaluator.class)
         );
     }
 }
