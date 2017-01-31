@@ -17,7 +17,7 @@ import de.tudarmstadt.ukp.dkpro.core.textcat.LanguageIdentifier;
 import de.unidue.langtech.teaching.pp.mueller.annotators.AnalyseOfSentimentWithFD;
 import de.unidue.langtech.teaching.pp.mueller.annotators.DecisionOfSentiment;
 import de.unidue.langtech.teaching.pp.mueller.annotators.DetectionOfSentimentWithWordnet;
-import de.unidue.langtech.teaching.pp.mueller.annotators.AnalyseWithFD;
+import de.unidue.langtech.teaching.pp.mueller.annotators.BuildFDsAndWriteToDisk;
 import de.unidue.langtech.teaching.pp.mueller.annotators.DetectionOfSentimentWithFD;
 import de.unidue.langtech.teaching.pp.mueller.annotators.Evaluator;
 import de.unidue.langtech.teaching.pp.mueller.io.Reader;
@@ -46,7 +46,7 @@ public class Pipeline_analyse
                         Reader.PARAM_INPUT_FILE, "src/main/resources/train.csv"
                 ),
                 AnalysisEngineFactory.createEngineDescription(ArktweetTokenizer.class),
-                AnalysisEngineFactory.createEngineDescription(AnalyseWithFD.class)
+                AnalysisEngineFactory.createEngineDescription(BuildFDsAndWriteToDisk.class)
          );
     }
     

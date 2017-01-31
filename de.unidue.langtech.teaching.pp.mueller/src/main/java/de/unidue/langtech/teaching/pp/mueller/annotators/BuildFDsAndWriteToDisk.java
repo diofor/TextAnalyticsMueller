@@ -15,7 +15,7 @@ import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 import de.unidue.langtech.teaching.pp.mueller.io.CFDFileManager;
 import de.unidue.langtech.teaching.pp.mueller.type.GoldInformation;
 
-public class AnalyseWithFD extends JCasAnnotator_ImplBase
+public class BuildFDsAndWriteToDisk extends JCasAnnotator_ImplBase
 {
 	//private FrequencyDistribution<String> fd;
     private ConditionalFrequencyDistribution<String, String> cfd_rawdata_target;

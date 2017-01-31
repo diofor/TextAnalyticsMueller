@@ -31,7 +31,7 @@ public class Pipeline_baseline {
 	                        Reader.PARAM_INPUT_FILE, "src/main/resources/test.csv"
 	                ),
 	                AnalysisEngineFactory.createEngineDescription(ArktweetTokenizer.class),
-	                AnalysisEngineFactory.createEngineDescription(BaselineEvaluator.class)
+	                AnalysisEngineFactory.createEngineDescription(BaselineEvaluator.class, BaselineEvaluator.PARAM_SENTIMENT, "neg")
 	        );
 	    }
 

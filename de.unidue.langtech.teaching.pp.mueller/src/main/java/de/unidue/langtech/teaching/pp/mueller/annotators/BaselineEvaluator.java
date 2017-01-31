@@ -3,6 +3,7 @@ package de.unidue.langtech.teaching.pp.mueller.annotators;
 import org.apache.uima.UimaContext;
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
 import org.apache.uima.fit.component.JCasAnnotator_ImplBase;
+import org.apache.uima.fit.descriptor.ConfigurationParameter;
 import org.apache.uima.fit.util.JCasUtil;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.resource.ResourceInitializationException;
@@ -18,6 +19,8 @@ public class BaselineEvaluator
 
     private int correct;
     private int nrOfDocuments;
+    public static final String PARAM_SENTIMENT = "Sentiment";
+    @ConfigurationParameter(name = PARAM_SENTIMENT, mandatory = true)
     private String choosenSentiment;
     
     /* 
@@ -30,7 +33,6 @@ public class BaselineEvaluator
         super.initialize(context);
         correct = 0;
         nrOfDocuments = 0;
-        choosenSentiment = "neg";
     }
     
     

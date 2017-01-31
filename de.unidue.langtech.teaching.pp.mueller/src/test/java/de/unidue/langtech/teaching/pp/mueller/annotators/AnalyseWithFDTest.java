@@ -42,7 +42,7 @@ public class AnalyseWithFDTest {
 		AnalysisEngine segEngine = createEngine(segmenter);
 		segEngine.process(jcas);
 		
-		AnalyseWithFD ana = new AnalyseWithFD();
+		BuildFDsAndWriteToDisk ana = new BuildFDsAndWriteToDisk();
 		AnalysisEngine analyseEngine = createEngine(ana.getClass());
 		analyseEngine.process(jcas);
 		
