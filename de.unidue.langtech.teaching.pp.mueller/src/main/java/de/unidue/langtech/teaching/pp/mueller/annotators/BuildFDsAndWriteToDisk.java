@@ -44,8 +44,8 @@ public class BuildFDsAndWriteToDisk extends JCasAnnotator_ImplBase
 		String sentiment = gold.getSentiment();
 		for(Token t: tokens)
 		{
-			cfd_target.inc(t.getCoveredText(), cond);
-			cfd_sentiment.inc(t.getCoveredText(), sentiment);
+			cfd_target.inc(t.getCoveredText().toLowerCase(), cond);
+			cfd_sentiment.inc(t.getCoveredText().toLowerCase(), sentiment);
 			
 			//fd.inc(t.getCoveredText());
 		}

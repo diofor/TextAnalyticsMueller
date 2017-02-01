@@ -1,5 +1,8 @@
 package de.unidue.langtech.teaching.pp.mueller.annotators;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -19,15 +22,13 @@ import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 import de.unidue.langtech.teaching.pp.mueller.io.CFDFileManager;
 import de.unidue.langtech.teaching.pp.mueller.type.DetectedInformation;
 
-public class DetectionAndDecisionOfSentimentWithFD extends JCasAnnotator_ImplBase
+public class DetectionAndDecisionOfTargetWithFD extends JCasAnnotator_ImplBase
 {
 	//private FrequencyDistribution<String> fd_token;
     private ConditionalFrequencyDistribution<String, String> cfd;
     private FrequencyDistribution<String> fd_token;
-    
-    String[] sentiments = {"pos", "neg", "other"};
-	long[] countsForSentiments  = new long[sentiments.length];
-	FrequencyDistribution<String> fd_tweet;
+	private FrequencyDistribution<String> fd_tweet;
+	private List<String> alleTargets;
    
     
     /* 
@@ -41,6 +42,7 @@ public class DetectionAndDecisionOfSentimentWithFD extends JCasAnnotator_ImplBas
         CFDFileManager fm = new CFDFileManager();
         cfd = fm.read("Target");
         fd_tweet = new FrequencyDistribution<String>();
+        alleTargets = new ArrayList<String>();
     }
 	
 	
@@ -50,27 +52,77 @@ public class DetectionAndDecisionOfSentimentWithFD extends JCasAnnotator_ImplBas
 		
 		for(Token t: tokens)
 		{
-			fd_token = cfd.getFrequencyDistribution(t.getCoveredText());
+			fd_token = cfd.getFrequencyDistribution(t.getCoveredText().toLowerCase());
 			if (fd_token != null)
 			{
 				for(String keyForToken : fd_token.getKeys())
 				{
+					
 					fd_tweet.addSample(keyForToken, fd_token.getCount(keyForToken));
 				}
 			}
 			
 		}
 		
-		//hier fehtl noch was..
+		
+
+		//Bestimmung der Targets welches am häufigsten vorkam.
+		//Der normale Aufruf von getSampleWithMaxFreq geht hier nicht, da wir mit addSample hinzufügen und nicht mit inc.
+		//String haeufigstesTarget = fd_tweet.getSampleWithMaxFreq();
+		String haeufigstesTarget = "";
+		long countHaeufigstesTarget = Integer.MIN_VALUE;
+		for(String key : fd_tweet.getKeys())
+		{
+			if (fd_tweet.getCount(key)> countHaeufigstesTarget)
+			{
+				haeufigstesTarget = key;
+				countHaeufigstesTarget = fd_tweet.getCount(key);
+			}
+		}
 		
 		DetectedInformation di = JCasUtil.selectSingle(aJCas, DetectedInformation.class);
-		di.setSent_count_pos(countsForSentiments[0]);
-		di.setSent_count_neg(countsForSentiments[1]);
-		di.setSent_count_other(countsForSentiments[2]);
+		di.setTarget(haeufigstesTarget);
 		di.addToIndexes();
+		
+		for(String target : fd_tweet.getKeys())
+		{
+			if (!(alleTargets.contains(target))) 
+			{
+				alleTargets.add(target);
+			}
+		}
+		
+		
 
 		//Werte fürd die nächste jCas zurücksetzen.
-		for(int j = 0; j<countsForSentiments.length; ++j) countsForSentiments[j] = 0;
-		fd_tweet = new FrequencyDistribution<String>();
+		fd_tweet.clear();
 	}
+	
+	
+	@Override
+    public void collectionProcessComplete()
+        throws AnalysisEngineProcessException
+    {
+		// File anlegen
+		File file = new File(System.getProperty("user.dir") + "/src/main/resources/alleTargets.txt");
+	
+		try {
+			FileWriter writer = new FileWriter(file);
+			 
+			for (String zeile: alleTargets)
+			{
+				// Text wird in den Stream geschrieben	
+				writer.write("\""+zeile+"\", ");
+			}
+			 
+			// Schreibt den Stream in die Datei
+			writer.flush();
+			 
+			// Schließt den Stream
+			writer.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+    }
+	
 }

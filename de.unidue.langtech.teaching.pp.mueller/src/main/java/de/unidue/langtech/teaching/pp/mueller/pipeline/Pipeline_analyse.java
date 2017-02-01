@@ -16,6 +16,7 @@ import de.tudarmstadt.ukp.dkpro.core.stopwordremover.StopWordRemover;
 import de.tudarmstadt.ukp.dkpro.core.textcat.LanguageIdentifier;
 import de.unidue.langtech.teaching.pp.mueller.annotators.AnalyseOfSentimentWithFD;
 import de.unidue.langtech.teaching.pp.mueller.annotators.DecisionOfSentiment;
+import de.unidue.langtech.teaching.pp.mueller.annotators.DetectionAndDecisionOfTargetWithFD;
 import de.unidue.langtech.teaching.pp.mueller.annotators.DetectionOfSentimentWithWordnet;
 import de.unidue.langtech.teaching.pp.mueller.annotators.BuildFDsAndWriteToDisk;
 import de.unidue.langtech.teaching.pp.mueller.annotators.DetectionOfSentimentWithFD;
@@ -59,6 +60,7 @@ public class Pipeline_analyse
                         Reader.PARAM_INPUT_FILE, "src/main/resources/test.csv"
                 ),
                 AnalysisEngineFactory.createEngineDescription(ArktweetTokenizer.class),
+                AnalysisEngineFactory.createEngineDescription(DetectionAndDecisionOfTargetWithFD.class),
                 AnalysisEngineFactory.createEngineDescription(AnalyseOfSentimentWithFD.class),
                 AnalysisEngineFactory.createEngineDescription(Evaluator.class)
         );
@@ -74,6 +76,7 @@ public class Pipeline_analyse
                 ),
                 AnalysisEngineFactory.createEngineDescription(ArktweetTokenizer.class),
                 AnalysisEngineFactory.createEngineDescription(StopWordRemover.class, StopWordRemover.PARAM_MODEL_LOCATION, STOPWORD_FILE),
+                AnalysisEngineFactory.createEngineDescription(DetectionAndDecisionOfTargetWithFD.class),
                 AnalysisEngineFactory.createEngineDescription(DetectionOfSentimentWithFD.class),
                 AnalysisEngineFactory.createEngineDescription(DecisionOfSentiment.class),
                 AnalysisEngineFactory.createEngineDescription(Evaluator.class)
@@ -91,6 +94,7 @@ public class Pipeline_analyse
                 AnalysisEngineFactory.createEngineDescription(ArktweetTokenizer.class),
                 AnalysisEngineFactory.createEngineDescription(OpenNlpPosTagger.class, OpenNlpPosTagger.PARAM_LANGUAGE, "en"),
                 AnalysisEngineFactory.createEngineDescription(StopWordRemover.class, StopWordRemover.PARAM_MODEL_LOCATION, STOPWORD_FILE),
+                AnalysisEngineFactory.createEngineDescription(DetectionAndDecisionOfTargetWithFD.class),
                 AnalysisEngineFactory.createEngineDescription(DetectionOfSentimentWithFD.class),
                 AnalysisEngineFactory.createEngineDescription(DetectionOfSentimentWithWordnet.class, DetectionOfSentimentWithWordnet.PARAM_WORDNET_FILE, WORDNET_FILE),
                 AnalysisEngineFactory.createEngineDescription(DecisionOfSentiment.class),

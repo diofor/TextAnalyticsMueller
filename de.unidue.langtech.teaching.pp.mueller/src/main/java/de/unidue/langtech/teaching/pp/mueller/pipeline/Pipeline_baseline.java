@@ -29,7 +29,7 @@ public class Pipeline_baseline {
 			findMostFrequentTargetOnTest();
 			
 			
-			calculateTargetBasline("Hillary Clinton");
+//			calculateTargetBasline("Hillary Clinton");
 	    }
 
 	public static void findMostFrequentSentimentOnTraining() throws ResourceInitializationException, UIMAException, IOException
