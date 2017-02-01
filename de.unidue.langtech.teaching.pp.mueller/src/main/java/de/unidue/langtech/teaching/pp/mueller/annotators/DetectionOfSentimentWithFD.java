@@ -48,7 +48,7 @@ public class DetectionOfSentimentWithFD extends JCasAnnotator_ImplBase
 		
 		for(Token t: tokens)
 		{
-			fd = cfd.getFrequencyDistribution(t.getCoveredText());
+			fd = cfd.getFrequencyDistribution(t.getCoveredText().toLowerCase());
 			if (fd != null)
 			{
 				long summeAnPunkten = 0;
