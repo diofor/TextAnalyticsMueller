@@ -18,10 +18,8 @@ import de.unidue.langtech.teaching.pp.mueller.type.GoldInformation;
 public class BuildFDsAndWriteToDisk extends JCasAnnotator_ImplBase
 {
 	//private FrequencyDistribution<String> fd;
-    private ConditionalFrequencyDistribution<String, String> cfd_rawdata_target;
-    protected static ConditionalFrequencyDistribution<String, String> cfd_rawdata_sentiment;
     private ConditionalFrequencyDistribution<String, String> cfd_target;
-    private ConditionalFrequencyDistribution<String, String> cfd_sentiment;
+    protected static ConditionalFrequencyDistribution<String, String> cfd_sentiment;
     private int counter;
     
     /* 
@@ -32,8 +30,6 @@ public class BuildFDsAndWriteToDisk extends JCasAnnotator_ImplBase
         throws ResourceInitializationException
     {
         super.initialize(context);
-        cfd_rawdata_target = new ConditionalFrequencyDistribution<String, String>();
-        cfd_rawdata_sentiment = new ConditionalFrequencyDistribution<String, String>();
         cfd_target = new ConditionalFrequencyDistribution<String, String>();
         cfd_sentiment = new ConditionalFrequencyDistribution<String, String>();
         counter = 0;
@@ -44,12 +40,12 @@ public class BuildFDsAndWriteToDisk extends JCasAnnotator_ImplBase
 	public void process(JCas aJCas) throws AnalysisEngineProcessException {
 		Collection<Token> tokens = JCasUtil.select(aJCas, Token.class);
 		GoldInformation gold = JCasUtil.selectSingle(aJCas, GoldInformation.class);
-		String cond = gold.getTargetText();
+		String cond = gold.getTarget();
 		String sentiment = gold.getSentiment();
 		for(Token t: tokens)
 		{
-			cfd_rawdata_target.inc(cond, t.getCoveredText());
-			cfd_rawdata_sentiment.inc(t.getCoveredText(), sentiment);
+			cfd_target.inc(t.getCoveredText(), cond);
+			cfd_sentiment.inc(t.getCoveredText(), sentiment);
 			
 			//fd.inc(t.getCoveredText());
 		}
@@ -65,15 +61,15 @@ public class BuildFDsAndWriteToDisk extends JCasAnnotator_ImplBase
     {
         super.collectionProcessComplete();
       
-        for (String condition : cfd_target.getConditions())
-        {
-        	System.out.println(condition+" "+cfd_target.getFrequencyDistribution(condition).getB());
-        }
+//        for (String condition : cfd_target.getConditions())
+//        {
+//        	System.out.println(condition+" "+cfd_target.getFrequencyDistribution(condition).getB());
+//        }
         
         CFDFileManager writer = new CFDFileManager();
         //writer.write(cfd_target, "Target");
-        writer.write(cfd_rawdata_target, "Target");
-        writer.write(cfd_rawdata_sentiment, "Sentiment");
+        writer.write(cfd_target, "Target");
+        writer.write(cfd_sentiment, "Sentiment");
         
         System.out.println("\nBEGIN Auswertung AnalyseWithFD");
         System.out.printf("Es wurden %d Tweets eingelesen.%n", counter);
@@ -81,11 +77,11 @@ public class BuildFDsAndWriteToDisk extends JCasAnnotator_ImplBase
     }
     
     public ConditionalFrequencyDistribution<String, String> getCfd_rawdata_target() {
-		return cfd_rawdata_target;
+		return cfd_target;
 	}
 
 	public ConditionalFrequencyDistribution<String, String> getCfd_rawdata_sentiment() {
-		return cfd_rawdata_sentiment;
+		return cfd_sentiment;
 	}
 
 }

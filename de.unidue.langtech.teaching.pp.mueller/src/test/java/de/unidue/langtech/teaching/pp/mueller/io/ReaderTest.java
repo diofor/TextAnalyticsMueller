@@ -53,14 +53,14 @@ public class ReaderTest {
 		for (JCas jcas : new JCasIterable(reader)) {
 			amountJCasElements++;
 			GoldInformation gold = JCasUtil.selectSingle(jcas, GoldInformation.class);
-			switch (gold.getTargetText()) {
+			switch (gold.getTarget()) {
 			case "Atheism": target++; break;
 			case "Climate Change is a Real Concern": target++; break;
 			case "Feminist Movement": target++; break;
 			case "Hillary Clinton": target++; break;
 			case "Donald Trump": target++; break;
 			case "Legalization of Abortion": target++; break;
-			default: System.out.println(gold.getTargetText());
+			default: System.out.println(gold.getTarget());
 			}
 		}
 		assertEquals(amountJCasElements, target);

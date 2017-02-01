@@ -11,7 +11,7 @@ import org.apache.uima.jcas.tcas.Annotation;
 
 
 /** 
- * Updated by JCasGen Thu Jan 26 11:11:04 CET 2017
+ * Updated by JCasGen Wed Feb 01 13:28:12 CET 2017
  * XML source: /Users/JMac/git/TextAnalyticsMueller/de.unidue.langtech.teaching.pp.mueller/src/main/resources/desc/type/GoldInformation.xml
  * @generated */
 public class GoldInformation extends Annotation {
@@ -77,28 +77,6 @@ public class GoldInformation extends Annotation {
  
     
   //*--------------*
-  //* Feature: TargetText
-
-  /** getter for TargetText - gets 
-   * @generated
-   * @return value of the feature 
-   */
-  public String getTargetText() {
-    if (GoldInformation_Type.featOkTst && ((GoldInformation_Type)jcasType).casFeat_TargetText == null)
-      jcasType.jcas.throwFeatMissing("TargetText", "de.unidue.langtech.teaching.pp.mueller.type.GoldInformation");
-    return jcasType.ll_cas.ll_getStringValue(addr, ((GoldInformation_Type)jcasType).casFeatCode_TargetText);}
-    
-  /** setter for TargetText - sets  
-   * @generated
-   * @param v value to set into the feature 
-   */
-  public void setTargetText(String v) {
-    if (GoldInformation_Type.featOkTst && ((GoldInformation_Type)jcasType).casFeat_TargetText == null)
-      jcasType.jcas.throwFeatMissing("TargetText", "de.unidue.langtech.teaching.pp.mueller.type.GoldInformation");
-    jcasType.ll_cas.ll_setStringValue(addr, ((GoldInformation_Type)jcasType).casFeatCode_TargetText, v);}    
-   
-    
-  //*--------------*
   //* Feature: Stance
 
   /** getter for Stance - gets The Stance of the Tweet.
@@ -162,6 +140,28 @@ public class GoldInformation extends Annotation {
     if (GoldInformation_Type.featOkTst && ((GoldInformation_Type)jcasType).casFeat_Opinion == null)
       jcasType.jcas.throwFeatMissing("Opinion", "de.unidue.langtech.teaching.pp.mueller.type.GoldInformation");
     jcasType.ll_cas.ll_setStringValue(addr, ((GoldInformation_Type)jcasType).casFeatCode_Opinion, v);}    
-  }
+    //*--------------*
+  //* Feature: Target
+
+  /** getter for Target - gets 
+   * @generated
+   * @return value of the feature 
+   */
+  public String getTarget() {
+    if (GoldInformation_Type.featOkTst && ((GoldInformation_Type)jcasType).casFeat_Target == null)
+      jcasType.jcas.throwFeatMissing("Target", "de.unidue.langtech.teaching.pp.mueller.type.GoldInformation");
+    return jcasType.ll_cas.ll_getStringValue(addr, ((GoldInformation_Type)jcasType).casFeatCode_Target);}
+    
+  /** setter for Target - sets  
+   * @generated
+   * @param v value to set into the feature 
+   */
+  public void setTarget(String v) {
+    if (GoldInformation_Type.featOkTst && ((GoldInformation_Type)jcasType).casFeat_Target == null)
+      jcasType.jcas.throwFeatMissing("Target", "de.unidue.langtech.teaching.pp.mueller.type.GoldInformation");
+    jcasType.ll_cas.ll_setStringValue(addr, ((GoldInformation_Type)jcasType).casFeatCode_Target, v);}    
+   
+    
+}
 
     

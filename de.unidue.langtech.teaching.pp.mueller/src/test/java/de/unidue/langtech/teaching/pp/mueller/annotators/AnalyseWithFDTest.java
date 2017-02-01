@@ -34,7 +34,7 @@ public class AnalyseWithFDTest {
 		JCas jcas = JCasFactory.createJCas();
 		jcas.setDocumentText("Das ist der erste Test");
 		GoldInformation gold = new GoldInformation(jcas);
-		gold.setTargetText("Targettext");
+		gold.setTarget("Targettext");
 		gold.setSentiment("pos");
 		gold.addToIndexes();
 		

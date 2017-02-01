@@ -15,7 +15,7 @@ public class Printer
     public void process(JCas jcas)
         throws AnalysisEngineProcessException
     {
-    	System.out.println((JCasUtil.selectSingle(jcas, GoldInformation.class)).getTargetText() +":\t"+jcas.getDocumentText());
+    	System.out.println((JCasUtil.selectSingle(jcas, GoldInformation.class)).getTarget() +":\t"+jcas.getDocumentText());
     	
     	
     	

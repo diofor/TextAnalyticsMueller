@@ -11,7 +11,7 @@ import org.apache.uima.cas.Feature;
 import org.apache.uima.jcas.tcas.Annotation_Type;
 
 /** 
- * Updated by JCasGen Thu Jan 26 11:11:05 CET 2017
+ * Updated by JCasGen Wed Feb 01 13:28:12 CET 2017
  * @generated */
 public class GoldInformation_Type extends Annotation_Type {
   /** @generated */
@@ -21,30 +21,6 @@ public class GoldInformation_Type extends Annotation_Type {
      @modifiable */
   @SuppressWarnings ("hiding")
   public final static boolean featOkTst = JCasRegistry.getFeatOkTst("de.unidue.langtech.teaching.pp.mueller.type.GoldInformation");
- 
-  /** @generated */
-  final Feature casFeat_TargetText;
-  /** @generated */
-  final int     casFeatCode_TargetText;
-  /** @generated
-   * @param addr low level Feature Structure reference
-   * @return the feature value 
-   */ 
-  public String getTargetText(int addr) {
-        if (featOkTst && casFeat_TargetText == null)
-      jcas.throwFeatMissing("TargetText", "de.unidue.langtech.teaching.pp.mueller.type.GoldInformation");
-    return ll_cas.ll_getStringValue(addr, casFeatCode_TargetText);
-  }
-  /** @generated
-   * @param addr low level Feature Structure reference
-   * @param v value to set 
-   */    
-  public void setTargetText(int addr, String v) {
-        if (featOkTst && casFeat_TargetText == null)
-      jcas.throwFeatMissing("TargetText", "de.unidue.langtech.teaching.pp.mueller.type.GoldInformation");
-    ll_cas.ll_setStringValue(addr, casFeatCode_TargetText, v);}
-    
-  
  
   /** @generated */
   final Feature casFeat_Stance;
@@ -120,6 +96,30 @@ public class GoldInformation_Type extends Annotation_Type {
 
 
 
+  /** @generated */
+  final Feature casFeat_Target;
+  /** @generated */
+  final int     casFeatCode_Target;
+  /** @generated
+   * @param addr low level Feature Structure reference
+   * @return the feature value 
+   */ 
+  public String getTarget(int addr) {
+        if (featOkTst && casFeat_Target == null)
+      jcas.throwFeatMissing("Target", "de.unidue.langtech.teaching.pp.mueller.type.GoldInformation");
+    return ll_cas.ll_getStringValue(addr, casFeatCode_Target);
+  }
+  /** @generated
+   * @param addr low level Feature Structure reference
+   * @param v value to set 
+   */    
+  public void setTarget(int addr, String v) {
+        if (featOkTst && casFeat_Target == null)
+      jcas.throwFeatMissing("Target", "de.unidue.langtech.teaching.pp.mueller.type.GoldInformation");
+    ll_cas.ll_setStringValue(addr, casFeatCode_Target, v);}
+    
+  
+ 
   /** initialize variables to correspond with Cas Type and Features
 	 * @generated
 	 * @param jcas JCas
@@ -130,8 +130,8 @@ public class GoldInformation_Type extends Annotation_Type {
     casImpl.getFSClassRegistry().addGeneratorForType((TypeImpl)this.casType, getFSGenerator());
 
  
-    casFeat_TargetText = jcas.getRequiredFeatureDE(casType, "TargetText", "uima.cas.String", featOkTst);
-    casFeatCode_TargetText  = (null == casFeat_TargetText) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_TargetText).getCode();
+    casFeat_Target = jcas.getRequiredFeatureDE(casType, "Target", "uima.cas.String", featOkTst);
+    casFeatCode_Target  = (null == casFeat_Target) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_Target).getCode();
 
  
     casFeat_Stance = jcas.getRequiredFeatureDE(casType, "Stance", "uima.cas.String", featOkTst);

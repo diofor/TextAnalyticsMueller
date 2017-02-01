@@ -7,32 +7,27 @@ import org.apache.uima.fit.util.JCasUtil;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.resource.ResourceInitializationException;
 
+import de.tudarmstadt.ukp.dkpro.core.api.frequency.util.FrequencyDistribution;
 import de.unidue.langtech.teaching.pp.mueller.type.GoldInformation;
 
-public class FindMostFrequentSentiment  extends JCasAnnotator_ImplBase {
+public class FindMostFrequentTarget  extends JCasAnnotator_ImplBase {
 
-	int pos, neg, other, sum;
+	FrequencyDistribution<String> fd;
+	int sum;
 	
 	@Override
     public void initialize(UimaContext context)
         throws ResourceInitializationException
     {
         super.initialize(context);
-        pos = 0;
-        neg = 0;
-        other = 0;
+        fd = new FrequencyDistribution<String>();
         sum = 0;
     }
 	
 	@Override
 	public void process(JCas aJCas) throws AnalysisEngineProcessException {
 		GoldInformation gold = JCasUtil.selectSingle(aJCas, GoldInformation.class);
-		switch (gold.getSentiment()) 
-		{
-			case "pos":	++pos; break;
-			case "neg":	++neg; break; 
-			case "other": ++other; break;
-		}
+		fd.inc(gold.getTarget());
 		++sum;
 	}
 	
@@ -40,15 +35,13 @@ public class FindMostFrequentSentiment  extends JCasAnnotator_ImplBase {
 	public void collectionProcessComplete() throws AnalysisEngineProcessException
 	{
 		super.collectionProcessComplete();
-		String max = "";
-		if (pos > neg && pos > other) max = "pos"; 
-		if (neg > pos && neg > other) max = "neg"; 
-		if (other > neg && other > pos) max = "other";
-		System.out.println("Die Verteilung der Sentiments:");
-		System.out.printf("pos:\t%d \tvon %d - %.2f%% %n", pos, sum, ((double)pos/sum) * 100);
-		System.out.printf("neg:\t%d \tvon %d - %.2f%% %n", neg, sum, ((double)neg/sum) * 100);
-		System.out.printf("other:\t%d \tvon %d - %.2f%% %n", other, sum, ((double)other/sum) * 100);
-		System.out.printf("The most frequent sentiment in this data was: \"%s\" %n %n", max);
+		String max = fd.getSampleWithMaxFreq();
+		System.out.println("Die Verteilung der Targets:");
+		for(String key : fd.getKeys())
+		{
+			System.out.printf("%d von %d - %.2f%% \t| %s%n", fd.getCount(key), sum, ((double)fd.getCount(key)/sum) * 100, key);
+		}
+		System.out.printf("The most frequent target in this data was: \"%s\" %n %n", max);
 	}
 
 	

@@ -34,7 +34,7 @@ public class Pipeline_analyse
     {
     	buildFDs();
     	detectViaFDs();
-    	detectViaFDsAdvanced();
+    	//detectViaFDsAdvanced();
     	detectViaFDandWordnet();
     }
     

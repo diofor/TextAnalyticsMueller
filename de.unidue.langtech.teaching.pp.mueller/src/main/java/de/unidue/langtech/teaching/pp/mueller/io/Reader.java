@@ -125,7 +125,7 @@ public class Reader
         // add gold standard value as annotation
         // the first line is the language code
         GoldInformation goldInf = new GoldInformation(aJCas);
-        goldInf.setTargetText(target);
+        goldInf.setTarget(target);
         goldInf.setStance(stance);
         goldInf.setSentiment(sentiment);
         goldInf.setOpinion(opinion);
