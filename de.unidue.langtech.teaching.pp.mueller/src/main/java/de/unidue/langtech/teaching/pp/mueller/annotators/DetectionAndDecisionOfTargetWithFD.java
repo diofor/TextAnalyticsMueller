@@ -13,22 +13,18 @@ import org.apache.uima.fit.component.JCasAnnotator_ImplBase;
 import org.apache.uima.fit.util.JCasUtil;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.resource.ResourceInitializationException;
-import org.apache.uima.jcas.cas.LongArray;
 
 import de.tudarmstadt.ukp.dkpro.core.api.frequency.util.ConditionalFrequencyDistribution;
 import de.tudarmstadt.ukp.dkpro.core.api.frequency.util.FrequencyDistribution;
-//import de.tudarmstadt.ukp.dkpro.core.api.frequency.util.FrequencyDistribution;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 import de.unidue.langtech.teaching.pp.mueller.io.CFDFileManager;
 import de.unidue.langtech.teaching.pp.mueller.type.DetectedInformation;
 
 public class DetectionAndDecisionOfTargetWithFD extends JCasAnnotator_ImplBase
 {
-	//private FrequencyDistribution<String> fd_token;
     private ConditionalFrequencyDistribution<String, String> cfd;
     private FrequencyDistribution<String> fd_token;
 	private FrequencyDistribution<String> fd_tweet;
-	private List<String> alleTargets;
    
     
     /* 
@@ -42,7 +38,6 @@ public class DetectionAndDecisionOfTargetWithFD extends JCasAnnotator_ImplBase
         CFDFileManager fm = new CFDFileManager();
         cfd = fm.read("Target");
         fd_tweet = new FrequencyDistribution<String>();
-        alleTargets = new ArrayList<String>();
     }
 	
 	
@@ -57,13 +52,10 @@ public class DetectionAndDecisionOfTargetWithFD extends JCasAnnotator_ImplBase
 			{
 				for(String keyForToken : fd_token.getKeys())
 				{
-					
 					fd_tweet.addSample(keyForToken, fd_token.getCount(keyForToken));
 				}
 			}
-			
 		}
-		
 		
 
 		//Bestimmung der Targets welches am häufigsten vorkam.
@@ -83,46 +75,9 @@ public class DetectionAndDecisionOfTargetWithFD extends JCasAnnotator_ImplBase
 		DetectedInformation di = JCasUtil.selectSingle(aJCas, DetectedInformation.class);
 		di.setTarget(haeufigstesTarget);
 		di.addToIndexes();
-		
-		for(String target : fd_tweet.getKeys())
-		{
-			if (!(alleTargets.contains(target))) 
-			{
-				alleTargets.add(target);
-			}
-		}
-		
-		
 
 		//Werte fürd die nächste jCas zurücksetzen.
-		fd_tweet.clear();
+		fd_tweet = new FrequencyDistribution<String>();
+		//eventuell wenn der bug mit clear weg ist hier: fd_tweet.clear();
 	}
-	
-	
-	@Override
-    public void collectionProcessComplete()
-        throws AnalysisEngineProcessException
-    {
-		// File anlegen
-		File file = new File(System.getProperty("user.dir") + "/src/main/resources/alleTargets.txt");
-	
-		try {
-			FileWriter writer = new FileWriter(file);
-			 
-			for (String zeile: alleTargets)
-			{
-				// Text wird in den Stream geschrieben	
-				writer.write("\""+zeile+"\", ");
-			}
-			 
-			// Schreibt den Stream in die Datei
-			writer.flush();
-			 
-			// Schließt den Stream
-			writer.close();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-    }
-	
 }

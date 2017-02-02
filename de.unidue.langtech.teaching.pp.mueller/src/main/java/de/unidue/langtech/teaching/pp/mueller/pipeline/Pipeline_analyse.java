@@ -34,8 +34,9 @@ public class Pipeline_analyse
         throws Exception
     {
     	buildFDs();
-    	detectViaFDs();
-    	detectViaFDsAdvanced();
+//    	detectViaFDs();
+//    	detectViaWordnet();
+//    	detectViaFDsAdvanced();
     	detectViaFDandWordnet();
     }
     
@@ -96,6 +97,24 @@ public class Pipeline_analyse
                 AnalysisEngineFactory.createEngineDescription(StopWordRemover.class, StopWordRemover.PARAM_MODEL_LOCATION, STOPWORD_FILE),
                 AnalysisEngineFactory.createEngineDescription(DetectionAndDecisionOfTargetWithFD.class),
                 AnalysisEngineFactory.createEngineDescription(DetectionOfSentimentWithFD.class),
+                AnalysisEngineFactory.createEngineDescription(DetectionOfSentimentWithWordnet.class, DetectionOfSentimentWithWordnet.PARAM_WORDNET_FILE, WORDNET_FILE),
+                AnalysisEngineFactory.createEngineDescription(DecisionOfSentiment.class),
+                AnalysisEngineFactory.createEngineDescription(Evaluator.class)
+        );
+    }
+    
+    public static void detectViaWordnet() throws ResourceInitializationException, UIMAException, IOException
+    {
+    	
+    	SimplePipeline.runPipeline(
+                CollectionReaderFactory.createReader(
+                        Reader.class,
+                        Reader.PARAM_INPUT_FILE, "src/main/resources/test.csv"
+                ),
+                AnalysisEngineFactory.createEngineDescription(ArktweetTokenizer.class),
+                AnalysisEngineFactory.createEngineDescription(OpenNlpPosTagger.class, OpenNlpPosTagger.PARAM_LANGUAGE, "en"),
+                AnalysisEngineFactory.createEngineDescription(StopWordRemover.class, StopWordRemover.PARAM_MODEL_LOCATION, STOPWORD_FILE),
+                AnalysisEngineFactory.createEngineDescription(DetectionAndDecisionOfTargetWithFD.class),
                 AnalysisEngineFactory.createEngineDescription(DetectionOfSentimentWithWordnet.class, DetectionOfSentimentWithWordnet.PARAM_WORDNET_FILE, WORDNET_FILE),
                 AnalysisEngineFactory.createEngineDescription(DecisionOfSentiment.class),
                 AnalysisEngineFactory.createEngineDescription(Evaluator.class)
