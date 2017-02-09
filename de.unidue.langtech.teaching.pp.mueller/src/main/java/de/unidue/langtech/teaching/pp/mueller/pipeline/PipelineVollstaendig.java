@@ -9,21 +9,19 @@ import org.apache.uima.fit.factory.CollectionReaderFactory;
 import org.apache.uima.fit.pipeline.SimplePipeline;
 import org.apache.uima.resource.ResourceInitializationException;
 
-import de.tudarmstadt.ukp.dkpro.core.arktools.ArktweetPosTagger;
 import de.tudarmstadt.ukp.dkpro.core.arktools.ArktweetTokenizer;
 import de.tudarmstadt.ukp.dkpro.core.opennlp.OpenNlpPosTagger;
 import de.tudarmstadt.ukp.dkpro.core.stopwordremover.StopWordRemover;
-import de.tudarmstadt.ukp.dkpro.core.textcat.LanguageIdentifier;
 import de.unidue.langtech.teaching.pp.mueller.annotators.AnalyseOfSentimentWithFD;
+import de.unidue.langtech.teaching.pp.mueller.annotators.BuildFDsAndWriteToDisk;
 import de.unidue.langtech.teaching.pp.mueller.annotators.DecisionOfSentiment;
 import de.unidue.langtech.teaching.pp.mueller.annotators.DetectionAndDecisionOfTargetWithFD;
-import de.unidue.langtech.teaching.pp.mueller.annotators.DetectionOfSentimentWithWordnet;
-import de.unidue.langtech.teaching.pp.mueller.annotators.BuildFDsAndWriteToDisk;
 import de.unidue.langtech.teaching.pp.mueller.annotators.DetectionOfSentimentWithFD;
+import de.unidue.langtech.teaching.pp.mueller.annotators.DetectionOfSentimentWithWordnet;
 import de.unidue.langtech.teaching.pp.mueller.annotators.Evaluator;
 import de.unidue.langtech.teaching.pp.mueller.io.Reader;
 
-public class Pipeline_analyse
+public class PipelineVollstaendig
 {
 	private static final File STOPWORD_FILE = new File("src/main/resources/stopwords_en.txt");
 	private static final File WORDNET_FILE = new File("src/main/resources/SentiWordNet_3.0.0.txt");
@@ -34,9 +32,9 @@ public class Pipeline_analyse
         throws Exception
     {
     	buildFDs();
-//    	detectViaFDs();
-//    	detectViaWordnet();
-//    	detectViaFDsAdvanced();
+    	detectViaFDs(); //eine sehr ursprüngliche Variante
+    	detectViaWordnet();
+    	detectViaFDsAdvanced(); //die Variante die ich auch im Vortrag erwähnt habe
     	detectViaFDandWordnet();
     }
     

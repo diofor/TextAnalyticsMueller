@@ -13,7 +13,7 @@ import de.unidue.langtech.teaching.pp.mueller.type.GoldInformation;
 //import de.unidue.langtech.teaching.pp.mueller.type.DetectedLanguage;
 //import de.unidue.langtech.teaching.pp.mueller.type.GoldLanguage;
 
-public class BaselineEvaluatorTarget
+public class BaselineEvaluatorCombined
     extends JCasAnnotator_ImplBase
 {
 
@@ -22,6 +22,9 @@ public class BaselineEvaluatorTarget
     public static final String PARAM_TARGET = "Target";
     @ConfigurationParameter(name = PARAM_TARGET, mandatory = true)
     private String choosenTarget;
+    public static final String PARAM_SENTIMENT = "Sentiment";
+    @ConfigurationParameter(name = PARAM_SENTIMENT, mandatory = true)
+    private String choosenSentiment;
     
     /* 
      * This is called BEFORE any documents are processed.
@@ -44,7 +47,7 @@ public class BaselineEvaluatorTarget
         throws AnalysisEngineProcessException
     {
     	GoldInformation gold = JCasUtil.selectSingle(jcas, GoldInformation.class);
-    	if (gold.getTarget().equals(choosenTarget)) ++correct;
+    	if (gold.getTarget().equals(choosenTarget) && gold.getSentiment().equals(choosenSentiment)) ++correct;
     	++nrOfDocuments;
     }
 
@@ -58,7 +61,7 @@ public class BaselineEvaluatorTarget
     {
         super.collectionProcessComplete();
         
-        System.out.printf("%d out of %d are correct, if you choose %s every time as Target.%n", correct, nrOfDocuments, choosenTarget);
-        System.out.printf("The TargetBaseline is %.6f%%.", (double)correct/nrOfDocuments*100);
+        System.out.printf("%d out of %d are correct, if you choose %s every time as Target and %s every time as Sentiment.%n", correct, nrOfDocuments, choosenTarget, choosenSentiment);
+        System.out.printf("The combined Baseline is %.6f%%.", (double)correct/nrOfDocuments*100);
     }
 }

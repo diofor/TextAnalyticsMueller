@@ -55,6 +55,7 @@ public class Evaluator
     	GoldInformation gold = JCasUtil.selectSingle(jcas, GoldInformation.class);
     	DetectedInformation detec = JCasUtil.selectSingle(jcas, DetectedInformation.class);
     	
+    	//Überprüfungen für das Sentiment (bestimmen von tp fn fp tn)
     	for (int i = 0; i < sentiments.length; ++i)
     	{
 	    	if (gold.getSentiment().equals(sentiments[i]))
@@ -80,6 +81,7 @@ public class Evaluator
 	    	}
     	}	
     	
+    	//Überprüfungen für das Target (bestimmen von tp fn fp tn)
     	for (int i = 0; i < targets.length; ++i)
     	{
 	    	if (gold.getTarget().equals(targets[i]))
@@ -104,20 +106,16 @@ public class Evaluator
 	    		}
 	    	}
     	}	
-//    	System.out.printf("Gold: %s%nDetec: %s%n%n", gold.getTarget(), detec.getTarget());
-    	//if (gold.getSentiment().equals(detec.getSentiment())) ++correct;
     	++nrOfDocuments;
     }
 
 
-    /* 
-     * This is called AFTER all documents have been processed.
-     */
     @Override
     public void collectionProcessComplete()
         throws AnalysisEngineProcessException
     {
         super.collectionProcessComplete();
+        
         //Sentiment
         double precision_sentiment[] = {0,0,0};
         double recall_sentiment[] = {0,0,0};
@@ -128,7 +126,7 @@ public class Evaluator
         	f1_sentiment[i] = 2*((precision_sentiment[i]*recall_sentiment[i])/(precision_sentiment[i]+recall_sentiment[i]));
         }
                         
-        System.out.println(); //leerzeiles
+        System.out.println(); //leerzeile
         TableList results_sentiment = new TableList(4, "Sentiment", "Precision", "Recall", "F-measure");
         for(int i = 0; i < sentiments.length; ++i){
         	String precision_text = String.format("%.4f (%d/%d)", precision_sentiment[i], tp_sentiment[i], tp_sentiment[i]+fp_sentiment[i]);
@@ -150,7 +148,7 @@ public class Evaluator
         	f1_target[i] = 2*((precision_target[i]*recall_target[i])/(precision_target[i]+recall_target[i]));
         }
         
-        System.out.println("\n "); //leerzeiles
+        System.out.println("\n "); //leerzeile
         TableList results_target = new TableList(4, "Target", "Precision", "Recall", "F-measure");
         for(int i = 0; i < targets.length; ++i){
         	String precision_text = String.format("%.4f (%d/%d)", precision_target[i], tp_target[i], tp_target[i]+fp_target[i]);
@@ -160,8 +158,5 @@ public class Evaluator
         }
         results_target.print();
         System.out.printf("%nAccuracy:   %.7f (%d/%d)%n", (double)correct_target/nrOfDocuments, correct_target, nrOfDocuments);
-        
-//        System.out.println("\n"+correct + " out of " + nrOfDocuments + " are correct.");
-//        System.out.println((double)correct/nrOfDocuments*100 +"% is the Accurency.");
     }
 }

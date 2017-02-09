@@ -9,28 +9,43 @@ import org.apache.uima.fit.pipeline.SimplePipeline;
 import org.apache.uima.resource.ResourceInitializationException;
 
 import de.tudarmstadt.ukp.dkpro.core.arktools.ArktweetTokenizer;
-import de.unidue.langtech.teaching.pp.mueller.annotators.BaselineEvaluatorSentiment;
-import de.unidue.langtech.teaching.pp.mueller.annotators.BaselineEvaluatorTarget;
+import de.unidue.langtech.teaching.pp.mueller.annotators.BaselineSetter;
+import de.unidue.langtech.teaching.pp.mueller.annotators.Evaluator;
 import de.unidue.langtech.teaching.pp.mueller.annotators.FindMostFrequentSentiment;
 import de.unidue.langtech.teaching.pp.mueller.annotators.FindMostFrequentTarget;
 import de.unidue.langtech.teaching.pp.mueller.io.Reader;
 
-public class Pipeline_baseline {
+public class PipelineBaseline {
 
 	public static void main(String[] args)
 	        throws Exception
-	    {
-//			findMostFrequentSentimentOnTraining();
-//			findMostFrequentSentimentOnTest();
+    {
+		findMostFrequentSentimentOnTraining();
+//		findMostFrequentSentimentOnTest();
+			
+		findMostFrequentTargetOnTraining();
+//		findMostFrequentTargetOnTest();
 		
-//			calculateSentimentBasline("neg");
-			
-			findMostFrequentTargetOnTraining();
-			findMostFrequentTargetOnTest();
-			
-			
-//			calculateTargetBasline("Hillary Clinton");
-	    }
+		calculateBasline("neg", "Hillary Clinton"); //Die Ergebnisse aus den beiden vorherigen Methoden. 
+    }
+	
+	public static void calculateBasline(String mostFrequentSentimentOnTraining, String mostFrequentTargetOnTraining) throws ResourceInitializationException, UIMAException, IOException
+	{
+		System.out.printf("%nMit dem Sentiment %s und dem Target %s wird nun also eine Basline durch einfaches setzen dieser Werte für alle CAS-Elemente errechnet.%n", mostFrequentSentimentOnTraining, mostFrequentTargetOnTraining);
+		
+        SimplePipeline.runPipeline(
+                CollectionReaderFactory.createReader(
+                        Reader.class,
+                        Reader.PARAM_INPUT_FILE, "src/main/resources/train.csv"
+                ),
+                AnalysisEngineFactory.createEngineDescription(ArktweetTokenizer.class),
+                AnalysisEngineFactory.createEngineDescription(BaselineSetter.class,
+                		BaselineSetter.PARAM_SENTIMENT, mostFrequentSentimentOnTraining,
+                		BaselineSetter.PARAM_TARGET, mostFrequentTargetOnTraining),
+                AnalysisEngineFactory.createEngineDescription(Evaluator.class)
+                
+        );
+	}
 
 	public static void findMostFrequentSentimentOnTraining() throws ResourceInitializationException, UIMAException, IOException
 	{
@@ -82,32 +97,6 @@ public class Pipeline_baseline {
                 ),
                 AnalysisEngineFactory.createEngineDescription(ArktweetTokenizer.class),
                 AnalysisEngineFactory.createEngineDescription(FindMostFrequentTarget.class)
-        );
-	}
-	
-	public static void calculateSentimentBasline(String mostFrequentSentimentOnTraining) throws ResourceInitializationException, UIMAException, IOException
-	{
-		//Pipeline um eine Basline mit dem häufigsten Sentiment zu bestimmen.
-        SimplePipeline.runPipeline(
-                CollectionReaderFactory.createReader(
-                        Reader.class,
-                        Reader.PARAM_INPUT_FILE, "src/main/resources/test.csv"
-                ),
-                AnalysisEngineFactory.createEngineDescription(ArktweetTokenizer.class),
-                AnalysisEngineFactory.createEngineDescription(BaselineEvaluatorSentiment.class, BaselineEvaluatorSentiment.PARAM_SENTIMENT, mostFrequentSentimentOnTraining)
-        );
-	}
-	
-	public static void calculateTargetBasline(String mostTargetSentimentOnTraining) throws ResourceInitializationException, UIMAException, IOException
-	{
-		//Pipeline um eine Basline mit dem häufigsten Sentiment zu bestimmen.
-        SimplePipeline.runPipeline(
-                CollectionReaderFactory.createReader(
-                        Reader.class,
-                        Reader.PARAM_INPUT_FILE, "src/main/resources/test.csv"
-                ),
-                AnalysisEngineFactory.createEngineDescription(ArktweetTokenizer.class),
-                AnalysisEngineFactory.createEngineDescription(BaselineEvaluatorTarget.class, BaselineEvaluatorTarget.PARAM_TARGET, mostTargetSentimentOnTraining)
         );
 	}
 }

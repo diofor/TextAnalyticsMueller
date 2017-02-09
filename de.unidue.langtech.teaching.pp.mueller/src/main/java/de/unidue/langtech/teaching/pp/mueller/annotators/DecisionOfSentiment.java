@@ -96,9 +96,12 @@ public class DecisionOfSentiment extends JCasAnnotator_ImplBase{
         throws AnalysisEngineProcessException
     {
         super.collectionProcessComplete();
+        if (up > 0 || down > 0){
+        	System.out.println("\nBEGIN Auswertung DecisionOfSentiment");
+        	System.out.println("Hier ist direkt die Auswirkung von SentiWordnet auf die Ergebnisse zu sehen.");
+	        System.out.printf("Es wurde %d (%.2f%%) mal ins positive und %d (%.2f%%) mal ins negative korrigiert.%n", up, (double)up/counter*100 , down, (double)down/counter*100);
+	        System.out.println("ENDE Auswertung DecisionOfSentiment\n");
+        }
         
-        System.out.println("\nBEGIN Auswertung DecisionOfSentiment");
-        System.out.printf("Es wurde %d (%.2f%%) mal nach oben korrigiert und %d (%.2f%%) mal nach unten.%n", up, (double)up/counter*100 , down, (double)down/counter*100);
-        System.out.println("ENDE Auswertung DecisionOfSentiment\n");
     }
 }

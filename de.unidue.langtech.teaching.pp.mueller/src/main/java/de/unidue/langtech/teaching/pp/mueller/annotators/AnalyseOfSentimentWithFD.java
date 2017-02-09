@@ -19,17 +19,12 @@ import de.unidue.langtech.teaching.pp.mueller.type.GoldInformation;
 
 public class AnalyseOfSentimentWithFD extends JCasAnnotator_ImplBase
 {
-	//private FrequencyDistribution<String> fd;
     private ConditionalFrequencyDistribution<String, String> cfd;
     private FrequencyDistribution<String> fd;
     private long jcasCounter;
     private long trefferCounter;
     
-   
     
-    /* 
-     * This is called BEFORE any documents are processed.
-     */
     @Override
     public void initialize(UimaContext context)
         throws ResourceInitializationException

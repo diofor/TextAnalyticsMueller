@@ -1,11 +1,6 @@
 package de.unidue.langtech.teaching.pp.mueller.annotators;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
 
 import org.apache.uima.UimaContext;
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
@@ -27,9 +22,6 @@ public class DetectionAndDecisionOfTargetWithFD extends JCasAnnotator_ImplBase
 	private FrequencyDistribution<String> fd_tweet;
    
     
-    /* 
-     * This is called BEFORE any documents are processed.
-     */
     @Override
     public void initialize(UimaContext context)
         throws ResourceInitializationException
@@ -52,7 +44,7 @@ public class DetectionAndDecisionOfTargetWithFD extends JCasAnnotator_ImplBase
 			{
 				for(String keyForToken : fd_token.getKeys())
 				{
-					fd_tweet.addSample(keyForToken, fd_token.getCount(keyForToken));
+					fd_tweet.addSample(keyForToken, Math.round(fd_token.getCount(keyForToken)/fd_token.getN()*100));
 				}
 			}
 		}

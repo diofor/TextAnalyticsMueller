@@ -20,7 +20,7 @@ import de.unidue.langtech.teaching.pp.mueller.io.CFDFileManager;
 import de.unidue.langtech.teaching.pp.mueller.io.vergleicheCFDs;
 import de.unidue.langtech.teaching.pp.mueller.type.GoldInformation;
 
-public class AnalyseWithFDTest {
+public class BuildFDsAndWriteToDiskTest {
 	
 	@Test
 	public void testCollectionProcessComplete() throws UIMAException

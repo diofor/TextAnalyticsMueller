@@ -57,6 +57,7 @@ public class Reader
         throws IOException, CollectionException
     {
     	String line = lines.get(currentLine);
+    	line.replace("#SemST", " "); //verfälscht nur das Ergebnis
     	String tweet = "";
     	String target = "";
     	String stance = "";
@@ -100,60 +101,24 @@ public class Reader
 		//sentiment
 		index = ++indexUpper;
 		sentiment = line.substring(index);
-        
-/*
-        String nextLine = null;
-        for (; currentLine < lines.size(); currentLine++) {
 
-            // get the current line
-            nextLine = lines.get(currentLine);
-
-            // empty line = end of entry
-            if (nextLine.isEmpty()) {
-                currentLine++;
-                break;
-            }
-
-            entry.add(nextLine);
-        }
-        */
-        
-        // 'entry' contains now one language code with all tokens of a sentence
-        // position 0: language code
-        // position 1 -> N: tokens
+		
+		target.trim();
+		opinion.trim();
 
         // add gold standard value as annotation
-        // the first line is the language code
         GoldInformation goldInf = new GoldInformation(aJCas);
         goldInf.setTarget(target);
         goldInf.setStance(stance);
         goldInf.setSentiment(sentiment);
         goldInf.setOpinion(opinion);
         
-        //---------------goldLanguage.setLanguage(entry.get(0));
         goldInf.addToIndexes();
         
         DetectedInformation df = new DetectedInformation(aJCas);
         df.addToIndexes();
         
-        /*
-        String documentText = "";
-        for (int i = 1; i < entry.size(); i++) {
-            String word = entry.get(i);
-            documentText += word;
-
-            // add the token annotated as own type
-            int start = documentText.length() - word.length();
-            int end = documentText.length();
-            Token t = new Token(aJCas, start, end);
-            t.addToIndexes();
-
-            // append space as separator for next token
-            documentText += " ";
-        }
-        */
-
-        
+        tweet.trim();
         aJCas.setDocumentText(tweet);
         currentLine++;
 
