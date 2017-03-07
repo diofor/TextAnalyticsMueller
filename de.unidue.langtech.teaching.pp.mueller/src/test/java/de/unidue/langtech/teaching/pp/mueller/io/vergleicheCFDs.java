@@ -37,7 +37,6 @@ public class vergleicheCFDs {
 				if (!(cfd1.getCount(condition, key) == cfd2.getCount(condition, key))) return false; 
 			}
 		}
-//			System.out.println(cfd1.getConditions().equals(cfd2.getConditions()));
 		return true;
 	}
 

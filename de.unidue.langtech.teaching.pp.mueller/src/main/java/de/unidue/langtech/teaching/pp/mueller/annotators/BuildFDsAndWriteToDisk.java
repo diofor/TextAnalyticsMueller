@@ -17,7 +17,7 @@ import de.unidue.langtech.teaching.pp.mueller.type.GoldInformation;
 
 public class BuildFDsAndWriteToDisk extends JCasAnnotator_ImplBase
 {
-    private ConditionalFrequencyDistribution<String, String> cfd_target;
+    protected static ConditionalFrequencyDistribution<String, String> cfd_target;
     protected static ConditionalFrequencyDistribution<String, String> cfd_sentiment;
     private int counter;
     
@@ -30,13 +30,13 @@ public class BuildFDsAndWriteToDisk extends JCasAnnotator_ImplBase
         cfd_sentiment = new ConditionalFrequencyDistribution<String, String>();
         counter = 0;
     }
-	
-	
-	@Override
-	public void process(JCas aJCas) throws AnalysisEngineProcessException {
+    
+    @Override
+    public void process(JCas aJCas) throws AnalysisEngineProcessException {
 		Collection<Token> tokens = JCasUtil.select(aJCas, Token.class);
 		GoldInformation gold = JCasUtil.selectSingle(aJCas, GoldInformation.class);
 		String cond = gold.getTarget();
+		System.out.println("Condition ist: "+ cond);
 		String sentiment = gold.getSentiment();
 		for(Token t: tokens)
 		{
@@ -44,11 +44,10 @@ public class BuildFDsAndWriteToDisk extends JCasAnnotator_ImplBase
 			cfd_sentiment.inc(t.getCoveredText().toLowerCase(), sentiment);
 		}
 		++counter;
-	}
+    }
 	
     @Override
-    public void collectionProcessComplete()
-        throws AnalysisEngineProcessException
+    public void collectionProcessComplete() throws AnalysisEngineProcessException
     {
         super.collectionProcessComplete();
         
@@ -63,10 +62,10 @@ public class BuildFDsAndWriteToDisk extends JCasAnnotator_ImplBase
     
     public ConditionalFrequencyDistribution<String, String> getCfd_rawdata_target() {
 		return cfd_target;
-	}
+    }
 
-	public ConditionalFrequencyDistribution<String, String> getCfd_rawdata_sentiment() {
-		return cfd_sentiment;
-	}
+    public ConditionalFrequencyDistribution<String, String> getCfd_rawdata_sentiment() {
+    		return cfd_sentiment;
+    }
 
 }
