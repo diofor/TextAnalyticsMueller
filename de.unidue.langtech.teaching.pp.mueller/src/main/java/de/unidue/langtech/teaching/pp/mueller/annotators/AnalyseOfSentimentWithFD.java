@@ -15,15 +15,13 @@ import de.tudarmstadt.ukp.dkpro.core.api.frequency.util.FrequencyDistribution;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 import de.unidue.langtech.teaching.pp.mueller.io.CFDFileManager;
 import de.unidue.langtech.teaching.pp.mueller.type.DetectedInformation;
-import de.unidue.langtech.teaching.pp.mueller.type.GoldInformation;
 
 public class AnalyseOfSentimentWithFD extends JCasAnnotator_ImplBase
 {
     private ConditionalFrequencyDistribution<String, String> cfd;
     private FrequencyDistribution<String> fd;
-    private long jcasCounter;
-    private long trefferCounter;
-    
+    ////weil auf den Trainignsdaten das häufigste Sentiment neg ist.
+    private static final String defaultSentimentOfJCas = "neg";
     
     @Override
     public void initialize(UimaContext context)
@@ -32,8 +30,6 @@ public class AnalyseOfSentimentWithFD extends JCasAnnotator_ImplBase
         super.initialize(context);
         CFDFileManager fm = new CFDFileManager();
         cfd = fm.read("Sentiment");
-        jcasCounter = 0;
-        trefferCounter = 0;
     }
 	
 	
@@ -43,13 +39,10 @@ public class AnalyseOfSentimentWithFD extends JCasAnnotator_ImplBase
 		int neg = 0;
 		int pos = 0;
 		int other = 0;
-		jcasCounter++;
-		//GoldInformation gold = JCasUtil.selectSingle(aJCas, GoldInformation.class);
-		//String cond = gold.getTargetText();
-		//String sentiment = gold.getSentiment();
+		
 		for(Token t: tokens)
 		{
-			fd = cfd.getFrequencyDistribution(t.getCoveredText());
+			fd = cfd.getFrequencyDistribution(t.getCoveredText().toLowerCase());
 			if (fd != null)
 			{
 				String max = fd.getMostFrequentSamples(1).get(0);
@@ -57,34 +50,27 @@ public class AnalyseOfSentimentWithFD extends JCasAnnotator_ImplBase
 				if(max.equals("neg")) neg++;
 				if(max.equals("other")) other++;
 			}
-			
 		}
 		
-		String sentimentOfJCas = "neg"; //weil auf den Trainignsdaten das häufigste Sentiment neg ist.
+		String sentimentOfJCas = defaultSentimentOfJCas; 
 		if (pos > neg && pos > other) sentimentOfJCas = "pos";
 		if (neg > pos && neg > other) sentimentOfJCas = "neg";
 		if (other > pos && other > neg) sentimentOfJCas = "other";
+
+//		System.out.printf("%s: pos - %d ## neg - %d ## other - %d%n", aJCas.getDocumentText(), pos, neg, other);
+		DetectedInformation di; 
+		try{
+		    di = JCasUtil.selectSingle(aJCas, DetectedInformation.class);
+		}
+		catch(IllegalArgumentException e)
+		{
+		    //add the missed Element to the Jcas
+		    di = new DetectedInformation(aJCas);
+		    di.addToIndexes();
+		}
 		
-		//Vergeichen....
-//		String goldSentiment = JCasUtil.selectSingle(aJCas, GoldInformation.class).getSentiment();
-//		if (goldSentiment.equals(sentimentOfJCas)) trefferCounter++;
-		
-		DetectedInformation di = JCasUtil.selectSingle(aJCas, DetectedInformation.class);
 		di.setSentiment(sentimentOfJCas);
 		di.addToIndexes();
 		
 	}
-	
-	/* 
-     * This is called AFTER all documents have been processed.
-     */
-    @Override
-    public void collectionProcessComplete()
-        throws AnalysisEngineProcessException
-    {
-        super.collectionProcessComplete();
-//        System.out.println("Absolute Zahlen: \nTreffer: "+trefferCounter+" - JCas Elemente: "+jcasCounter);
-//        System.out.println("Trefferquote: "+ (double)trefferCounter/jcasCounter*100 +"%");
-    }
-
 }

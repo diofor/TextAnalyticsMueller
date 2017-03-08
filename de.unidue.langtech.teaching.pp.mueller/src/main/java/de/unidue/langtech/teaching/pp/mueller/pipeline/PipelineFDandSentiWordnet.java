@@ -35,6 +35,7 @@ public class PipelineFDandSentiWordnet
     	System.out.println("###################################\n");
     	buildFDs();
     	detectViaFDandWordnet();
+    	System.out.println("Das Target wird hier weiter nur über FDs bestimmt.");
     }
     
     public static void buildFDs() throws ResourceInitializationException, UIMAException, IOException

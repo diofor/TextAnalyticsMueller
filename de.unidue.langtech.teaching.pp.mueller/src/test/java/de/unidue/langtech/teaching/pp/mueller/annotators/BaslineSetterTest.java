@@ -16,8 +16,7 @@ import de.tudarmstadt.ukp.dkpro.core.arktools.ArktweetTokenizer;
 import de.unidue.langtech.teaching.pp.mueller.type.DetectedInformation;
 
 public class BaslineSetterTest {
-	
-    	String documentTextForTest = "Das ist der erste Test mit zwei mal dem Wort der";
+    String documentTextForTest = "Das ist der erste Test mit zwei mal dem Wort der";
 	String sentimentForTest = "pos";
 	String targetForTest ="Targettext";
 	

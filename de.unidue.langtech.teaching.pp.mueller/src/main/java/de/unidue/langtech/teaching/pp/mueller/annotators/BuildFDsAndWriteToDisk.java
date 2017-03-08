@@ -36,7 +36,6 @@ public class BuildFDsAndWriteToDisk extends JCasAnnotator_ImplBase
 		Collection<Token> tokens = JCasUtil.select(aJCas, Token.class);
 		GoldInformation gold = JCasUtil.selectSingle(aJCas, GoldInformation.class);
 		String cond = gold.getTarget();
-		System.out.println("Condition ist: "+ cond);
 		String sentiment = gold.getSentiment();
 		for(Token t: tokens)
 		{
