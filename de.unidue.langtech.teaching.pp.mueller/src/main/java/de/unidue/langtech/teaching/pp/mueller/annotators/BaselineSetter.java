@@ -33,7 +33,16 @@ public class BaselineSetter
     public void process(JCas jcas)
         throws AnalysisEngineProcessException
     {
-    	DetectedInformation di = JCasUtil.selectSingle(jcas, DetectedInformation.class);
+	DetectedInformation di;
+	try {
+	    di = JCasUtil.selectSingle(jcas, DetectedInformation.class);
+	} catch(IllegalArgumentException e) //is thrown if the Jcas doesent have an DetectedInformtion Objekt
+	{
+	    //add the missed Element to the Jcas
+	    di = new DetectedInformation(jcas);
+	    di.addToIndexes();
+	}
+    	
     	di.setSentiment(choosenSentiment);
     	di.setTarget(choosenTarget);
     	di.addToIndexes();

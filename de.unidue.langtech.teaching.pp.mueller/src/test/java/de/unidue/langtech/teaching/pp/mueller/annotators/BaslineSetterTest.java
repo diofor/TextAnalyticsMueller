@@ -26,9 +26,6 @@ public class BaslineSetterTest {
 	{
 	    	JCas jcas = JCasFactory.createJCas();
 		jcas.setDocumentText(documentTextForTest);
-		//Da die Jcas nicht durch den Reader erzeugt wird, muss hier ein DetectedInformation Objekt erzeugt und an  die Jcas gebunden werden.
-		DetectedInformation df_addOneToTheJcas = new DetectedInformation(jcas);
-		df_addOneToTheJcas.addToIndexes();
 		
 		AnalysisEngineDescription segmenter = createEngineDescription(ArktweetTokenizer.class);
 		AnalysisEngine segEngine = createEngine(segmenter);
