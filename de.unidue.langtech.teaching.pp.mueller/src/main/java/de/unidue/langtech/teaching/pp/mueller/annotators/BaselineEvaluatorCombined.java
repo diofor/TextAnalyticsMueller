@@ -17,18 +17,15 @@ public class BaselineEvaluatorCombined
     extends JCasAnnotator_ImplBase
 {
 
-    private int correct;
-    private int nrOfDocuments;
+    protected static int correct;
+    protected static int nrOfDocuments;
     public static final String PARAM_TARGET = "Target";
     @ConfigurationParameter(name = PARAM_TARGET, mandatory = true)
-    private String choosenTarget;
+    private String defaultTargetFromBasline;
     public static final String PARAM_SENTIMENT = "Sentiment";
     @ConfigurationParameter(name = PARAM_SENTIMENT, mandatory = true)
-    private String choosenSentiment;
+    private String defaultSentimentFromBasline;
     
-    /* 
-     * This is called BEFORE any documents are processed.
-     */
     @Override
     public void initialize(UimaContext context)
         throws ResourceInitializationException
@@ -39,29 +36,31 @@ public class BaselineEvaluatorCombined
     }
     
     
-    /* 
-     * This is called ONCE for each document
-     */
     @Override
     public void process(JCas jcas)
         throws AnalysisEngineProcessException
     {
     	GoldInformation gold = JCasUtil.selectSingle(jcas, GoldInformation.class);
-    	if (gold.getTarget().equals(choosenTarget) && gold.getSentiment().equals(choosenSentiment)) ++correct;
+    	if (gold.getTarget().equals(defaultTargetFromBasline) && gold.getSentiment().equals(defaultSentimentFromBasline)) ++correct;
     	++nrOfDocuments;
     }
 
 
-    /* 
-     * This is called AFTER all documents have been processed.
-     */
     @Override
     public void collectionProcessComplete()
         throws AnalysisEngineProcessException
     {
         super.collectionProcessComplete();
         
-        System.out.printf("%d out of %d are correct, if you choose %s every time as Target and %s every time as Sentiment.%n", correct, nrOfDocuments, choosenTarget, choosenSentiment);
+        System.out.printf("%d out of %d are correct, if you choose %s every time as Target and %s every time as Sentiment.%n", correct, nrOfDocuments, defaultTargetFromBasline, defaultSentimentFromBasline);
         System.out.printf("The combined Baseline is %.6f%%.", (double)correct/nrOfDocuments*100);
+    }
+    
+    public int getNrOfCorrectDocuments(){
+	return correct;
+    }
+    
+    public int getNrOfDocuments(){
+	return nrOfDocuments;
     }
 }
