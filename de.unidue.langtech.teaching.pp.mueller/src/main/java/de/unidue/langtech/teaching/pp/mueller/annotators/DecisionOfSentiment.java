@@ -21,7 +21,7 @@ public class DecisionOfSentiment extends JCasAnnotator_ImplBase{
 	long[] sentimentScores = new long[sentiments.length];
 	double sentimentValue;
 	
-	public static final int faktor = 8; //erfahrungswert
+	protected static final int faktor = 8; //erfahrungswert
 	
 	
 	//für interne Auswertung des Effekts des Wordnet-Wertes
@@ -82,7 +82,7 @@ public class DecisionOfSentiment extends JCasAnnotator_ImplBase{
 		
 		if (stelle == -1) 
 		{
-			di.setSentiment("neg"); //weil auf den Trainignsdaten das häufigste Sentiment neg ist.
+			di.setSentiment("neg"); //weil auf den Trainignsdaten das häufigste Sentiment neg ist. #DefaultValue
 		} else {
 			di.setSentiment(sentiments[stelle]);
 		}

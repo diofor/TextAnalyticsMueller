@@ -51,7 +51,14 @@ public class DetectionOfSentimentWithFD extends JCasAnnotator_ImplBase
 		}
 		
 		//Berechnete Werte im Typ DetectedInformation ablegen
-		DetectedInformation di = JCasUtil.selectSingle(aJCas, DetectedInformation.class);
+		DetectedInformation di;
+		try{
+		    di = JCasUtil.selectSingle(aJCas, DetectedInformation.class);
+		}catch(IllegalArgumentException e)
+		{
+//		    e.printStackTrace();
+		    di = new DetectedInformation(aJCas);
+		}
 		di.setSent_count_pos(countsForSentiments[0]);
 		di.setSent_count_neg(countsForSentiments[1]);
 		di.setSent_count_other(countsForSentiments[2]);
