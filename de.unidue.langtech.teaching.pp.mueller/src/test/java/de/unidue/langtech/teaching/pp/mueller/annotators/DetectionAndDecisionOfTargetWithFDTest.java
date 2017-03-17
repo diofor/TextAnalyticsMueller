@@ -19,7 +19,7 @@ import de.tudarmstadt.ukp.dkpro.core.arktools.ArktweetTokenizer;
 import de.unidue.langtech.teaching.pp.mueller.type.DetectedInformation;
 import de.unidue.langtech.teaching.pp.mueller.type.GoldInformation;
 
-public class DecisionAndDecisionOfTargetWithFDTest {
+public class DetectionAndDecisionOfTargetWithFDTest {
 	
 	@Before
 	public void beforeTestBuildFDs() throws UIMAException

@@ -1,8 +1,5 @@
-boring	targetTwo	1
-happy	targetTwo	1
-happy	targetOne	5
-sad	targetTwo	2
-sad	targetOne	1
-sad	targetThree	1
-today	targetThree	1
-fun	targetOne	2
+boring	null	1
+happy	null	6
+sad	null	4
+today	null	1
+fun	null	2

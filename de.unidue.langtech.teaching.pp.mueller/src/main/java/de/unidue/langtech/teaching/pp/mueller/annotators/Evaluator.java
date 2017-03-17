@@ -32,9 +32,7 @@ public class Evaluator
     private int correct_target;
     private int nrOfDocuments;
     
-    /* 
-     * This is called BEFORE any documents are processed.
-     */
+   
     @Override
     public void initialize(UimaContext context)
         throws ResourceInitializationException
@@ -45,9 +43,7 @@ public class Evaluator
     }
     
     
-    /* 
-     * This is called ONCE for each document
-     */
+    
     @Override
     public void process(JCas jcas)
         throws AnalysisEngineProcessException

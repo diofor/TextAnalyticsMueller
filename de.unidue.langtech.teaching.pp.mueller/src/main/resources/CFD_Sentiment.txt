@@ -1,5 +1,8 @@
-boring	null	1
-happy	null	6
-sad	null	4
-today	null	1
-fun	null	2
+boring	neg	1
+happy	pos	5
+happy	neg	1
+sad	pos	1
+sad	neg	2
+sad	other	1
+today	other	1
+fun	pos	2
