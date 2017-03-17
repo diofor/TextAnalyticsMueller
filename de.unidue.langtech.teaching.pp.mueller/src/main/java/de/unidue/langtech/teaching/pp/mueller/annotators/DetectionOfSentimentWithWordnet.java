@@ -27,7 +27,7 @@ public class DetectionOfSentimentWithWordnet extends JCasAnnotator_ImplBase
     private double sentimentValue;
     String[] sentiments = {"pos", "neg", "other"};
     
-    private static final float seperator = 0.6f; //should set the border for evaluating an non sure tweet. 
+    private static final float seperator = 0.6f; //set the seperator for evaluating weather it is an non sure tweet. 
     
     private static final boolean ausgabe = false;
     private int counter;

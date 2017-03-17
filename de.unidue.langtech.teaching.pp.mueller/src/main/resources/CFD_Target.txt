@@ -1,2 +1,2 @@
-freude	null	2
-glück	null	11
+happy	null	11
+fun	null	2

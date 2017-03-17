@@ -1,3 +1,3 @@
-freude	pos	2
-glück	pos	5
-glück	neg	6
+happy	pos	5
+happy	neg	6
+fun	pos	2

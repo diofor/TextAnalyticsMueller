@@ -41,6 +41,7 @@ public class DecisionOfSentiment extends JCasAnnotator_ImplBase{
 
 	@Override
 	public void process(JCas aJCas) throws AnalysisEngineProcessException {
+		
 		DetectedInformation di = JCasUtil.selectSingle(aJCas, DetectedInformation.class);
 		sentimentScores[0] = di.getSent_count_pos();
 		sentimentScores[1] = di.getSent_count_neg();
