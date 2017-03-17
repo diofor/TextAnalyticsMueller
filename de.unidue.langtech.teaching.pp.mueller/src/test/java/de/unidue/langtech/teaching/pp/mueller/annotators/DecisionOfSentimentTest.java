@@ -4,7 +4,6 @@ import static org.apache.uima.fit.factory.AnalysisEngineFactory.createEngine;
 import static org.apache.uima.fit.factory.AnalysisEngineFactory.createEngineDescription;
 import static org.junit.Assert.assertEquals;
 
-import java.io.File;
 import java.util.ArrayList;
 
 import org.apache.uima.UIMAException;
@@ -17,11 +16,10 @@ import org.junit.Before;
 import org.junit.Test;
 
 import de.tudarmstadt.ukp.dkpro.core.arktools.ArktweetTokenizer;
-import de.tudarmstadt.ukp.dkpro.core.opennlp.OpenNlpPosTagger;
 import de.unidue.langtech.teaching.pp.mueller.type.DetectedInformation;
 import de.unidue.langtech.teaching.pp.mueller.type.GoldInformation;
 
-public class DetectionOfSentimentWithWordnetTest {
+public class DecisionOfSentimentTest {
 	
 	@Before
 	public void beforeTestBuildFDs() throws UIMAException
@@ -30,12 +28,16 @@ public class DetectionOfSentimentWithWordnetTest {
 	    ArrayList<String> sentimentForCas = new ArrayList<>();
 	    	
 	    //Example One (0)
-	    documentTextForCas.add("happy happy happy happy happy fun fun sad sad sad"); //5 times 'happy' an twice times 'fun'
+	    documentTextForCas.add("happy happy happy happy happy fun fun sad");
 	    sentimentForCas.add("pos");
 	    	
 	    //Example Two (1)
-		documentTextForCas.add("happy happy happy happy happy happy sad sad"); //6 times 'happy'
+		documentTextForCas.add("happy sad sad boring");
 		sentimentForCas.add("neg");
+		
+		//Example Three (2)
+		documentTextForCas.add("today sad"); 
+		sentimentForCas.add("other");
 		
 	    AnalysisEngineDescription segmenter = createEngineDescription(ArktweetTokenizer.class);
 		AnalysisEngine segEngine = createEngine(segmenter);
@@ -57,18 +59,15 @@ public class DetectionOfSentimentWithWordnetTest {
 	}
 	
 	@Test
-	//Korrigiert ins positive
+	//decide for pos
 	public void testProcessOne() throws UIMAException
 	{
 	    JCas jcas = JCasFactory.createJCas();
-		jcas.setDocumentText("happy happy");
+		jcas.setDocumentText("happy sad");
 		
 		AnalysisEngineDescription segmenter = createEngineDescription(ArktweetTokenizer.class);
 		AnalysisEngine segEngine = createEngine(segmenter);
 		segEngine.process(jcas);
-		
-		AnalysisEngine posEngine = createEngine(OpenNlpPosTagger.class, OpenNlpPosTagger.PARAM_LANGUAGE, "en");
-		posEngine.process(jcas);
 		
 		DetectionOfSentimentWithFD deSFD= new DetectionOfSentimentWithFD();
 		AnalysisEngine deSFDEngine = createEngine(deSFD.getClass());
@@ -76,41 +75,31 @@ public class DetectionOfSentimentWithWordnetTest {
 		
 		DetectedInformation di = JCasUtil.selectSingle(jcas, DetectedInformation.class);
 		
+		//do the Tests before
+		assertEquals(true, di.getSent_count_pos() > di.getSent_count_neg());
+		assertEquals(true, di.getSent_count_pos() > di.getSent_count_other());
+		assertEquals(null, di.getSentiment());
+		
 		DecisionOfSentiment dofs = new DecisionOfSentiment();
 		AnalysisEngine dofsEngine = createEngine(dofs.getClass());
 		dofsEngine.process(jcas);
 		
-//		System.out.printf("pos: %d%nneg: %d%nother: %d%nsentiment: %s%n", di.getSent_count_pos(), di.getSent_count_neg(), di.getSent_count_other(), di.getSentiment());
-		
-		//do the Tests
-		assertEquals(true, di.getSent_count_neg() > di.getSent_count_pos());
-		assertEquals(true, di.getSent_count_neg() > di.getSent_count_other());
-		assertEquals("neg", di.getSentiment());
-		
-		DetectionOfSentimentWithWordnet dosww = new DetectionOfSentimentWithWordnet();
-		AnalysisEngine doswwEngine = createEngine(dosww.getClass(), 
-						DetectionOfSentimentWithWordnet.PARAM_WORDNET_FILE, new File("src/main/resources/SentiWordNet_3.0.0.txt"));
-		doswwEngine.process(jcas);
-		
-		dofsEngine.process(jcas);
-//		System.out.printf("pos: %d%nneg: %d%nother: %d%nsentiment: %s%n", di.getSent_count_pos(), di.getSent_count_neg(), di.getSent_count_other(), di.getSentiment());
-		
+		//do the Tests after
+		assertEquals(true, di.getSent_count_pos() > di.getSent_count_neg());
+		assertEquals(true, di.getSent_count_pos() > di.getSent_count_other());
 		assertEquals("pos", di.getSentiment());
 	}
 	
 	@Test
-	//Korrigiert nicht
+	//decide for neg
 	public void testProcessTwo() throws UIMAException
 	{
 	    JCas jcas = JCasFactory.createJCas();
-		jcas.setDocumentText("fun");
+		jcas.setDocumentText("sad fun boring somethingelse");
 		
 		AnalysisEngineDescription segmenter = createEngineDescription(ArktweetTokenizer.class);
 		AnalysisEngine segEngine = createEngine(segmenter);
 		segEngine.process(jcas);
-		
-		AnalysisEngine posEngine = createEngine(OpenNlpPosTagger.class, OpenNlpPosTagger.PARAM_LANGUAGE, "en");
-		posEngine.process(jcas);
 		
 		DetectionOfSentimentWithFD deSFD= new DetectionOfSentimentWithFD();
 		AnalysisEngine deSFDEngine = createEngine(deSFD.getClass());
@@ -118,41 +107,31 @@ public class DetectionOfSentimentWithWordnetTest {
 		
 		DetectedInformation di = JCasUtil.selectSingle(jcas, DetectedInformation.class);
 		
+		//do the Tests before
+		assertEquals(true, di.getSent_count_neg() > di.getSent_count_pos());
+		assertEquals(true, di.getSent_count_neg() > di.getSent_count_other());
+		assertEquals(null, di.getSentiment());
+		
 		DecisionOfSentiment dofs = new DecisionOfSentiment();
 		AnalysisEngine dofsEngine = createEngine(dofs.getClass());
 		dofsEngine.process(jcas);
 		
-//		System.out.printf("pos: %d%nneg: %d%nother: %d%nsentiment: %s%n", di.getSent_count_pos(), di.getSent_count_neg(), di.getSent_count_other(), di.getSentiment());
-		
-		//do the Tests
-		assertEquals(true, di.getSent_count_pos() > di.getSent_count_neg());
-		assertEquals(true, di.getSent_count_pos() > di.getSent_count_other());
-		assertEquals("pos", di.getSentiment());
-		
-		DetectionOfSentimentWithWordnet dosww = new DetectionOfSentimentWithWordnet();
-		AnalysisEngine doswwEngine = createEngine(dosww.getClass(), 
-						DetectionOfSentimentWithWordnet.PARAM_WORDNET_FILE, new File("src/main/resources/SentiWordNet_3.0.0.txt"));
-		doswwEngine.process(jcas);
-		
-		dofsEngine.process(jcas);
-//		System.out.printf("pos: %d%nneg: %d%nother: %d%nsentiment: %s%n", di.getSent_count_pos(), di.getSent_count_neg(), di.getSent_count_other(), di.getSentiment());
-		
-		assertEquals("pos", di.getSentiment());
+		//do the Tests after
+		assertEquals(true, di.getSent_count_neg() > di.getSent_count_pos());
+		assertEquals(true, di.getSent_count_neg() > di.getSent_count_other());
+		assertEquals("neg", di.getSentiment());
 	}
 	
 	@Test
-	//Korrigiert ins negative
+	//decide for other
 	public void testProcessThree() throws UIMAException
 	{
 	    JCas jcas = JCasFactory.createJCas();
-		jcas.setDocumentText("sad");
+		jcas.setDocumentText("today");
 		
 		AnalysisEngineDescription segmenter = createEngineDescription(ArktweetTokenizer.class);
 		AnalysisEngine segEngine = createEngine(segmenter);
 		segEngine.process(jcas);
-		
-		AnalysisEngine posEngine = createEngine(OpenNlpPosTagger.class, OpenNlpPosTagger.PARAM_LANGUAGE, "en");
-		posEngine.process(jcas);
 		
 		DetectionOfSentimentWithFD deSFD= new DetectionOfSentimentWithFD();
 		AnalysisEngine deSFDEngine = createEngine(deSFD.getClass());
@@ -160,25 +139,18 @@ public class DetectionOfSentimentWithWordnetTest {
 		
 		DetectedInformation di = JCasUtil.selectSingle(jcas, DetectedInformation.class);
 		
+		//do the Tests before
+		assertEquals(true, di.getSent_count_other() > di.getSent_count_pos());
+		assertEquals(true, di.getSent_count_other() > di.getSent_count_neg());
+		assertEquals(null, di.getSentiment());
+		
 		DecisionOfSentiment dofs = new DecisionOfSentiment();
 		AnalysisEngine dofsEngine = createEngine(dofs.getClass());
 		dofsEngine.process(jcas);
 		
-//		System.out.printf("pos: %d%nneg: %d%nother: %d%nsentiment: %s%n", di.getSent_count_pos(), di.getSent_count_neg(), di.getSent_count_other(), di.getSentiment());
-		
-		//do the Tests
-		assertEquals(true, di.getSent_count_pos() > di.getSent_count_neg());
-		assertEquals(true, di.getSent_count_pos() > di.getSent_count_other());
-		assertEquals("pos", di.getSentiment());
-		
-		DetectionOfSentimentWithWordnet dosww = new DetectionOfSentimentWithWordnet();
-		AnalysisEngine doswwEngine = createEngine(dosww.getClass(), 
-						DetectionOfSentimentWithWordnet.PARAM_WORDNET_FILE, new File("src/main/resources/SentiWordNet_3.0.0.txt"));
-		doswwEngine.process(jcas);
-		
-		dofsEngine.process(jcas);
-//		System.out.printf("pos: %d%nneg: %d%nother: %d%nsentiment: %s%n", di.getSent_count_pos(), di.getSent_count_neg(), di.getSent_count_other(), di.getSentiment());
-		
-		assertEquals("neg", di.getSentiment());
+		//do the Tests after
+		assertEquals(true, di.getSent_count_other() > di.getSent_count_pos());
+		assertEquals(true, di.getSent_count_other() > di.getSent_count_neg());
+		assertEquals("other", di.getSentiment());
 	}
 }

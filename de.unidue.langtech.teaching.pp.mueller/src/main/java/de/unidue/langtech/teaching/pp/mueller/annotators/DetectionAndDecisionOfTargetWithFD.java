@@ -44,7 +44,7 @@ public class DetectionAndDecisionOfTargetWithFD extends JCasAnnotator_ImplBase
 			{
 				for(String keyForToken : fd_token.getKeys())
 				{
-					fd_tweet.addSample(keyForToken, Math.round(fd_token.getCount(keyForToken)/fd_token.getN()*100));
+					fd_tweet.addSample(keyForToken, Math.round(( (fd_token.getCount(keyForToken)*100)/fd_token.getN() )));
 				}
 			}
 		}

@@ -1,3 +1,5 @@
-happy	pos	5
-happy	neg	6
-fun	pos	2
+boring	null	1
+happy	null	6
+sad	null	4
+today	null	1
+fun	null	2

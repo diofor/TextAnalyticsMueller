@@ -1,2 +1,8 @@
-happy	null	11
-fun	null	2
+boring	targetTwo	1
+happy	targetTwo	1
+happy	targetOne	5
+sad	targetTwo	2
+sad	targetOne	1
+sad	targetThree	1
+today	targetThree	1
+fun	targetOne	2
