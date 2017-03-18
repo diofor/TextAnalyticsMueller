@@ -11,7 +11,8 @@ import de.unidue.langtech.teaching.pp.mueller.type.GoldInformation;
 
 public class FindMostFrequentSentiment  extends JCasAnnotator_ImplBase {
 
-	int pos, neg, other, sum;
+	protected static int pos, neg, other, sum;
+	protected static String max; 
 	
 	@Override
     public void initialize(UimaContext context)
@@ -40,7 +41,7 @@ public class FindMostFrequentSentiment  extends JCasAnnotator_ImplBase {
 	public void collectionProcessComplete() throws AnalysisEngineProcessException
 	{
 		super.collectionProcessComplete();
-		String max = "";
+//		max = "";
 		if (pos > neg && pos > other) max = "pos"; 
 		if (neg > pos && neg > other) max = "neg"; 
 		if (other > neg && other > pos) max = "other";
@@ -50,6 +51,24 @@ public class FindMostFrequentSentiment  extends JCasAnnotator_ImplBase {
 		System.out.printf("other:\t%d \tvon %d - %.2f%% %n", other, sum, ((double)other/sum) * 100);
 		System.out.printf("The most frequent sentiment in this data was: \"%s\" %n %n", max);
 	}
-
 	
+	public String getMax() {
+		return max;
+	}
+	
+	public int getPos() {
+		return pos;
+	}
+	
+	public int getNeg() {
+		return neg;
+	}
+
+	public int getOther() {
+		return other;
+	}
+	
+	public int getSum() {
+		return sum;
+	}
 }

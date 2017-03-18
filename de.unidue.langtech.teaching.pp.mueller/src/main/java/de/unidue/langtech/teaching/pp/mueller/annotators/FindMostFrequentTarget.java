@@ -12,8 +12,9 @@ import de.unidue.langtech.teaching.pp.mueller.type.GoldInformation;
 
 public class FindMostFrequentTarget  extends JCasAnnotator_ImplBase {
 
-	FrequencyDistribution<String> fd;
-	int sum;
+	protected static FrequencyDistribution<String> fd;
+	protected static int sum;
+	protected static String max;
 	
 	@Override
     public void initialize(UimaContext context)
@@ -35,7 +36,7 @@ public class FindMostFrequentTarget  extends JCasAnnotator_ImplBase {
 	public void collectionProcessComplete() throws AnalysisEngineProcessException
 	{
 		super.collectionProcessComplete();
-		String max = fd.getSampleWithMaxFreq();
+		max = fd.getSampleWithMaxFreq();
 		System.out.println("Die Verteilung der Targets:");
 		for(String key : fd.getKeys())
 		{
@@ -43,6 +44,20 @@ public class FindMostFrequentTarget  extends JCasAnnotator_ImplBase {
 		}
 		System.out.printf("The most frequent target in this data was: \"%s\" %n %n", max);
 	}
+	
+	public int getCountOf(String name)
+	{
+		return (int) fd.getCount(name);
+	}
+	
+	public int getSum()
+	{
+		return sum;
+	}
 
+	public String getMax()
+	{
+		return max;
+	}
 	
 }
