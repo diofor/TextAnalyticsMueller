@@ -57,7 +57,6 @@ public class AnalyseOfSentimentWithFD extends JCasAnnotator_ImplBase
 		if (neg > pos && neg > other) sentimentOfJCas = "neg";
 		if (other > pos && other > neg) sentimentOfJCas = "other";
 
-//		System.out.printf("%s: pos - %d ## neg - %d ## other - %d%n", aJCas.getDocumentText(), pos, neg, other);
 		DetectedInformation di; 
 		try{
 		    di = JCasUtil.selectSingle(aJCas, DetectedInformation.class);

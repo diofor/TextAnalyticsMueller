@@ -56,7 +56,6 @@ public class DetectionOfSentimentWithFD extends JCasAnnotator_ImplBase
 		    di = JCasUtil.selectSingle(aJCas, DetectedInformation.class);
 		}catch(IllegalArgumentException e)
 		{
-//		    e.printStackTrace();
 		    di = new DetectedInformation(aJCas);
 		}
 		di.setSent_count_pos(countsForSentiments[0]);
@@ -64,7 +63,7 @@ public class DetectionOfSentimentWithFD extends JCasAnnotator_ImplBase
 		di.setSent_count_other(countsForSentiments[2]);
 		di.addToIndexes();
 
-		//Werte fürd die nächste jCas zurücksetzen.
+		//Werte für die nächste jCas zurücksetzen.
 		for(int j = 0; j<countsForSentiments.length; ++j) countsForSentiments[j] = 0;
 	}
 }

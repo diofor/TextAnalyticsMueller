@@ -15,7 +15,6 @@ import org.apache.uima.util.Progress;
 
 import de.unidue.langtech.teaching.pp.mueller.type.DetectedInformation;
 import de.unidue.langtech.teaching.pp.mueller.type.GoldInformation;
-//import de.unidue.langtech.teaching.pp.type.GoldLanguage;
 
 public class Reader
     extends JCasCollectionReader_ImplBase

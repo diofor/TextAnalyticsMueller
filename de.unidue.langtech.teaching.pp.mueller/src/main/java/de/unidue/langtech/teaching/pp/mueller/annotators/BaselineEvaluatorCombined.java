@@ -10,9 +10,6 @@ import org.apache.uima.resource.ResourceInitializationException;
 
 import de.unidue.langtech.teaching.pp.mueller.type.GoldInformation;
 
-//import de.unidue.langtech.teaching.pp.mueller.type.DetectedLanguage;
-//import de.unidue.langtech.teaching.pp.mueller.type.GoldLanguage;
-
 public class BaselineEvaluatorCombined
     extends JCasAnnotator_ImplBase
 {

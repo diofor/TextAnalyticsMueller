@@ -41,7 +41,6 @@ public class FindMostFrequentSentiment  extends JCasAnnotator_ImplBase {
 	public void collectionProcessComplete() throws AnalysisEngineProcessException
 	{
 		super.collectionProcessComplete();
-//		max = "";
 		if (pos > neg && pos > other) max = "pos"; 
 		if (neg > pos && neg > other) max = "neg"; 
 		if (other > neg && other > pos) max = "other";

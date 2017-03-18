@@ -59,11 +59,6 @@ public class CFDFileManager {
 		file = new File(System.getProperty("user.dir") + "/src/main/resources/CFD_"+goal+".txt");
 	
 		try {
-			// new FileWriter(file ,true) - falls die Datei bereits existiert
-			// werden die Bytes an das Ende der Datei geschrieben
-			 
-			// new FileWriter(file) - falls die Datei bereits existiert
-			// wird diese überschrieben
 			writer = new FileWriter(file);
 			 
 			for (String zeile: fertigeZeilen)
