@@ -11,26 +11,22 @@ import de.unidue.langtech.teaching.pp.mueller.io.TableList;
 import de.unidue.langtech.teaching.pp.mueller.type.DetectedInformation;
 import de.unidue.langtech.teaching.pp.mueller.type.GoldInformation;
 
-//import de.unidue.langtech.teaching.pp.mueller.type.DetectedLanguage;
-//import de.unidue.langtech.teaching.pp.mueller.type.GoldLanguage;
-
 public class Evaluator
     extends JCasAnnotator_ImplBase
 {
-
-	private int[] tp_sentiment = {0,0,0};
-	private int[] fp_sentiment = {0,0,0};
-	private int[] fn_sentiment = {0,0,0};
-	private int[] tn_sentiment = {0,0,0};
-	private int[] tp_target = {0,0,0,0,0};
-	private int[] fp_target = {0,0,0,0,0};
-	private int[] fn_target = {0,0,0,0,0};
-	private int[] tn_target = {0,0,0,0,0};
+	protected static int[] tp_sentiment;
+	protected static int[] fp_sentiment;
+	protected static int[] fn_sentiment;
+	protected static int[] tn_sentiment;
+	protected static int[] tp_target;
+	protected static int[] fp_target;
+	protected static int[] fn_target;
+	protected static int[] tn_target;
 	private String[] sentiments = {"pos", "neg", "other"};
 	private String[] targets = {"Legalization of Abortion", "Atheism", "Hillary Clinton", "Climate Change is a Real Concern", "Feminist Movement"};
     private int correct_sentiment;
     private int correct_target;
-    private int nrOfDocuments;
+    protected static int nrOfDocuments;
     
    
     @Override
@@ -40,6 +36,14 @@ public class Evaluator
         super.initialize(context);
         correct_sentiment = 0;
         nrOfDocuments = 0;
+        tp_sentiment = new int[sentiments.length];
+        fp_sentiment = new int[sentiments.length];
+        fn_sentiment = new int[sentiments.length];
+        tn_sentiment = new int[sentiments.length];
+        tp_target = new int[targets.length];
+        fp_target = new int[targets.length];
+        fn_target = new int[targets.length];
+        tn_target = new int[targets.length];
     }
     
     
@@ -154,5 +158,42 @@ public class Evaluator
         }
         results_target.print();
         System.out.printf("%nAccuracy:   %.7f (%d/%d)%n", (double)correct_target/nrOfDocuments, correct_target, nrOfDocuments);
+    }
+    
+    //for the JUnit tests
+    public int getNumberOfDocuments() {
+    	return nrOfDocuments;
+    }
+    
+    public int[] getTP_Sentiment() {
+    	return tp_sentiment;
+    }
+    
+    public int[] getFP_Sentiment() {
+    	return fp_sentiment;
+    }
+    
+    public int[] getFN_Sentiment() {
+    	return fn_sentiment;
+    }
+    
+    public int[] getTN_Sentiment() {
+    	return tn_sentiment;
+    }
+    
+    public int[] getTP_Target() {
+    	return tp_target;
+    }
+    
+    public int[] getFP_Target() {
+    	return fp_target;
+    }
+    
+    public int[] getFN_Target() {
+    	return fn_target;
+    }
+    
+    public int[] getTN_Target() {
+    	return tn_target;
     }
 }
