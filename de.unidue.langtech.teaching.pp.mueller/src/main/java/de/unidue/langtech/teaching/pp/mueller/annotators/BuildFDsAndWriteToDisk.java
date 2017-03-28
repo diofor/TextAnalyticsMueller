@@ -19,6 +19,7 @@ public class BuildFDsAndWriteToDisk extends JCasAnnotator_ImplBase
 {
     protected static ConditionalFrequencyDistribution<String, String> cfd_target;
     protected static ConditionalFrequencyDistribution<String, String> cfd_sentiment;
+    protected static ConditionalFrequencyDistribution<String, String> cfd_stance;
     private int counter;
     
     @Override
@@ -28,6 +29,7 @@ public class BuildFDsAndWriteToDisk extends JCasAnnotator_ImplBase
         super.initialize(context);
         cfd_target = new ConditionalFrequencyDistribution<String, String>();
         cfd_sentiment = new ConditionalFrequencyDistribution<String, String>();
+        cfd_stance = new ConditionalFrequencyDistribution<String, String>();
         counter = 0;
     }
     
@@ -37,10 +39,12 @@ public class BuildFDsAndWriteToDisk extends JCasAnnotator_ImplBase
 		GoldInformation gold = JCasUtil.selectSingle(aJCas, GoldInformation.class);
 		String cond = gold.getTarget();
 		String sentiment = gold.getSentiment();
+		String stance = gold.getStance();
 		for(Token t: tokens)
 		{
 			cfd_target.inc(t.getCoveredText().toLowerCase(), cond);
 			cfd_sentiment.inc(t.getCoveredText().toLowerCase(), sentiment);
+			cfd_stance.inc(t.getCoveredText().toLowerCase(), stance);
 		}
 		++counter;
     }
@@ -53,6 +57,7 @@ public class BuildFDsAndWriteToDisk extends JCasAnnotator_ImplBase
         CFDFileManager writer = new CFDFileManager();
         writer.write(cfd_target, "Target");
         writer.write(cfd_sentiment, "Sentiment");
+        writer.write(cfd_stance, "Stance");
         
         System.out.println("\nBEGIN Auswertung BuildFDsAndWriteToDisk");
         System.out.printf("Es wurden %d Tweets eingelesen und als CFDs abgelegt.%n", counter);
@@ -67,4 +72,7 @@ public class BuildFDsAndWriteToDisk extends JCasAnnotator_ImplBase
     		return cfd_sentiment;
     }
 
+    public ConditionalFrequencyDistribution<String, String> getCfd_rawdate_stance() {
+		return cfd_stance;
+    }
 }

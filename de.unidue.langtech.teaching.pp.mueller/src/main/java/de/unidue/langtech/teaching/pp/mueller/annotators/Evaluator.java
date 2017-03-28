@@ -22,29 +22,42 @@ public class Evaluator
 	protected static int[] fp_target;
 	protected static int[] fn_target;
 	protected static int[] tn_target;
+	protected static int[] tp_stance;
+	protected static int[] fp_stance;
+	protected static int[] fn_stance;
+	protected static int[] tn_stance;
 	private String[] sentiments = {"pos", "neg", "other"};
 	private String[] targets = {"Legalization of Abortion", "Atheism", "Hillary Clinton", "Climate Change is a Real Concern", "Feminist Movement"};
-    private int correct_sentiment;
-    private int correct_target;
-    protected static int nrOfDocuments;
-    
-   
-    @Override
-    public void initialize(UimaContext context)
-        throws ResourceInitializationException
-    {
-        super.initialize(context);
-        correct_sentiment = 0;
-        nrOfDocuments = 0;
-        tp_sentiment = new int[sentiments.length];
-        fp_sentiment = new int[sentiments.length];
-        fn_sentiment = new int[sentiments.length];
-        tn_sentiment = new int[sentiments.length];
-        tp_target = new int[targets.length];
-        fp_target = new int[targets.length];
-        fn_target = new int[targets.length];
-        tn_target = new int[targets.length];
-    }
+	private String[] stances = {"FAVOR", "AGAINST",  "NONE"};
+	
+	private int correct_sentiment;
+	private int correct_target;
+	private int correct_stance;
+	protected static int nrOfDocuments;
+	
+	
+        @Override
+        public void initialize(UimaContext context)
+            throws ResourceInitializationException
+        {
+            super.initialize(context);
+            correct_sentiment = 0;
+            correct_target = 0;
+            correct_stance = 0;
+            nrOfDocuments = 0;
+            tp_sentiment = new int[sentiments.length];
+            fp_sentiment = new int[sentiments.length];
+            fn_sentiment = new int[sentiments.length];
+            tn_sentiment = new int[sentiments.length];
+            tp_target = new int[targets.length];
+            fp_target = new int[targets.length];
+            fn_target = new int[targets.length];
+            tn_target = new int[targets.length];
+            tp_stance = new int[stances.length];
+            fp_stance = new int[stances.length];
+            fn_stance = new int[stances.length];
+            tn_stance = new int[stances.length];
+        }
     
     
     
@@ -106,6 +119,34 @@ public class Evaluator
 	    		}
 	    	}
     	}	
+    	
+    	//Überprüfungen für das Stance (bestimmen von tp fn fp tn)
+    	for (int i = 0; i < stances.length; ++i)
+    	{
+	    	if (gold.getStance().equals(stances[i]))
+	    	{
+	    		if(detec.getStance().equals(stances[i]))	    		
+	    		{
+	    			++tp_stance[i];
+	    			++correct_stance;
+	    		}else{
+	    			++fn_stance[i];
+	    		}
+	    	}
+	    	else
+	    	{
+	    		if(detec.getStance().equals(stances[i]))
+	    		{
+	    			++fp_stance[i];
+	    		}
+	    		else
+	    		{
+	    			++tn_stance[i];
+	    		}
+	    	}
+    	}	
+    	
+    	
     	++nrOfDocuments;
     }
 
@@ -158,6 +199,27 @@ public class Evaluator
         }
         results_target.print();
         System.out.printf("%nAccuracy:   %.7f (%d/%d)%n", (double)correct_target/nrOfDocuments, correct_target, nrOfDocuments);
+        
+        //Stance
+        double precision_stance[] = {0,0,0};
+        double recall_stance[] = {0,0,0};
+        double f1_stance[] = {0,0,0};
+        for(int i = 0; i < stances.length; ++i){
+        	recall_stance[i] = (double) tp_stance[i] / (tp_stance[i]+fn_stance[i]);
+        	precision_stance[i] = (double) tp_stance[i]/(tp_stance[i]+fp_stance[i]);
+        	f1_stance[i] = 2*((precision_stance[i]*recall_stance[i])/(precision_stance[i]+recall_stance[i]));
+        }
+        
+        System.out.println("\n "); //leerzeile
+        TableList results_stance = new TableList(4, "Stance", "Precision", "Recall", "F-measure");
+        for(int i = 0; i < stances.length; ++i){
+        	String precision_text = String.format("%.4f (%d/%d)", precision_stance[i], tp_stance[i], tp_stance[i]+fp_stance[i]);
+        	String recall_text = String.format("%.4f (%d/%d)", recall_stance[i], tp_stance[i], tp_stance[i]+fn_stance[i]); 
+        	String fmeasure_text = String.format("%.4f", f1_stance[i]);
+	        results_stance.addRow(stances[i], precision_text, recall_text, fmeasure_text);
+        }
+        results_stance.print();
+        System.out.printf("%nAccuracy:   %.7f (%d/%d)%n", (double)correct_stance/nrOfDocuments, correct_stance, nrOfDocuments);
     }
     
     //for the JUnit tests

@@ -13,6 +13,7 @@ import de.tudarmstadt.ukp.dkpro.core.arktools.ArktweetTokenizer;
 import de.tudarmstadt.ukp.dkpro.core.stopwordremover.StopWordRemover;
 import de.unidue.langtech.teaching.pp.mueller.annotators.BuildFDsAndWriteToDisk;
 import de.unidue.langtech.teaching.pp.mueller.annotators.DecisionOfSentiment;
+import de.unidue.langtech.teaching.pp.mueller.annotators.DetectionAndDecisionOfStanceWithFD;
 import de.unidue.langtech.teaching.pp.mueller.annotators.DetectionAndDecisionOfTargetWithFD;
 import de.unidue.langtech.teaching.pp.mueller.annotators.DetectionOfSentimentWithFD;
 import de.unidue.langtech.teaching.pp.mueller.annotators.Evaluator;
@@ -58,6 +59,7 @@ public class PipelineFDonly
                 AnalysisEngineFactory.createEngineDescription(DetectionAndDecisionOfTargetWithFD.class),
                 AnalysisEngineFactory.createEngineDescription(DetectionOfSentimentWithFD.class),
                 AnalysisEngineFactory.createEngineDescription(DecisionOfSentiment.class),
+                AnalysisEngineFactory.createEngineDescription(DetectionAndDecisionOfStanceWithFD.class),
                 AnalysisEngineFactory.createEngineDescription(Evaluator.class)
         );
     }
